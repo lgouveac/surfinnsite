@@ -1,0 +1,67 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE and Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# System and config files
+.bash_history
+.zsh_history
+.zsh_sessions/
+.ssh/
+.cups/
+.cache/
+.npm/
+.node_repl_history
+.gitconfig
+
+# Application data
+.claude/
+.claude.json*
+.cursor/
+.cursor-tutor/
+.docker/
+.gemini/
+.local/
+.config/
+.mcp-auth/
+.opencode/
+.codex/
+.tor/
+.antigravity/
+
+# User directories
+Desktop/
+Documents/
+Downloads/
+Library/
+Movies/
+Music/
+Pictures/
+Applications/
+Public/
+.Trash/
+
+# Development tools
+.dart-tool/
+.flutter
+.pub-cache/
+.fontconfig/
+.npm-global/
+.npmrc
+.bun/
+
+# Temporary files
+*.tmp
+*.temp
+.CFUserTextEncoding
