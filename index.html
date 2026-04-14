@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Surf Inn - Surf Camp in Brazil</title>
+  <meta name="description" content="Discover the best surf camps in Brazil. Surf Inn offers complete surf, yoga, and culture experiences in Rio de Janeiro and Itacaré, Bahia.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Surf Inn - Surf Camp in Brazil">
+  <meta property="og:description" content="Discover the best surf camps in Brazil. Surf Inn offers complete surf, yoga, and culture experiences in Rio de Janeiro and Itacaré, Bahia.">
+  <meta property="og:image" content="/assets/images/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Surf Inn - Surf Camp in Brazil">
+  <meta name="twitter:image" content="/assets/images/og-image.png">
+  <link rel="icon" href="/assets/images/favicon.png" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/assets/images/favicon-dark.png" media="(prefers-color-scheme: dark)">
+  <link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Montserrat+Alternates:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800&family=Open+Sans:wght@400;600&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,900;1,500;1,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bege: #f5f2eb;
+      --off-black: #494440;
+      --brown: #3d3529;
+      --teal: #4bb8d4;
+      --card-bg: #5a5248;
+      --border: #c4b9a8;
+      --text-muted: #8a7e70;
+      --text-body: #5a5248;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', 'Open Sans', sans-serif;
+      background-color: var(--bege);
+      color: var(--off-black);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; color: inherit; }
+    ul, ol { list-style: none; }
+    img { max-width: 100%; display: block; }
+    button { cursor: pointer; font-family: inherit; }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 10px 40px;
+      background: var(--bege);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .navbar-logo img { height: 38px; width: auto; object-fit: contain; }
+    .hamburger {
+      display: flex; flex-direction: column; gap: 5px;
+      cursor: pointer; padding: 8px; background: none; border: none;
+    }
+    .hamburger span { width: 24px; height: 2.5px; background: var(--off-black); border-radius: 2px; display: block; }
+    .nav-overlay {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.3); z-index: 998;
+    }
+    .nav-overlay.active { display: block; }
+    .nav-menu {
+      display: none; position: fixed; top: 0; right: 0; bottom: 0;
+      width: 300px; background: var(--bege); z-index: 999;
+      padding: 80px 40px 40px; box-shadow: -4px 0 30px rgba(0,0,0,0.1);
+    }
+    .nav-menu.active { display: block; }
+    .nav-menu a {
+      display: block; padding: 16px 0;
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-size: 16px; font-weight: 500; color: var(--off-black);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      transition: color 0.3s;
+    }
+    .nav-menu a:hover { color: var(--teal); }
+    .nav-group { border-bottom: 1px solid rgba(0,0,0,0.06); }
+    .nav-group-toggle {
+      display: flex; align-items: center; justify-content: space-between;
+      width: 100%; padding: 16px 0; background: none; border: none;
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-size: 16px; font-weight: 600; color: var(--off-black);
+      cursor: pointer; transition: color 0.3s;
+    }
+    .nav-group-toggle:hover { color: var(--teal); }
+    .nav-arrow { font-size: 18px; transition: transform 0.3s; }
+    .nav-group.open .nav-arrow { transform: rotate(90deg); }
+    .nav-group-items { display: none; padding-left: 16px; padding-bottom: 8px; }
+    .nav-group.open .nav-group-items { display: block; }
+    .nav-group-items a { padding: 10px 0; font-size: 14px; border-bottom: none; opacity: 0.8; }
+    .nav-group-items a:hover { opacity: 1; }
+    .nav-close {
+      position: absolute; top: 20px; right: 20px;
+      background: none; border: none; font-size: 28px; color: var(--off-black);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      padding-top: 80px;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    .hero h1 {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: clamp(48px, 8vw, 120px);
+      color: var(--off-black);
+      line-height: 1;
+      letter-spacing: -0.04em;
+      padding: 30px 40px 20px;
+    }
+    .hero-description {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(14px, 1.6vw, 18px);
+      color: var(--off-black);
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 40px;
+    }
+
+    /* ===== LOCATION CARDS ===== */
+    .locations {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 50px 20px 30px;
+    }
+    .location-card {
+      border-radius: 20px;
+      overflow: hidden;
+      position: relative;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+    }
+    .location-card-media {
+      position: relative;
+      height: 380px;
+      overflow: hidden;
+      border-radius: 20px;
+      background: #e8e3da;
+    }
+    .location-card-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .location-card-content {
+      padding: 20px 0 10px;
+    }
+    .location-card-content h2 {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 800;
+      font-style: italic;
+      font-size: clamp(28px, 3.5vw, 44px);
+      color: var(--off-black);
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+    .location-card-content p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.5;
+      margin-bottom: 14px;
+    }
+    .btn-surf {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 22px;
+      background: transparent;
+      border: 1.5px solid var(--off-black);
+      border-radius: 30px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--off-black);
+      transition: all 0.3s;
+    }
+    .btn-surf:hover {
+      background: var(--off-black);
+      color: var(--bege);
+    }
+    .btn-surf .dot-icon {
+      width: 8px; height: 8px;
+      background: var(--off-black);
+      border-radius: 50%;
+      display: inline-block;
+      transition: background 0.3s;
+    }
+    .btn-surf:hover .dot-icon {
+      background: var(--bege);
+    }
+
+    /* ===== MOUNTAIN DIVIDER ===== */
+    .mountain-divider {
+      display: flex;
+      justify-content: center;
+      padding: 30px 40px 20px;
+    }
+    .mountain-divider svg {
+      width: 100%;
+      max-width: 900px;
+      height: auto;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact { padding: 50px 40px; }
+    .contact-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 18px; border: 1.5px solid var(--off-black); border-radius: 30px;
+      font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px;
+    }
+    .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+    .contact-info h2 {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 800; font-style: italic;
+      font-size: clamp(26px, 3.2vw, 38px);
+      color: var(--off-black); line-height: 1.2; margin-bottom: 14px;
+    }
+    .contact-info h2 .q { color: var(--teal); }
+    .contact-info p { font-family: 'Poppins', sans-serif; font-size: 13px; color: var(--text-body); line-height: 1.6; }
+    .social-icons { display: flex; gap: 14px; margin-top: 18px; }
+    .social-icons a { color: var(--off-black); transition: color 0.3s; }
+    .social-icons a:hover { color: var(--teal); }
+    .social-icons svg { width: 26px; height: 26px; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 10px; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 12px 16px;
+      border: 1.5px solid var(--border); border-radius: 10px;
+      background: transparent; font-family: 'Poppins', sans-serif;
+      font-size: 13px; color: var(--off-black); outline: none;
+      transition: border-color 0.3s;
+    }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--teal); }
+    .contact-form input::placeholder, .contact-form textarea::placeholder { color: #a09688; }
+    .contact-form textarea { min-height: 110px; resize: vertical; }
+    .btn-submit {
+      width: 100%; padding: 14px; background: var(--teal); border: none;
+      border-radius: 10px; font-family: 'Poppins', sans-serif;
+      font-size: 15px; font-weight: 600; color: white; transition: background 0.3s;
+    }
+    .btn-submit:hover { background: #3da5bf; }
+
+    /* ===== CONTACT BANNER ===== */
+    .contact-banner { padding: 10px 40px 30px; }
+    .contact-banner h2 {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 900; font-size: clamp(40px, 6vw, 72px);
+      text-transform: uppercase; letter-spacing: 2px; color: var(--off-black);
+    }
+
+    /* ===== FOOTER ===== */
+    .footer { background: var(--off-black); color: var(--bege); padding: 36px 40px 20px; }
+    .footer-top {
+      display: flex; justify-content: space-between; align-items: center;
+      padding-bottom: 20px; border-bottom: 1px solid rgba(245,242,235,0.1);
+    }
+    .footer-logo img { height: 65px; }
+    .footer-nav { display: flex; gap: 28px; }
+    .footer-nav a {
+      font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 1px; opacity: 0.7;
+      transition: opacity 0.3s;
+    }
+    .footer-nav a:hover { color: var(--teal); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      padding-top: 20px;
+    }
+    .footer-contact { display: flex; gap: 28px; align-items: center; }
+    .footer-contact a, .footer-contact span {
+      font-family: 'Poppins', sans-serif; font-size: 12px; opacity: 0.7;
+    }
+    .footer-contact a:hover { opacity: 1; }
+    .footer-social { display: flex; gap: 14px; margin-top: 8px; }
+    .footer-social a { opacity: 0.7; transition: opacity 0.3s; color: var(--bege); }
+    .footer-social a:hover { opacity: 1; }
+    .footer-social svg { width: 22px; height: 22px; }
+    .footer-right { text-align: right; }
+    .footer-right .copyright {
+      font-family: 'Poppins', sans-serif; font-size: 10px;
+      text-transform: uppercase; letter-spacing: 1px; opacity: 0.5;
+    }
+    .footer-right .credit { font-family: 'Poppins', sans-serif; font-size: 10px; opacity: 0.3; margin-top: 4px; }
+
+    /* ===== WHATSAPP ===== */
+    .whatsapp-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 900;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: #25d366; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float svg { width: 26px; height: 26px; fill: white; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 809px) {
+      .navbar { padding: 10px 20px; }
+      .hero h1 { padding: 20px 20px 16px; font-size: clamp(36px, 10vw, 60px); }
+      .hero-description { padding: 0 20px; font-size: 14px; }
+      .locations {
+        grid-template-columns: 1fr;
+        padding: 30px 20px 20px;
+      }
+      .location-card { min-height: auto; }
+      .location-card-media { height: 280px; }
+      .contact { padding: 30px 20px; }
+      .contact-inner { grid-template-columns: 1fr; gap: 30px; }
+      .contact-banner { padding: 10px 20px 20px; }
+      .footer { padding: 24px 20px 16px; }
+      .footer-top { flex-direction: column; gap: 14px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-right { text-align: center; }
+      .footer-contact { flex-direction: column; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SVG DEFS (hidden) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="icon-whatsapp" viewBox="0 0 32 32">
+      <path d="M22.84 18.98c-.38-.18-2.2-1.08-2.54-1.22-.34-.14-.58-.18-.84.2-.26.38-.96 1.2-1.18 1.46-.22.26-.42.28-.8 0a11.4 11.4 0 01-2.98-1.84 11.1 11.1 0 01-2-2.58c-.22-.36 0-.56.16-.76.16-.2.36-.42.56-.64.15-.19.27-.4.36-.62.1-.21.1-.45 0-.66-.08-.18-.92-2-1.24-2.74-.32-.74-.6-.64-.82-.64h-.8c-.38.02-.74.18-.98.46-.85.81-1.32 1.93-1.3 3.1.1 1.42.62 2.78 1.5 3.9 1.6 2.39 3.8 4.32 6.38 5.6.88.38 1.56.6 2.1.78.76.23 1.56.28 2.34.14a3.76 3.76 0 002.52-1.76c.23-.56.31-1.16.22-1.76-.1-.14-.34-.24-.72-.42z"/>
+      <path d="M26.58 5.36A14.85 14.85 0 0016 1C10.7 1.03 5.82 3.87 3.18 8.46.54 13.06.54 18.71 3.18 23.3L1.18 31l7.88-2c2.18 1.19 4.62 1.8 7.1 1.8h-.16c6.05.04 11.52-3.58 13.84-9.17 2.32-5.58 1.03-12.01-3.26-16.27zM16 28.24c-2.22 0-4.4-.6-6.3-1.74l-.44-.26-4.68 1.22 1.24-4.56-.28-.46A12.16 12.16 0 018.34 6.25c4.9-3.91 11.95-3.52 16.4.86 2.33 2.31 3.63 5.46 3.62 8.74-.01 6.82-5.54 12.35-12.36 12.39z"/>
+    </symbol>
+    <symbol id="icon-instagram" viewBox="0 0 30 30">
+      <path d="M8.8.19C6.36.29 4.25.89 2.54 2.59.82 4.3.23 6.43.12 8.85.06 10.35-.35 21.75.82 24.74A5.94 5.94 0 005.18 29.09c.95.37 2.04.62 3.63.69C22.1 30.38 27.02 30.06 29.1 24.74c.37-.95.62-2.03.69-3.62.61-13.33-.1-16.22-2.41-18.53C25.54.76 23.38-.49 8.8.19M8.93 27.1c-1.46-.07-2.24-.31-2.77-.51a3.79 3.79 0 01-2.83-2.82c-.89-2.27-.59-13.06-.51-14.8.08-1.71.43-3.27 1.63-4.48 1.49-1.49 3.42-2.22 16.55-1.63 1.71.08 3.28.43 4.49 1.63 1.49 1.49 2.23 3.43 1.63 16.51-.07 1.45-.31 2.24-.51 2.77-1.35 3.46-4.46 3.94-17.67 3.33M21.14 7.04a1.79 1.79 0 101.79 1.78 1.79 1.79 0 00-1.79-1.78M7.3 14.98a7.66 7.66 0 1015.33 0 7.66 7.66 0 00-15.33 0m2.69 0a4.97 4.97 0 119.95 0 4.97 4.97 0 01-9.95 0"/>
+    </symbol>
+  </svg>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="/" class="navbar-logo"><img src="/assets/images/logo.svg" alt="Surf Inn" loading="eager" class="logo-svg"></a>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
+    <div class="nav-overlay" onclick="toggleMenu()"></div>
+    <div class="nav-menu">
+      <button class="nav-close" onclick="toggleMenu()">&times;</button>
+      <a href="/" onclick="toggleMenu()">Home</a>
+      <div class="nav-group">
+        <button class="nav-group-toggle" onclick="toggleNavGroup(this)">Rio de Janeiro <span class="nav-arrow">›</span></button>
+        <div class="nav-group-items">
+          <a href="/rio-de-janeiro" onclick="toggleMenu()">Overview</a>
+          <a href="/rio-de-janeiro#packages" onclick="toggleMenu()">Packages</a>
+          <a href="/rio-de-janeiro/activities" onclick="toggleMenu()">Activities</a>
+          <a href="/rio-de-janeiro/accommodations" onclick="toggleMenu()">Accommodations</a>
+        </div>
+      </div>
+      <div class="nav-group">
+        <button class="nav-group-toggle" onclick="toggleNavGroup(this)">Itacaré <span class="nav-arrow">›</span></button>
+        <div class="nav-group-items">
+          <a href="/itacare" onclick="toggleMenu()">Overview</a>
+          <a href="/itacare#packages" onclick="toggleMenu()">Packages</a>
+          <a href="/itacare/activities" onclick="toggleMenu()">Activities</a>
+          <a href="/itacare/accommodations" onclick="toggleMenu()">Accommodations</a>
+        </div>
+      </div>
+      <a href="/blog" onclick="toggleMenu()">Blog</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Surf Camp in Brazil</h1>
+    <p class="hero-description">
+      Discover the best surf camps in Brazil. Surf Inn offers complete surf, yoga, and culture experiences
+      in Rio de Janeiro and Itacaré, Bahia. Programs for beginners, intermediates, and advanced surfers
+      with local instructors and consistent waves all year long.&rdquo;
+    </p>
+  </section>
+
+  <!-- LOCATION CARDS -->
+  <section class="locations">
+    <div class="location-card">
+      <div class="location-card-media">
+        <img src="/assets/images/hero-beach.jpg" alt="Rio de Janeiro surf camp" loading="lazy">
+      </div>
+      <div class="location-card-content">
+        <h2>Rio de Janeiro</h2>
+        <p>Surf Camp in Rio de Janeiro with<br>consistent waves year round</p>
+        <a href="/rio-de-janeiro.html" class="btn-surf">Surf With Us <span class="dot-icon"></span></a>
+      </div>
+    </div>
+    <div class="location-card">
+      <div class="location-card-media">
+        <img src="/assets/images/group-surfboards.jpg" alt="Itacaré surf camp" loading="lazy">
+      </div>
+      <div class="location-card-content">
+        <h2>Itacaré</h2>
+        <p>Surf, yoga and culture<br>in Itacaré, Bahia</p>
+        <a href="/itacare.html" class="btn-surf">Surf With Us <span class="dot-icon"></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOUNTAIN DIVIDER -->
+  <div class="mountain-divider">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 731 64"><path d="M 719.264 58.076 L 605.545 58.076 L 583.798 41.548 C 583.798 41.548 579.212 37.962 575.416 37.833 C 575.416 37.833 574.362 35.206 571.091 36.166 L 571.091 32.451 C 571.091 32.451 561.59 31.04 559.692 35.011 L 559.692 37.957 C 559.692 37.957 557.205 38.356 555.237 36.874 C 553.269 35.391 552.025 35.715 551.046 38.342 C 550.062 40.969 546.985 45.71 546.985 45.71 L 534.403 45.71 L 531.916 47.696 L 531.916 49.743 L 529.563 49.743 L 527.465 50.77 L 525.502 50.128 C 525.502 50.128 526.092 45.643 524.064 47.568 C 522.031 49.492 522.62 50.128 522.62 50.128 C 522.62 50.128 520.852 50.385 520.393 50.77 C 519.938 51.154 518.559 52.18 518.559 52.18 L 516.332 52.18 C 516.332 52.18 515.807 49.748 513.06 48.85 C 510.308 47.952 509.389 49.107 509.389 49.107 C 509.389 49.107 509.194 48.917 507.426 48.465 C 505.658 48.014 507.366 45.71 505.068 46.29 C 502.776 46.869 502.646 47.957 502.056 48.408 L 500.871 49.365 C 500.871 49.365 500.281 49.365 499.692 49.619 C 499.102 49.876 498.513 50.77 498.513 50.77 L 495.635 50.77 C 495.635 50.77 496.291 48.85 494.388 48.019 L 494.388 48.019 C 492.485 47.184 490.257 48.531 490.257 48.531 C 490.257 48.531 487.575 47.061 485.414 48.019 L 483.581 48.019 L 482.532 50.645 L 479.786 50.645 L 479.196 50.128 L 475.92 50.128 L 474.347 51.666 L 471.601 50.645 L 469.439 52.057 C 469.439 52.057 468.001 50.639 466.884 50.77 C 465.767 50.898 464.192 51.666 464.192 51.666 L 461.569 48.598 C 461.569 48.598 461.569 48.598 461.569 48.598 L 459.733 50.266 L 454.491 51.292 L 452.654 52.19 C 451.605 52.703 449.118 52 447.543 52.19 C 445.969 52.38 445.838 54.176 444.4 54.237 C 442.962 54.299 436.277 53.596 436.277 53.596 L 436.277 58.081 L 434.441 56.926 L 434.441 54.494 L 427.76 54.366 L 353.214 54.109 C 353.214 54.109 335.268 42.066 307.755 34.764 L 301.075 34.508 C 301.075 34.508 302.649 32.076 298.063 32.84 C 298.063 32.84 295.444 31.073 292.821 32.213 C 290.197 33.353 272.513 19.52 272.513 19.52 C 272.513 19.52 268.583 14.394 267.271 14.522 C 265.959 14.65 262.947 8.631 262.947 8.631 C 262.947 8.631 261.504 5.814 258.098 5.301 C 254.693 4.788 250.432 2.289 248.533 1.971 C 246.633 1.652 240.215 0.113 235.298 2.74 C 230.382 5.367 229.663 5.814 229.663 5.814 L 227.7 5.686 L 226.257 7.861 L 222.851 7.477 L 221.802 11.576 C 221.802 11.576 220.622 11.32 219.965 13.372 C 219.31 15.424 216.691 14.655 216.691 14.655 C 216.691 14.655 214.267 15.743 213.023 16.066 C 211.779 16.389 212.236 18.498 212.236 18.498 C 212.236 18.498 207.587 21.767 202.15 24.646 C 196.714 27.524 195.339 29.962 193.371 31.306 C 191.404 32.65 193.503 34.123 189.047 36.432 C 184.592 38.741 178.568 43.544 177.388 45.719 C 176.207 47.895 149.384 58.851 134.056 58.432 L 0.001 58.442" fill="transparent" stroke-width="1.13" stroke="rgb(73,68,64)" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </div>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="contact-label">&#10148; CONTACT US</div>
+    <div class="contact-inner">
+      <div class="contact-info">
+        <h2>Would you like to speak with us<span class="q">?</span></h2>
+        <p>Fill out this form, we will aim to get back to you ASAP!</p>
+        <div class="social-icons">
+          <a href="https://wa.me/5521999231992" target="_blank" rel="noopener" aria-label="WhatsApp"><svg><use href="#icon-whatsapp"/></svg></a>
+          <a href="https://www.instagram.com/surfinnrio/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#icon-instagram"/></svg></a>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <input type="text" name="name" placeholder="Full name*" required>
+        <input type="email" name="email" placeholder="E-mail*" required>
+        <input type="tel" name="phone" placeholder="Phone*">
+        <textarea name="message" placeholder="Your message"></textarea>
+        <button type="submit" class="btn-submit">Submit</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- CONTACT BANNER -->
+  <div class="contact-banner"><h2>Contact Us</h2></div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <a href="/" class="footer-logo"><img src="/assets/images/logo-light.svg" alt="Surf Inn" class="logo-svg"></a>
+      <div class="footer-nav">
+        <a href="#contact">Contato</a>
+        <a href="#">Sobre</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>
+        <div class="footer-contact">
+          <a href="tel:+5521999231992">+55 (21) 99923 1992</a>
+          <span>surfinnrio@gmail.com</span>
+        </div>
+        <div class="footer-social">
+          <a href="https://wa.me/5521999231992" target="_blank" rel="noopener" aria-label="WhatsApp"><svg fill="currentColor"><use href="#icon-whatsapp"/></svg></a>
+          <a href="https://www.instagram.com/surfinnrio/" target="_blank" rel="noopener" aria-label="Instagram"><svg fill="currentColor"><use href="#icon-instagram"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <div class="copyright">&copy; TODOS OS DIREITOS RESERVADOS</div>
+        <div class="credit">Desenvolvido por Flowcode</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FLOAT -->
+  <a href="https://wa.me/5521999231992" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 32 32"><use href="#icon-whatsapp"/></svg>
+  </a>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-menu').classList.toggle('active');
+      document.querySelector('.nav-overlay').classList.toggle('active');
+    }
+
+    function toggleNavGroup(btn) {
+      btn.parentElement.classList.toggle('open');
+    }
+
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('.btn-submit');
+      const originalText = btn.textContent;
+      btn.textContent = 'Sending...';
+      btn.disabled = true;
+
+      try {
+        const data = Object.fromEntries(new FormData(form));
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          btn.textContent = 'Sent! \u2713';
+          btn.style.background = '#25d366';
+          form.reset();
+          setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; btn.disabled = false; }, 3000);
+        } else {
+          throw new Error('Failed');
+        }
+      } catch (err) {
+        btn.textContent = 'Error - Try again';
+        btn.style.background = '#e74c3c';
+        setTimeout(() => { btn.textContent = originalText; btn.style.background = ''; btn.disabled = false; }, 3000);
+      }
+    });
+  </script>
+</body>
+</html>

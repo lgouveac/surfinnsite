@@ -1,0 +1,26 @@
+{
+  "rewrites": [
+    { "source": "/api/contact", "destination": "/api/contact" },
+    { "source": "/home-new", "destination": "/index.html" },
+    { "source": "/rio-de-janeiro", "destination": "/rio-de-janeiro.html" },
+    { "source": "/itacar%C3%A9-new", "destination": "/itacare.html" },
+    { "source": "/itacare-new", "destination": "/itacare.html" },
+    { "source": "/itacar%C3%A9", "destination": "/itacare.html" },
+    { "source": "/itacare", "destination": "/itacare.html" },
+    { "source": "/rio-de-janeiro/activities", "destination": "/activities-rio.html" },
+    { "source": "/itacare/activities", "destination": "/activities-itacare.html" },
+    { "source": "/itacar%C3%A9/activities", "destination": "/activities-itacare.html" },
+    { "source": "/rio-de-janeiro/accommodations", "destination": "/accommodations-rio.html" },
+    { "source": "/itacare/accommodations", "destination": "/accommodations-itacare.html" },
+    { "source": "/itacar%C3%A9/accommodations", "destination": "/accommodations-itacare.html" },
+    { "source": "/blog", "destination": "/blog.html" }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    }
+  ]
+}
