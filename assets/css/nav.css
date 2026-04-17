@@ -8,12 +8,19 @@
   border-bottom: 1px solid transparent;
   transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
-.navbar.scrolled,
-body.menu-open .navbar {
+.navbar.scrolled {
   background: rgba(245, 242, 235, 0.96);
   border-bottom-color: rgba(0, 0, 0, 0.06);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 2px 18px rgba(0, 0, 0, 0.04);
+}
+/* When menu is open, navbar stays fully opaque (no blur pulls overlay through) */
+body.menu-open .navbar {
+  background: #f5f2eb;
+  border-bottom-color: rgba(0, 0, 0, 0.06);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   box-shadow: 0 2px 18px rgba(0, 0, 0, 0.04);
 }
 .navbar-logo {

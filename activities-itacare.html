@@ -146,6 +146,70 @@
     /* ===== ACTIVITIES ===== */
     .activities { padding: 50px 40px 20px; max-width: 1200px; margin: 0 auto; }
 
+    /* FEATURED card */
+    .activity-featured {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 60px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 26px;
+    }
+    .activity-featured-photo {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .activity-featured-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .activity-featured-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+      padding: 4px 10px 10px;
+    }
+    .activity-featured-left {
+      display: flex; flex-direction: column;
+      gap: 28px;
+      align-items: flex-start;
+      justify-content: space-between;
+      min-height: 100%;
+    }
+    .activity-featured h3 {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 800; font-style: italic;
+      font-size: clamp(36px, 4.5vw, 58px);
+      text-transform: uppercase; letter-spacing: 0.5px;
+      color: var(--bege);
+      line-height: 0.95;
+      margin: 0;
+    }
+    .activity-featured .activity-subtitle {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 700; font-style: italic;
+      font-size: clamp(20px, 2vw, 26px);
+      color: var(--bege);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+    .activity-featured p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px; line-height: 1.6;
+      color: var(--bege);
+      opacity: 0.92;
+    }
+    .activity-featured .btn-outline {
+      border-color: var(--bege);
+      color: var(--bege);
+    }
+    .activity-featured .btn-outline:hover {
+      background: var(--bege); color: var(--card-bg);
+    }
+    .activity-featured .btn-outline .dot-icon { background: var(--bege); }
+    .activity-featured .btn-outline:hover .dot-icon { background: var(--card-bg); }
+
     .activity-detail {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -299,6 +363,8 @@
       .activity-detail.reverse .activity-text { order: 2; }
       .activity-image { order: -1; }
       .contact-inner { grid-template-columns: 1fr; }
+      .activity-featured-body { grid-template-columns: 1fr; gap: 20px; }
+      .activity-featured-photo { aspect-ratio: 16 / 9; }
     }
     @media (max-width: 768px) {
       .navbar { padding: 10px 20px; }
@@ -378,34 +444,44 @@
   <!-- ACTIVITIES -->
   <div class="activities">
 
-    <!-- 1. Surf Lessons -->
-    <div class="activity-detail">
-      <div class="activity-image">
-        <img src="https://framerusercontent.com/images/wrB5uJ0duhG659xmdy53m6UoEM.jpg" alt="Surf lessons in Itacaré" loading="lazy">
+    <!-- 1. Surf Lessons (FEATURED) -->
+    <div class="activity-featured">
+      <div class="activity-featured-photo">
+        <img src="https://images.unsplash.com/photo-1729118423316-25f48782375e?w=1600&q=85&auto=format&fit=crop" alt="Surf lessons in Itacaré" loading="lazy">
       </div>
-      <div class="activity-text">
-        <h3>Surf Lessons in Itacar&eacute;</h3>
-        <p class="activity-subtitle">Beginner to advanced surf coaching</p>
-        <p>Improve your surfing with English speaking coaches and waves for all levels in our Surf School. Our surfing lessons happens everyday with duration of 1.5 - 2 hours in small groups (max 3 students per coach) or private sessions. No experience needed. All gear included.</p>
-        <a href="#contact" class="btn-outline"><span class="dot-icon"></span> Book your lesson</a>
+      <div class="activity-featured-body">
+        <div class="activity-featured-left">
+          <h3>Surf Lessons</h3>
+          <a href="#contact" class="btn-outline">Book your lesson <span class="dot-icon"></span></a>
+        </div>
+        <div class="activity-featured-right">
+          <div class="activity-subtitle">Beginner to advanced surf coaching</div>
+          <p>Improve your surfing with English speaking coaches and waves for all levels in our Surf School. Our surfing lessons happen everyday with duration of 1.5 &ndash; 2 hours in small groups (max 3 students per coach) or private sessions. No experience needed. All gear included.</p>
+        </div>
       </div>
     </div>
 
-    <!-- 2. Yoga Lessons -->
-    <div class="activity-detail reverse">
-      <div class="activity-image">
-        <img src="https://framerusercontent.com/images/cp5qTYl58C02W9UlTGIWyOaT8o.jpg" alt="Yoga lessons" loading="lazy">
+    <!-- 2. Yoga Lessons (FEATURED) -->
+    <div class="activity-featured">
+      <div class="activity-featured-photo">
+        <img src="https://images.unsplash.com/photo-1646166624995-a8919665cbc1?w=1600&q=85&auto=format&fit=crop" alt="Yoga lessons on tropical beach" loading="lazy">
       </div>
-      <div class="activity-text">
-        <h3>Yoga Lessons</h3>
-        <p>Our yoga sessions are designed to stretch, restore and reconnect &mdash; whether you're a first-timer or a dedicated yogi. Held in our peaceful space, our Ashtanga and Vinyasa sessions are the perfect way to start or end your day</p>
+      <div class="activity-featured-body">
+        <div class="activity-featured-left">
+          <h3>Yoga</h3>
+          <a href="#contact" class="btn-outline">Flow with us <span class="dot-icon"></span></a>
+        </div>
+        <div class="activity-featured-right">
+          <div class="activity-subtitle">Stretch, restore, reconnect</div>
+          <p>Our yoga sessions are designed to stretch, restore and reconnect &mdash; whether you're a first-timer or a dedicated yogi. Held in our peaceful space, our Ashtanga and Vinyasa sessions are the perfect way to start or end your day.</p>
+        </div>
       </div>
     </div>
 
     <!-- 3. Hikes -->
     <div class="activity-detail">
       <div class="activity-image">
-        <img src="https://framerusercontent.com/images/zPEBjG55Ce6koo543gzEfJpaLM.jpg" alt="Guided hikes in Itacaré" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1767788171641-ca2490627cca?w=1200&q=85&auto=format&fit=crop" alt="Lush jungle trail in the Atlantic Forest" loading="lazy">
       </div>
       <div class="activity-text">
         <h3>Hikes</h3>
@@ -416,7 +492,7 @@
     <!-- 4. Altinha -->
     <div class="activity-detail reverse">
       <div class="activity-image">
-        <img src="https://framerusercontent.com/images/FvXHNVsBAbWpdE5ChDAYpxnEehI.jpg" alt="Altinha beach soccer game" loading="lazy">
+        <img src="https://plus.unsplash.com/premium_photo-1707920772587-5ad21aa5762d?w=1200&q=85&auto=format&fit=crop" alt="Altinha circle on the beach" loading="lazy">
       </div>
       <div class="activity-text">
         <h3>Altinha (Beach Soccer Game)</h3>
@@ -427,7 +503,7 @@
     <!-- 5. Capoeira -->
     <div class="activity-detail">
       <div class="activity-image">
-        <img src="https://framerusercontent.com/images/6EABb9KDby79gV0OoeoNV1Sep7E.jpg" alt="Capoeira session" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1759352856072-985a4ddab82d?w=1200&q=85&auto=format&fit=crop" alt="Capoeira roda with players in circle" loading="lazy">
       </div>
       <div class="activity-text">
         <h3>Capoeira</h3>
@@ -438,7 +514,7 @@
     <!-- 6. Boat Rides -->
     <div class="activity-detail reverse">
       <div class="activity-image">
-        <img src="https://framerusercontent.com/images/BVHV8h19LqNvLmjULPtU5ZLTrtU.jpg" alt="Boat rides along the coast" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1774961764427-80bfbb12df4b?w=1200&q=85&auto=format&fit=crop" alt="Traditional longtail boat on calm tropical waters" loading="lazy">
       </div>
       <div class="activity-text">
         <h3>Boat Rides</h3>
