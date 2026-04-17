@@ -18,6 +18,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fragment+Mono&family=Montserrat+Alternates:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500;1,600;1,700;1,800&family=Open+Sans:wght@400;600&family=Poppins:ital,wght@0,300;0,400;0,500;0,700;0,900;1,500;1,600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/builder.css">
   <style>
     :root {
       --bege: #f5f2eb;
@@ -49,10 +50,31 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; align-items: center; justify-content: space-between;
       padding: 10px 40px;
-      background: var(--bege);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     }
-    .navbar-logo img { height: 38px; width: auto; object-fit: contain; }
+    .navbar.scrolled {
+      background: rgba(245,242,235,0.92);
+      border-bottom-color: rgba(0,0,0,0.06);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 18px rgba(0,0,0,0.04);
+    }
+    .navbar-logo {
+      display: block; position: relative; z-index: 1;
+      transition: transform 0.35s cubic-bezier(.2,.9,.3,1);
+      transform-origin: left center;
+    }
+    .navbar-logo img {
+      height: 52px; width: auto; object-fit: contain;
+      transition: height 0.35s cubic-bezier(.2,.9,.3,1), filter 0.3s ease;
+    }
+    .navbar:not(.scrolled) .navbar-logo img {
+      height: 72px;
+    }
+    .navbar.scrolled .navbar-logo img {
+      height: 38px;
+    }
     .hamburger {
       display: flex; flex-direction: column; gap: 5px;
       cursor: pointer; padding: 8px; background: none; border: none;
@@ -98,19 +120,26 @@
     }
 
     /* ===== HERO ===== */
-    .hero { padding-top: 65px; }
-    .hero-banner {
-      margin: 0 40px; border-radius: 20px; overflow: hidden;
-      position: relative; height: 420px;
+    .hero {
+      padding: 90px 40px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 48px;
+      align-items: center;
     }
-    .hero-banner img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-image {
+      position: relative;
+      aspect-ratio: 1 / 1;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; }
     .hero-logo-overlay {
-      position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-      color: var(--bege);
+      position: absolute; top: 28px; left: 28px;
     }
-    .hero-logo-overlay img { width: 220px; height: auto; }
+    .hero-logo-overlay img { width: 160px; height: auto; }
 
-    .hero-content { padding: 40px 40px 20px; }
+    .hero-content { display: flex; flex-direction: column; justify-content: center; }
     .hero-tagline {
       font-family: 'Montserrat Alternates', sans-serif;
       font-weight: 800; font-style: italic;
@@ -221,7 +250,7 @@
 
     /* ===== PACKAGES ===== */
     .packages { padding: 50px 40px; }
-    .packages-header { display: flex; align-items: flex-end; gap: 24px; margin-bottom: 12px; flex-wrap: wrap; }
+    .packages-header { display: flex; align-items: center; gap: 24px; margin-bottom: 12px; flex-wrap: wrap; }
     .packages-header h2 {
       font-family: 'Montserrat Alternates', sans-serif;
       font-weight: 800; font-style: italic;
@@ -231,26 +260,53 @@
     }
     .packages-divider { width: 100%; height: 1px; background: var(--border); margin-bottom: 40px; }
 
-    .package { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 40px; align-items: start; }
-    .package-info h3 {
-      font-family: 'Fragment Mono', monospace;
-      font-size: 22px; color: var(--off-black); margin-bottom: 14px; font-weight: 400;
+    .packages-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 48px;
     }
+    .package { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+    .package-info { display: flex; flex-direction: column; }
+    .package-info h3 {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 800;
+      font-size: 26px; line-height: 1.1;
+      color: var(--off-black); margin-bottom: 16px;
+    }
+    .package-info ul { margin-bottom: 6px; }
     .package-info li { font-family: 'Poppins', sans-serif; font-size: 14px; color: var(--text-body); padding: 2px 0; }
-    .package-info .optional { margin-top: 12px; }
+    .package-info .optional { margin-top: 10px; }
     .package-info .optional li { color: var(--text-muted); font-size: 13px; }
 
     .btn-book {
-      display: block; width: 100%; max-width: 400px; padding: 14px;
-      margin-top: 18px; border: 1.5px solid var(--off-black); border-radius: 30px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      width: fit-content; padding: 11px 22px;
+      margin-top: auto; border: 1.5px solid var(--off-black); border-radius: 30px;
       background: transparent; font-family: 'Poppins', sans-serif;
-      font-size: 14px; font-weight: 500; color: var(--off-black);
+      font-size: 13px; font-weight: 500; color: var(--off-black);
       text-align: center; transition: all 0.3s;
     }
     .btn-book:hover { background: var(--off-black); color: var(--bege); }
+    .btn-book::after {
+      content: ''; width: 7px; height: 7px; background: currentColor;
+      display: inline-block;
+    }
 
-    .package-image { border-radius: 16px; overflow: hidden; height: 320px; position: relative; }
-    .package-image img { width: 100%; height: 100%; object-fit: cover; }
+    /* Notched "ticket-stub" mask: rectangle with cutouts on top-left and right-middle */
+    .package-image {
+      aspect-ratio: 1/1; position: relative;
+      --notch: 28px;
+      --radius: 16px;
+      background: transparent;
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M 2 0 L 10 0 L 10 4 L 18 4 L 18 0 L 98 0 Q 100 0 100 2 L 100 48 L 96 48 L 96 56 L 100 56 L 100 98 Q 100 100 98 100 L 2 100 Q 0 100 0 98 L 0 2 Q 0 0 2 0 Z' fill='black'/></svg>") no-repeat center/100% 100%;
+              mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M 2 0 L 10 0 L 10 4 L 18 4 L 18 0 L 98 0 Q 100 0 100 2 L 100 48 L 96 48 L 96 56 L 100 56 L 100 98 Q 100 100 98 100 L 2 100 Q 0 100 0 98 L 0 2 Q 0 0 2 0 Z' fill='black'/></svg>") no-repeat center/100% 100%;
+    }
+    .package-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .personalized-image {
+      aspect-ratio: 1/1;
+      -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M 2 0 L 10 0 L 10 4 L 18 4 L 18 0 L 98 0 Q 100 0 100 2 L 100 48 L 96 48 L 96 56 L 100 56 L 100 98 Q 100 100 98 100 L 2 100 Q 0 100 0 98 L 0 2 Q 0 0 2 0 Z' fill='black'/></svg>") no-repeat center/100% 100%;
+              mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M 2 0 L 10 0 L 10 4 L 18 4 L 18 0 L 98 0 Q 100 0 100 2 L 100 48 L 96 48 L 96 56 L 100 56 L 100 98 Q 100 100 98 100 L 2 100 Q 0 100 0 98 L 0 2 Q 0 0 2 0 Z' fill='black'/></svg>") no-repeat center/100% 100%;
+    }
     .price-badge {
       position: absolute; top: 14px; right: 14px;
       background: rgba(0,0,0,0.75); border-radius: 10px;
@@ -264,65 +320,19 @@
     .price-badge .brl { font-size: 26px; font-weight: 700; }
     .price-badge .cents { font-size: 11px; vertical-align: super; }
 
-    /* ===== PERSONALIZED ===== */
-    .personalized { padding: 20px 40px 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-    .personalized-info h2 {
-      font-family: 'Fragment Mono', monospace;
-      font-size: clamp(24px, 3vw, 34px); color: var(--off-black); line-height: 1.2; margin-bottom: 10px;
-    }
-    .personalized-info h3 { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 15px; color: var(--off-black); margin-bottom: 14px; }
-    .personalized-features { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 32px; }
-    .personalized-features li { font-family: 'Poppins', sans-serif; font-size: 13px; color: var(--text-body); padding: 2px 0; }
-    .personalized-image { border-radius: 16px; overflow: hidden; height: 380px; }
-    .personalized-image img { width: 100%; height: 100%; object-fit: cover; }
-
-    /* ===== BUILDER ===== */
-    .builder { padding: 0 40px 50px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-    .builder-image { border-radius: 16px; overflow: hidden; height: 520px; }
-    .builder-image img { width: 100%; height: 100%; object-fit: cover; }
-    .builder-link { display: block; padding: 10px 0; font-size: 13px; color: var(--text-muted); }
-    .builder-form h2 {
+    /* ===== PERSONALIZED (as 4th package cell) ===== */
+    .package.personalized { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
+    .personalized-info h3 {
       font-family: 'Montserrat Alternates', sans-serif;
-      font-weight: 800; font-style: italic;
-      font-size: 32px; color: var(--off-black); margin-bottom: 28px;
-    }
-    .form-group { margin-bottom: 20px; }
-    .form-group label {
-      display: block; text-align: right;
-      font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
+      font-weight: 800; font-size: 26px; line-height: 1.1;
       color: var(--off-black); margin-bottom: 6px;
     }
-    .counter {
-      display: flex; align-items: center; justify-content: flex-end;
-      border: 1.5px solid var(--border); border-radius: 8px;
-      overflow: hidden; width: fit-content; margin-left: auto;
-    }
-    .counter button {
-      width: 40px; height: 40px; border: none; background: transparent;
-      font-size: 18px; color: var(--off-black); transition: background 0.2s;
-    }
-    .counter button:hover { background: #e8e3d9; }
-    .counter .count { width: 40px; text-align: center; font-size: 15px; font-weight: 500; }
-    .form-select {
-      width: 100%; padding: 10px 14px;
-      border: 1.5px solid var(--border); border-radius: 8px;
-      background: transparent; font-family: 'Poppins', sans-serif;
-      font-size: 13px; color: var(--off-black); appearance: none;
-    }
-    .checkbox-group { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
-    .checkbox-group input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--teal); }
-    .checkbox-group label { margin-bottom: 0; font-size: 13px; }
-    .extra-link {
-      display: block; text-align: right; font-size: 13px; color: var(--off-black);
-      text-decoration: underline; margin-top: 6px;
-    }
-    .btn-continue {
-      display: block; width: 100%; padding: 14px; margin-top: 20px;
-      background: var(--teal); border: none; border-radius: 10px;
-      font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 600;
-      color: white; transition: background 0.3s;
-    }
-    .btn-continue:hover { background: #3da5bf; }
+    .personalized-info h4 { font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 14px; color: var(--off-black); margin-bottom: 12px; }
+    .personalized-features { display: grid; grid-template-columns: 1fr 1fr; gap: 2px 20px; margin-bottom: 14px; }
+    .personalized-features li { font-family: 'Poppins', sans-serif; font-size: 13px; color: var(--text-body); padding: 2px 0; }
+    .personalized-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    /* Builder styles are in /assets/css/builder.css */
 
     /* ===== CONTACT ===== */
     .contact { padding: 50px 40px; }
@@ -420,13 +430,14 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .features-grid { grid-template-columns: repeat(2, 1fr); }
-      .about, .personalized, .builder, .contact-inner, .package { grid-template-columns: 1fr; }
-      .package-image { order: -1; }
+      .about, .personalized, .builder, .contact-inner, .hero, .packages-grid { grid-template-columns: 1fr; }
+      .hero-image { max-width: 520px; margin: 0 auto; }
+      .packages-grid { gap: 40px; }
     }
     @media (max-width: 768px) {
       .navbar { padding: 10px 20px; }
-      .hero-banner { margin: 0 20px; height: 260px; }
-      .hero-content { padding: 24px 20px; }
+      .hero { padding: 80px 20px 20px; gap: 24px; }
+      .hero-logo-overlay img { width: 120px; }
       .features { padding: 10px 20px 0; }
       .activity-tags { padding: 20px; }
       .about { padding: 30px 20px; }
@@ -446,6 +457,7 @@
       .footer-contact { flex-direction: column; gap: 4px; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/css/nav.css">
 </head>
 <body>
 
@@ -516,7 +528,7 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-banner">
+    <div class="hero-image">
       <img src="/assets/images/hero-beach.jpg" alt="Surfer at sunset on Macumba beach" loading="eager">
     </div>
     <div class="hero-content">
@@ -588,102 +600,87 @@
   <!-- PACKAGES -->
   <section class="packages" id="packages">
     <div class="packages-header">
-      <h2>Pre Made<br>Packages</h2>
+      <h2>Packages</h2>
       <a href="#builder" class="btn-outline">or Create your package <span class="dot-icon"></span></a>
     </div>
     <div class="packages-divider"></div>
 
-    <div class="package">
-      <div class="package-info">
-        <h3>Package 1 - Surf In Rio</h3>
-        <ul><li>3 nights & 4 days</li><li>4 Surfing Lessons</li><li>1 Yoga Lesson</li></ul>
-        <div class="optional"><ul><li>Optional Board Rental</li><li>Breakfast Optional</li><li>Airport Transfer Optional</li></ul></div>
-        <a href="#contact" class="btn-book">Book the experience &#9632;</a>
+    <div class="packages-grid">
+      <div class="package">
+        <div class="package-info">
+          <h3>Package 1 -<br>Surf In Rio</h3>
+          <ul><li>3 nights & 4 days</li><li>4 Surfing Lessons</li><li>1 Yoga Lesson</li></ul>
+          <div class="optional"><ul><li>Optional Board Rental</li><li>Breakfast Optional</li><li>Airport Transfer Optional</li></ul></div>
+          <a href="#contact" class="btn-book">Book the experience</a>
+        </div>
+        <div class="package-image">
+          <img src="/assets/images/package1-surf-rio.jpg" alt="Surfing at Rio de Janeiro coastline" loading="lazy">
+          <div class="price-badge"><div class="label">Starting from</div><div class="price"><span class="euro">&euro;160</span><span class="sep">|</span><span class="brl-label">BRL</span><span class="brl">980</span><span class="cents">,00</span></div></div>
+        </div>
       </div>
-      <div class="package-image">
-        <img src="/assets/images/package1-surf-rio.jpg" alt="Surfing at Rio de Janeiro coastline" loading="lazy">
-        <div class="price-badge"><div class="label">Starting from</div><div class="price"><span class="euro">&euro;160</span><span class="sep">|</span><span class="brl-label">BRL</span><span class="brl">980</span><span class="cents">,00</span></div></div>
-      </div>
-    </div>
 
-    <div class="package">
-      <div class="package-info">
-        <h3>Package 2 - Carioca Ride</h3>
-        <ul><li>5 nights & 6 days</li><li>4 Surfing lessons</li><li>1 Surf Skate lesson</li><li>1 Yoga Lesson</li><li>Video Analysis</li><li>Ayurvedic Massage</li></ul>
-        <div class="optional"><ul><li>Optional Board Rental</li><li>Breakfast Optional</li><li>Airport Transfer Optional</li></ul></div>
-        <a href="#contact" class="btn-book">Book the experience &#9632;</a>
+      <div class="package">
+        <div class="package-info">
+          <h3>Package 2 -<br>Carioca Ride</h3>
+          <ul><li>5 nights & 6 days</li><li>4 Surfing lessons</li><li>1 Surf Skate lesson</li><li>1 Yoga Lesson</li><li>Video Analysis</li><li>Ayurvedic Massage</li></ul>
+          <div class="optional"><ul><li>Optional Board Rental</li><li>Breakfast Optional</li><li>Airport Transfer Optional</li></ul></div>
+          <a href="#contact" class="btn-book">Book the experience</a>
+        </div>
+        <div class="package-image">
+          <img src="/assets/images/package2-carioca.jpg" alt="Surf lesson high five" loading="lazy">
+          <div class="price-badge"><div class="label">Starting from</div><div class="price"><span class="euro">&euro;320</span><span class="sep">|</span><span class="brl-label">BRL</span><span class="brl">1.990</span><span class="cents">,00</span></div></div>
+        </div>
       </div>
-      <div class="package-image">
-        <img src="/assets/images/package2-carioca.jpg" alt="Surf lesson high five" loading="lazy">
-        <div class="price-badge"><div class="label">Starting from</div><div class="price"><span class="euro">&euro;320</span><span class="sep">|</span><span class="brl-label">BRL</span><span class="brl">1.990</span><span class="cents">,00</span></div></div>
-      </div>
-    </div>
 
-    <div class="package">
-      <div class="package-info">
-        <h3>Package 3 - Surf Intensive</h3>
-        <ul><li>7 nights & 8 days</li><li>8 Surfing lessons</li><li>1 Surf Skate lesson</li><li>1 Surf Guidance</li><li>2 Yoga Lesson</li><li>Video Analysis</li><li>Ayurvedic Massage</li></ul>
-        <div class="optional"><ul><li>Optional Board Rental</li><li>Breakfast Optional</li><li>Airport Transfer Optional</li></ul></div>
-        <a href="#contact" class="btn-book">Book the experience &#9632;</a>
+      <div class="package">
+        <div class="package-info">
+          <h3>Package 3 -<br>Surf Intensive</h3>
+          <ul><li>7 nights & 8 days</li><li>8 Surfing lessons</li><li>1 Surf Skate lesson</li><li>1 Surf Guidance</li><li>2 Yoga Lesson</li><li>Video Analysis</li><li>Ayurvedic Massage</li></ul>
+          <div class="optional"><ul><li>Optional Board Rental</li><li>Breakfast Optional</li><li>Airport Transfer Optional</li></ul></div>
+          <a href="#contact" class="btn-book">Book the experience</a>
+        </div>
+        <div class="package-image">
+          <img src="/assets/images/package3-intensive.jpg" alt="Surf instructor teaching in the water" loading="lazy">
+          <div class="price-badge"><div class="label">Starting from</div><div class="price"><span class="euro">&euro;510</span><span class="sep">|</span><span class="brl-label">BRL</span><span class="brl">3.160</span><span class="cents">,00</span></div></div>
+        </div>
       </div>
-      <div class="package-image">
-        <img src="/assets/images/package3-intensive.jpg" alt="Surf instructor teaching in the water" loading="lazy">
-        <div class="price-badge"><div class="label">Starting from</div><div class="price"><span class="euro">&euro;510</span><span class="sep">|</span><span class="brl-label">BRL</span><span class="brl">3.160</span><span class="cents">,00</span></div></div>
+
+      <div class="package personalized">
+        <div class="personalized-info">
+          <h3>Personalized<br>package</h3>
+          <h4>Create your own package</h4>
+          <ul class="personalized-features">
+            <li>Amount of people</li><li>Carnival Experience</li>
+            <li>Amount of nights</li><li>Carioca Experience</li>
+            <li>Surf lessons</li><li>Ayurvedic or<br>Shiatsu Massage</li>
+            <li>Yoga lesson</li><li>Airport Transfer</li>
+            <li>Unlimited board rental</li><li>Breakfast</li>
+            <li>Video Analysis</li>
+            <li>Surf Skate Lesson</li>
+          </ul>
+          <a href="#builder" class="btn-book">Personalize your Package</a>
+        </div>
+        <div class="personalized-image">
+          <img src="/assets/images/yoga-beach.jpg" alt="Yoga at the beach" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- PERSONALIZED PACKAGE -->
-  <section class="personalized">
-    <div class="personalized-info">
-      <h2>Personalized package</h2>
-      <h3>Create your own package</h3>
-      <ul class="personalized-features">
-        <li>Amount of people</li><li>Carnival Experience</li>
-        <li>Amount of nights</li><li>Carioca Experience</li>
-        <li>Surf lessons</li><li>Ayurvedic or Shiatsu Massage</li>
-        <li>Yoga lesson</li><li>Airport Transfer</li>
-        <li>Unlimited board rental</li><li>Breakfast</li>
-        <li>Video Analysis</li>
-        <li>Surf Skate Lesson</li>
-        <li>Rio City Tour</li>
-        <li>Samba Lesson</li>
-      </ul>
-      <a href="#builder" class="btn-book" style="margin-top:20px">Personalize your Package</a>
-      <a href="#packages" class="builder-link">Or explore our packages</a>
-    </div>
-    <div class="personalized-image">
-      <img src="/assets/images/yoga-beach.jpg" alt="Yoga at the beach" loading="lazy">
-    </div>
-  </section>
-
-  <!-- PACKAGE BUILDER -->
-  <section class="builder" id="builder">
-    <div class="builder-image">
+  <!-- PACKAGE BUILDER (2 forms with toggle) -->
+  <section class="builder" id="builder" data-active-mode="create">
+    <div class="builder-image" data-for-mode="create">
       <img src="/assets/images/group-surfboards.jpg" alt="Group photo with surfboards" loading="lazy">
+      <a href="#" class="builder-toggle-btn" data-switch="select">Or explore our packages <span class="dot-icon"></span></a>
     </div>
-    <div class="builder-form">
-      <h2>Create your package</h2>
-      <div class="form-group">
-        <label>Number of people</label>
-        <div class="counter"><button type="button" onclick="updateCount(this,-1)">&minus;</button><span class="count">1</span><button type="button" onclick="updateCount(this,1)">+</button></div>
-      </div>
-      <div class="form-group">
-        <label>Level</label>
-        <select class="form-select"><option>Beginner</option><option>Intermediate</option><option>Advanced</option></select>
-      </div>
-      <div class="form-group">
-        <label>Surf lessons</label>
-        <div class="counter"><button type="button" onclick="updateCount(this,-1)">&minus;</button><span class="count">2</span><button type="button" onclick="updateCount(this,1)">+</button></div>
-      </div>
-      <div class="form-group">
-        <label>Yoga lessons</label>
-        <div class="counter"><button type="button" onclick="updateCount(this,-1)">&minus;</button><span class="count">1</span><button type="button" onclick="updateCount(this,1)">+</button></div>
-      </div>
-      <div class="form-group"><div class="checkbox-group"><input type="checkbox" id="breakfast" checked><label for="breakfast">Add breakfast</label></div></div>
-      <div class="form-group"><div class="checkbox-group"><input type="checkbox" id="board" checked><label for="board">Unlimited board rental</label></div></div>
-      <a href="#" class="extra-link">Extra activities</a>
-      <button type="button" class="btn-continue">Continue</button>
+    <div class="builder-image builder-image-select" data-for-mode="select" hidden>
+      <img src="/assets/images/package1-surf-rio.jpg" alt="Surfers at sunset in Rio" loading="lazy">
+      <div class="builder-image-title">Select Your<br>Package</div>
+      <a href="#" class="builder-toggle-btn" data-switch="create">Or make in your way <span class="dot-icon"></span></a>
+    </div>
+    <div class="builder-form-slot">
+      <div class="builder-form-container" data-mode="create" data-city="Rio de Janeiro" data-storage-key="experience_make_v2_rio"></div>
+      <div class="builder-form-container" data-mode="select" data-city="Rio de Janeiro" data-storage-key="experience_select_v1_rio" hidden></div>
     </div>
   </section>
 
@@ -700,6 +697,7 @@
         </div>
       </div>
       <form class="contact-form" id="contactForm">
+        <input type="hidden" name="location" value="Rio de Janeiro">
         <input type="text" name="name" placeholder="Full name*" required>
         <input type="email" name="email" placeholder="E-mail*" required>
         <input type="tel" name="phone" placeholder="Phone*">
@@ -715,7 +713,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-top">
-      <a href="#" class="footer-logo"><img src="/assets/images/logo-light.svg" alt="Surf Inn" class="logo-svg"></a>
+      <a href="/" class="footer-logo"><img src="/assets/images/logo-light.svg" alt="Surf Inn" class="logo-svg"></a>
       <div class="footer-nav">
         <a href="#contact">Contato</a>
         <a href="#about">Sobre</a>
@@ -762,6 +760,18 @@
       countEl.textContent = val;
     }
 
+    // Navbar scroll effect
+    (function() {
+      const nav = document.querySelector('.navbar');
+      if (!nav) return;
+      function onScroll() {
+        if (window.scrollY > 40) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const form = e.target;
@@ -793,5 +803,7 @@
       }
     });
   </script>
+  <script src="/assets/js/builder.js" defer></script>
+  <script src="/assets/js/nav.js" defer></script>
 </body>
 </html>

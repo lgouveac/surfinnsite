@@ -273,6 +273,7 @@
       .footer-contact { flex-direction: column; gap: 4px; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/css/nav.css">
 </head>
 <body>
 
@@ -452,6 +453,7 @@
         </div>
       </div>
       <form class="contact-form" id="contactForm">
+        <input type="hidden" name="location" value="Rio de Janeiro">
         <input type="text" name="name" placeholder="Full name*" required>
         <input type="email" name="email" placeholder="E-mail*" required>
         <input type="tel" name="phone" placeholder="Phone*">
@@ -516,5 +518,6 @@
     });
   </script>
 
+  <script src="/assets/js/nav.js" defer></script>
 </body>
 </html>

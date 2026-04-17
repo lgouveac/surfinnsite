@@ -99,47 +99,53 @@
 
     /* ===== HERO ===== */
     .hero {
-      padding: 120px 40px 60px;
+      padding-top: 65px;
+      padding-bottom: 50px;
       text-align: center;
+    }
+    .hero-inner {
       max-width: 800px;
       margin: 0 auto;
+      padding: 60px 40px 40px;
     }
     .hero-title {
       font-family: 'Montserrat Alternates', sans-serif;
       font-weight: 800; font-style: italic;
-      font-size: clamp(32px, 4vw, 48px);
-      color: var(--off-black);
-      line-height: 1.15;
-      margin-bottom: 12px;
+      font-size: clamp(36px, 5.5vw, 56px);
+      text-transform: uppercase; letter-spacing: 1px;
+      color: var(--off-black); line-height: 1.1;
+      margin-bottom: 16px;
     }
     .hero-tagline {
       font-family: 'Fragment Mono', monospace;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--teal);
-      margin-bottom: 20px;
+      font-size: clamp(16px, 2.2vw, 22px);
+      text-transform: uppercase; letter-spacing: 3px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
     }
     .hero-desc {
       font-family: 'Poppins', sans-serif;
-      font-size: 15px;
+      font-size: 15px; line-height: 1.7;
       color: var(--text-body);
-      line-height: 1.7;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
     }
     .hero-sub {
-      font-family: 'Poppins', sans-serif;
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.6;
+      font-family: 'Fragment Mono', monospace;
+      font-size: 14px;
+      color: var(--off-black);
+      letter-spacing: 1px;
+    }
+    .hero-divider {
+      width: 100%; height: 1px;
+      background: var(--border);
+      margin: 0 40px;
+      max-width: calc(100% - 80px);
+      margin-left: auto; margin-right: auto;
     }
 
     /* ===== ACTIVITIES ===== */
-    .activities {
-      padding: 20px 40px 60px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+    .activities { padding: 50px 40px 20px; max-width: 1200px; margin: 0 auto; }
+
     .activity-detail {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -147,47 +153,51 @@
       align-items: center;
       margin-bottom: 60px;
     }
-    .activity-detail:nth-child(even) .activity-image { order: 2; }
-    .activity-detail:nth-child(even) .activity-text { order: 1; }
+    .activity-detail.reverse .activity-image { order: 2; }
+    .activity-detail.reverse .activity-text { order: 1; }
 
-    .activity-image img {
-      width: 100%;
-      height: 380px;
-      object-fit: cover;
+    .activity-image {
       border-radius: 16px;
+      overflow: hidden;
+      height: 380px;
     }
+    .activity-image img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
     .activity-text h3 {
       font-family: 'Fragment Mono', monospace;
-      font-size: 20px;
+      font-size: 22px; font-weight: 400;
       color: var(--off-black);
       margin-bottom: 8px;
     }
     .activity-text .activity-subtitle {
       font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 14px; font-weight: 500;
       color: var(--teal);
       margin-bottom: 14px;
     }
     .activity-text p {
       font-family: 'Poppins', sans-serif;
-      font-size: 14px;
+      font-size: 14px; line-height: 1.7;
       color: var(--text-body);
-      line-height: 1.7;
+      margin-bottom: 14px;
     }
-    .btn-book {
-      display: inline-block;
-      margin-top: 18px;
-      padding: 12px 28px;
-      background: var(--teal);
-      color: white;
-      border-radius: 10px;
-      font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      transition: background 0.3s;
+
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 24px; background: transparent;
+      border: 1.5px solid var(--off-black); border-radius: 30px;
+      font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500;
+      color: var(--off-black); transition: all 0.3s;
     }
-    .btn-book:hover { background: #3da5bf; }
+    .btn-outline:hover { background: var(--off-black); color: var(--bege); }
+    .btn-outline .dot-icon {
+      width: 8px; height: 8px; background: var(--off-black);
+      border-radius: 50%; display: inline-block; transition: background 0.3s;
+    }
+    .btn-outline:hover .dot-icon { background: var(--bege); }
 
     /* ===== CONTACT ===== */
     .contact { padding: 50px 40px; }
@@ -285,15 +295,18 @@
     /* ===== RESPONSIVE ===== */
     @media (max-width: 1024px) {
       .activity-detail { grid-template-columns: 1fr; }
-      .activity-detail:nth-child(even) .activity-image { order: 0; }
-      .activity-detail:nth-child(even) .activity-text { order: 0; }
+      .activity-detail.reverse .activity-image { order: -1; }
+      .activity-detail.reverse .activity-text { order: 2; }
+      .activity-image { order: -1; }
       .contact-inner { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       .navbar { padding: 10px 20px; }
-      .hero { padding: 100px 20px 40px; }
-      .activities { padding: 20px 20px 40px; }
-      .activity-image img { height: 280px; }
+      .hero-inner { padding: 40px 20px 30px; }
+      .hero-divider { max-width: calc(100% - 40px); }
+      .activities { padding: 30px 20px 10px; }
+      .activity-detail { gap: 24px; margin-bottom: 40px; }
+      .activity-image { height: 280px; }
       .contact { padding: 30px 20px; }
       .contact-banner { padding: 10px 20px 20px; }
       .footer { padding: 24px 20px 16px; }
@@ -305,6 +318,7 @@
       .footer-contact { flex-direction: column; gap: 4px; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/css/nav.css">
 </head>
 <body>
 
@@ -352,14 +366,17 @@
 
   <!-- HERO -->
   <section class="hero">
-    <h1 class="hero-title">Surf INN Experiences</h1>
-    <p class="hero-tagline">Waves. Arts. Culture. Spirit.</p>
-    <p class="hero-desc">From salty mornings to golden sunsets, every day at Surf Inn flows with rhythm, nature and meaningful connections.</p>
-    <p class="hero-sub">Surf and yoga sessions, music, capoeira and authentic Brazilian cultural experiences in the vibrant town of Itacar&eacute;, Bahia.</p>
+    <div class="hero-inner">
+      <h1 class="hero-title">Surf INN Experiences</h1>
+      <div class="hero-tagline">Waves. Arts. Culture. Spirit.</div>
+      <p class="hero-desc">From salty mornings to golden sunsets, every day at Surf Inn flows with rhythm, nature and meaningful connections.</p>
+      <div class="hero-sub">Surf and yoga sessions, music, capoeira and authentic Brazilian cultural experiences in the vibrant town of Itacar&eacute;, Bahia.</div>
+    </div>
+    <div class="hero-divider"></div>
   </section>
 
   <!-- ACTIVITIES -->
-  <section class="activities">
+  <div class="activities">
 
     <!-- 1. Surf Lessons -->
     <div class="activity-detail">
@@ -370,12 +387,12 @@
         <h3>Surf Lessons in Itacar&eacute;</h3>
         <p class="activity-subtitle">Beginner to advanced surf coaching</p>
         <p>Improve your surfing with English speaking coaches and waves for all levels in our Surf School. Our surfing lessons happens everyday with duration of 1.5 - 2 hours in small groups (max 3 students per coach) or private sessions. No experience needed. All gear included.</p>
-        <a href="#contact" class="btn-book">Book your lesson</a>
+        <a href="#contact" class="btn-outline"><span class="dot-icon"></span> Book your lesson</a>
       </div>
     </div>
 
     <!-- 2. Yoga Lessons -->
-    <div class="activity-detail">
+    <div class="activity-detail reverse">
       <div class="activity-image">
         <img src="https://framerusercontent.com/images/cp5qTYl58C02W9UlTGIWyOaT8o.jpg" alt="Yoga lessons" loading="lazy">
       </div>
@@ -396,20 +413,8 @@
       </div>
     </div>
 
-    <!-- 4. Carnival Experience -->
-    <div class="activity-detail">
-      <div class="activity-image">
-        <img src="https://framerusercontent.com/images/DuYXBkAHcffCO9DVk99gze7RslA.jpg" alt="Carnival experience" loading="lazy">
-      </div>
-      <div class="activity-text">
-        <h3>Carnival Experience - Join the Rhythm</h3>
-        <p class="activity-subtitle">Dance and Drum into the soul of Brazil's Carnival</p>
-        <p>Join us for a unique chance to learn how to dance samba and play samba-reggae drums.</p>
-      </div>
-    </div>
-
-    <!-- 5. Altinha -->
-    <div class="activity-detail">
+    <!-- 4. Altinha -->
+    <div class="activity-detail reverse">
       <div class="activity-image">
         <img src="https://framerusercontent.com/images/FvXHNVsBAbWpdE5ChDAYpxnEehI.jpg" alt="Altinha beach soccer game" loading="lazy">
       </div>
@@ -419,7 +424,7 @@
       </div>
     </div>
 
-    <!-- 6. Capoeira -->
+    <!-- 5. Capoeira -->
     <div class="activity-detail">
       <div class="activity-image">
         <img src="https://framerusercontent.com/images/6EABb9KDby79gV0OoeoNV1Sep7E.jpg" alt="Capoeira session" loading="lazy">
@@ -430,8 +435,8 @@
       </div>
     </div>
 
-    <!-- 7. Boat Rides -->
-    <div class="activity-detail">
+    <!-- 6. Boat Rides -->
+    <div class="activity-detail reverse">
       <div class="activity-image">
         <img src="https://framerusercontent.com/images/BVHV8h19LqNvLmjULPtU5ZLTrtU.jpg" alt="Boat rides along the coast" loading="lazy">
       </div>
@@ -441,7 +446,7 @@
       </div>
     </div>
 
-  </section>
+  </div>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
@@ -456,6 +461,7 @@
         </div>
       </div>
       <form class="contact-form" id="contactForm">
+        <input type="hidden" name="location" value="Itacaré">
         <input type="text" name="name" placeholder="Full name*" required>
         <input type="email" name="email" placeholder="E-mail*" required>
         <input type="tel" name="phone" placeholder="Phone*">
@@ -471,7 +477,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-top">
-      <a href="#" class="footer-logo"><img src="/assets/images/logo-light.svg" alt="Surf Inn" class="logo-svg"></a>
+      <a href="/" class="footer-logo"><img src="/assets/images/logo-light.svg" alt="Surf Inn" class="logo-svg"></a>
       <div class="footer-nav">
         <a href="#contact">Contato</a>
         <a href="/itacare#about">Sobre</a>
@@ -540,5 +546,6 @@
       }
     });
   </script>
+  <script src="/assets/js/nav.js" defer></script>
 </body>
 </html>

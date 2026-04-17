@@ -309,6 +309,7 @@
       .footer-contact { flex-direction: column; gap: 4px; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/css/nav.css">
 </head>
 <body>
 
@@ -403,20 +404,8 @@
       </div>
     </div>
 
-    <!-- 4. Carnival Experience -->
+    <!-- 4. Surfskate Training -->
     <div class="activity-detail reverse">
-      <div class="activity-image">
-        <img src="https://framerusercontent.com/images/DuYXBkAHcffCO9DVk99gze7RslA.jpg" alt="Carnival Experience" loading="lazy">
-      </div>
-      <div class="activity-text">
-        <h3>Carnival Experience - Join the Rhythm</h3>
-        <div class="activity-subtitle">Dance and Drum into the soul of Rio's Carnival blocos</div>
-        <p>Join us for a unique chance to learn how to dance samba and play samba-reggae drums alongside members of Rio's legendary street blocos.</p>
-      </div>
-    </div>
-
-    <!-- 5. Surfskate Training -->
-    <div class="activity-detail">
       <div class="activity-image">
         <img src="https://framerusercontent.com/images/FvXHNVsBAbWpdE5ChDAYpxnEehI.jpg" alt="Surfskate Training" loading="lazy">
       </div>
@@ -426,8 +415,8 @@
       </div>
     </div>
 
-    <!-- 6. Video Surf Analysis -->
-    <div class="activity-detail reverse">
+    <!-- 5. Video Surf Analysis -->
+    <div class="activity-detail">
       <div class="activity-image">
         <img src="https://framerusercontent.com/images/tcePLABUrrnKGHVQqaPq6WBiM.jpg" alt="Video Surf Analysis" loading="lazy">
       </div>
@@ -438,8 +427,8 @@
       </div>
     </div>
 
-    <!-- 7. The Carioca Experience -->
-    <div class="activity-detail">
+    <!-- 6. The Carioca Experience -->
+    <div class="activity-detail reverse">
       <div class="activity-image">
         <img src="https://framerusercontent.com/images/6EABb9KDby79gV0OoeoNV1Sep7E.jpg" alt="The Carioca Experience" loading="lazy">
       </div>
@@ -450,8 +439,8 @@
       </div>
     </div>
 
-    <!-- 8. Rio City Tour -->
-    <div class="activity-detail reverse">
+    <!-- 7. Rio City Tour -->
+    <div class="activity-detail">
       <div class="activity-image">
         <img src="https://framerusercontent.com/images/BVHV8h19LqNvLmjULPtU5ZLTrtU.jpg" alt="Rio City Tour" loading="lazy">
       </div>
@@ -461,8 +450,8 @@
       </div>
     </div>
 
-    <!-- 9. Guided Hikes -->
-    <div class="activity-detail">
+    <!-- 8. Guided Hikes -->
+    <div class="activity-detail reverse">
       <div class="activity-image">
         <img src="https://framerusercontent.com/images/zPEBjG55Ce6koo543gzEfJpaLM.jpg" alt="Guided Hikes in Rio" loading="lazy">
       </div>
@@ -487,6 +476,7 @@
         </div>
       </div>
       <form class="contact-form" id="contactForm">
+        <input type="hidden" name="location" value="Rio de Janeiro">
         <input type="text" name="name" placeholder="Full name*" required>
         <input type="email" name="email" placeholder="E-mail*" required>
         <input type="tel" name="phone" placeholder="Phone*">
@@ -551,5 +541,6 @@
     });
   </script>
 
+  <script src="/assets/js/nav.js" defer></script>
 </body>
 </html>

@@ -65,3 +65,19 @@ Public/
 *.tmp
 *.temp
 .CFUserTextEncoding
+# Test screenshots (local dev only)
+*.jpeg
+!assets/**/*.jpeg
+.playwright-mcp/
+framer-*.jpeg
+menu-*.jpeg
+rio-*.jpeg
+my-*.jpeg
+builder-*.jpeg
+accomod-*.jpeg
+itacare-*.jpeg
+leaf-*.jpeg
+palms-*.jpeg
+select-*.jpeg
+rooms-*.jpeg
+create-*.jpeg

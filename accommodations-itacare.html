@@ -49,10 +49,21 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
       display: flex; align-items: center; justify-content: space-between;
       padding: 10px 40px;
-      background: var(--bege);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background 0.3s ease, border-color 0.3s ease;
     }
-    .navbar-logo img { height: 38px; width: auto; object-fit: contain; }
+    .navbar.scrolled {
+      background: rgba(245,242,235,0.92);
+      border-bottom-color: rgba(0,0,0,0.06);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 18px rgba(0,0,0,0.04);
+    }
+    .navbar-logo img {
+      height: 48px; width: auto; object-fit: contain;
+      transition: height 0.3s ease;
+    }
+    .navbar.scrolled .navbar-logo img { height: 38px; }
     .hamburger {
       display: flex; flex-direction: column; gap: 5px;
       cursor: pointer; padding: 8px; background: none; border: none;
@@ -97,91 +108,231 @@
       background: none; border: none; font-size: 28px; color: var(--off-black);
     }
 
-    /* ===== HERO ===== */
-    .hero {
-      padding: 120px 40px 60px;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
+    /* ===== HERO (teal band) ===== */
+    .accomod-hero {
+      margin: 0; padding: 80px 40px 40px;
+      background: #4DACC4;
+      color: var(--bege);
     }
-    .hero-title {
+    .accomod-hero-top {
+      max-width: 1200px; margin: 0 auto;
+    }
+    .experiences-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: #494440; color: var(--bege);
+      padding: 5px 14px; border-radius: 20px;
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 700; font-style: italic; font-size: 11px;
+      letter-spacing: 1px; margin-bottom: 18px;
+    }
+    .accomod-hero h1 {
       font-family: 'Montserrat Alternates', sans-serif;
       font-weight: 800; font-style: italic;
-      font-size: clamp(32px, 4vw, 48px);
-      color: var(--off-black);
-      line-height: 1.15;
-      margin-bottom: 12px;
+      font-size: clamp(40px, 7vw, 80px);
+      text-transform: uppercase; letter-spacing: 1px;
+      color: var(--bege); line-height: 0.95;
+      margin: 0 0 30px;
     }
-    .hero-tagline {
-      font-family: 'Fragment Mono', monospace;
-      font-size: 14px;
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      color: var(--teal);
-      margin-bottom: 20px;
-    }
-    .hero-desc {
-      font-family: 'Poppins', sans-serif;
-      font-size: 15px;
-      color: var(--text-body);
-      line-height: 1.7;
-      margin-bottom: 12px;
-    }
-    .hero-sub {
-      font-family: 'Poppins', sans-serif;
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* ===== ACCOMMODATIONS ===== */
-    .accommodations { padding: 50px 40px 20px; max-width: 1200px; margin: 0 auto; }
-    .amenities-banner {
-      background: var(--card-bg); color: var(--bege); text-align: center;
-      padding: 20px 30px; border-radius: 12px; margin-bottom: 40px;
-      font-family: 'Poppins', sans-serif; font-size: 15px; font-weight: 500;
-    }
-    .room-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 30px; margin-bottom: 50px; }
-    .room-card { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
-    .room-card-image { height: 260px; overflow: hidden; }
-    .room-card-image img { width: 100%; height: 100%; object-fit: cover; }
-    .room-card-body { padding: 24px; }
-    .room-card-body h3 { font-family: 'Fragment Mono', monospace; font-size: 18px; font-weight: 400; color: var(--off-black); margin-bottom: 10px; }
-    .room-card-body p { font-family: 'Poppins', sans-serif; font-size: 13px; line-height: 1.7; color: var(--text-body); margin-bottom: 16px; }
-
-    /* ===== OUR SPACE ===== */
-    .our-space { padding: 20px 40px 50px; max-width: 1200px; margin: 0 auto; }
-    .our-space-title {
-      font-family: 'Montserrat Alternates', sans-serif;
-      font-weight: 800; font-style: italic; text-transform: uppercase;
-      font-size: clamp(22px, 3vw, 32px);
-      color: var(--off-black); margin-bottom: 30px;
-    }
-    .space-grid {
+    .accomod-hero-photos {
+      max-width: 1200px; margin: 0 auto 30px;
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: auto auto;
-      gap: 16px;
+      grid-template-columns: 1fr 3fr 1fr 1fr;
+      gap: 12px;
+      height: 280px;
     }
-    .space-grid .space-item { border-radius: 16px; overflow: hidden; }
-    .space-grid .space-item img { width: 100%; height: 100%; object-fit: cover; }
-    .space-grid .space-item:nth-child(1) { grid-column: 1 / 3; grid-row: 1; height: 320px; }
-    .space-grid .space-item:nth-child(2) { grid-column: 3; grid-row: 1; height: 320px; }
-    .space-grid .space-item:nth-child(3) { grid-column: 1; grid-row: 2; height: 280px; }
-    .space-grid .space-item:nth-child(4) { grid-column: 2 / 4; grid-row: 2; height: 280px; }
-    .btn-outline {
-      display: inline-block;
-      padding: 12px 28px;
-      border: 1.5px solid var(--off-black);
-      border-radius: 30px;
+    .accomod-hero-photos .ph {
+      border-radius: 12px; overflow: hidden; height: 100%;
+    }
+    .accomod-hero-photos .ph img { width: 100%; height: 100%; object-fit: cover; }
+    .accomod-hero-text {
+      max-width: 1200px; margin: 0 auto;
+    }
+    .accomod-hero-text h2 {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 800; font-style: italic;
+      font-size: 24px;
+      color: var(--bege);
+      margin-bottom: 8px;
+    }
+    .accomod-hero-text p {
       font-family: 'Poppins', sans-serif;
-      font-size: 14px;
-      font-weight: 500;
+      font-size: 14px; line-height: 1.6;
+      color: var(--bege); opacity: 0.95;
+      margin-bottom: 16px;
+      max-width: 620px;
+    }
+    .btn-outline-light {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 22px;
+      border: 1.5px solid var(--bege); border-radius: 30px;
+      background: transparent;
+      font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 500;
+      color: var(--bege);
+      transition: all 0.2s;
+    }
+    .btn-outline-light:hover { background: var(--bege); color: #494440; }
+    .btn-outline-light .dot-icon {
+      width: 7px; height: 7px; background: currentColor;
+      border-radius: 0; display: inline-block;
+    }
+
+    /* ===== ROOMS SECTION ===== */
+    /* ===== ROOMS SECTION (3-col: tabs | photo | description) ===== */
+    .rooms-section {
+      max-width: 1200px; margin: 0 auto;
+      padding: 80px 40px 40px;
+    }
+    .rooms-category { padding-bottom: 60px; }
+    .rooms-category + .rooms-category { padding-top: 0; }
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: minmax(240px, 320px) minmax(360px, 1fr) minmax(280px, 360px);
+      gap: 40px;
+      align-items: start;
+    }
+    .rooms-left {
+      display: flex; flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+    .discover-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--off-black); color: var(--bege);
+      padding: 5px 14px; border-radius: 20px;
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 700; font-style: italic; font-size: 11px;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+    }
+    .rooms-heading {
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 800; font-style: italic;
+      font-size: clamp(28px, 3.5vw, 42px);
+      text-transform: uppercase; letter-spacing: 0.5px;
       color: var(--off-black);
-      text-align: center;
-      transition: all 0.3s;
+      line-height: 1.05;
+      margin-bottom: 14px;
+    }
+    .room-tab {
+      background: transparent; border: none; cursor: pointer;
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 800; font-style: italic;
+      font-size: clamp(22px, 2.5vw, 30px);
+      text-transform: uppercase;
+      color: #bfb8ad;
+      padding: 4px 0;
+      text-align: left;
+      transition: color 0.2s;
+      letter-spacing: 0.5px;
+      line-height: 1.1;
+      display: block;
+    }
+    .room-tab:hover { color: var(--off-black); }
+    .room-tab.active { color: var(--off-black); }
+    .rooms-amenities {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px; line-height: 1.5;
+      color: var(--off-black);
+      font-weight: 500;
+      margin-top: 22px;
+    }
+
+    .rooms-carousel {
+      position: relative;
+      width: 100%;
+    }
+    .carousel-card {
+      position: relative;
+      aspect-ratio: 4/3;
+      border-radius: 16px;
+      overflow: hidden;
+      background: var(--bege);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    .carousel-label {
+      position: absolute; top: 18px; left: 18px;
+      background: var(--bege);
+      padding: 10px 14px; border-radius: 6px;
+      font-family: 'Montserrat Alternates', sans-serif;
+      font-weight: 800; font-style: italic;
+      font-size: 16px; text-transform: uppercase;
+      color: var(--off-black);
+      letter-spacing: 1px;
+      line-height: 1;
+      z-index: 2;
+    }
+    .carousel-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .carousel-nav {
+      position: absolute; right: 16px; top: 50%;
+      transform: translateY(-50%);
+      width: 40px; height: 40px;
+      border-radius: 50%; border: none;
+      background: rgba(255,255,255,0.92);
+      font-size: 22px; color: var(--off-black);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: background 0.2s;
+      z-index: 2;
+    }
+    .carousel-nav:hover { background: white; }
+    .carousel-nav.prev { right: auto; left: 16px; }
+
+    .rooms-right {
+      display: flex; flex-direction: column;
+      gap: 18px;
+      height: 100%;
+      min-height: 360px;
+    }
+    .rooms-right h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px; font-weight: 600;
+      color: var(--off-black);
+      line-height: 1.25;
+    }
+    .rooms-right p {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px; line-height: 1.55;
+      color: var(--text-body);
+    }
+    .rooms-right .rooms-right-spacer { flex: 1; }
+    .rooms-right .btn-outline { align-self: flex-start; }
+
+    /* ===== GALLERY ===== */
+    .gallery {
+      max-width: 1200px; margin: 0 auto;
+      padding: 20px 40px 60px;
+      display: grid; gap: 16px;
+      grid-template-columns: repeat(12, 1fr);
+    }
+    .gallery .g-item { border-radius: 12px; overflow: hidden; }
+    .gallery .g-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .gallery .g-1 { grid-column: 1 / -1; height: 440px; }
+    .gallery .g-2 { grid-column: 1 / 7; height: 280px; }
+    .gallery .g-3 { grid-column: 7 / -1; height: 280px; }
+    .gallery .g-4 { grid-column: 1 / 9; height: 440px; }
+    .gallery .g-5 { grid-column: 9 / -1; height: 440px; }
+
+    /* ===== PALM DIVIDER ===== */
+    .squiggle {
+      max-width: 1200px; margin: 0 auto;
+      padding: 30px 40px 10px;
+      color: var(--off-black);
+    }
+    .squiggle svg { width: 100%; height: 140px; display: block; overflow: visible; }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 24px; background: transparent;
+      border: 1.5px solid var(--off-black); border-radius: 30px;
+      font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 500;
+      color: var(--off-black); transition: all 0.3s;
     }
     .btn-outline:hover { background: var(--off-black); color: var(--bege); }
+    .btn-outline .dot-icon {
+      width: 8px; height: 8px; background: var(--off-black);
+      border-radius: 50%; display: inline-block; transition: background 0.3s;
+    }
+    .btn-outline:hover .dot-icon { background: var(--bege); }
 
     /* ===== CONTACT ===== */
     .contact { padding: 50px 40px; }
@@ -282,10 +433,17 @@
     }
     @media (max-width: 768px) {
       .navbar { padding: 10px 20px; }
-      .hero { padding: 100px 20px 40px; }
-      .accommodations { padding: 30px 20px 10px; }
-      .room-grid { grid-template-columns: 1fr; }
-      .room-card-image { height: 220px; }
+      .accomod-hero { padding: 80px 20px 30px; }
+      .accomod-hero-photos { grid-template-columns: 1fr 1fr; gap: 8px; height: 200px; }
+      .accomod-hero-photos .ph:nth-child(3), .accomod-hero-photos .ph:nth-child(4) { display: none; }
+      .rooms-section { padding: 40px 20px 20px; }
+      .rooms-category { padding-bottom: 40px; }
+      .rooms-grid { grid-template-columns: 1fr; gap: 24px; }
+      .rooms-right { min-height: 0; }
+      .gallery { padding: 20px 20px 40px; }
+      .gallery .g-1 { height: 280px; }
+      .gallery .g-2, .gallery .g-3 { grid-column: 1 / -1; height: 220px; }
+      .gallery .g-4, .gallery .g-5 { grid-column: 1 / -1; height: 280px; }
       .contact { padding: 30px 20px; }
       .contact-banner { padding: 10px 20px 20px; }
       .footer { padding: 24px 20px 16px; }
@@ -303,6 +461,7 @@
       .footer-contact { flex-direction: column; gap: 4px; }
     }
   </style>
+  <link rel="stylesheet" href="/assets/css/nav.css">
 </head>
 <body>
 
@@ -348,79 +507,136 @@
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1 class="hero-title">Pick your accommodation</h1>
-    <p class="hero-tagline">SURF AND STAY</p>
-    <p class="hero-desc">Uncover the extraordinary experiences our Surf Camp in Itacar&eacute; has to offer</p>
-  </section>
-
-  <!-- ACCOMMODATIONS -->
-  <section class="accommodations">
-
-    <div class="amenities-banner">
-      All rooms include private bathroom, A/C, minibar, TV and clothes line
+  <!-- HERO (teal banner) -->
+  <section class="accomod-hero">
+    <div class="accomod-hero-top">
+      <span class="experiences-tag">&#10148; EXPERIENCES</span>
+      <h1>Pick your<br>Accommodation</h1>
     </div>
-
-    <div class="room-grid">
-
-      <!-- Standard Room -->
-      <div class="room-card">
-        <div class="room-card-image">
-          <img src="https://lh3.googleusercontent.com/d/1khf2kv0EjOml5Y8_4OsxfrETxSS4WQou=w800" alt="Standard Room at Surf Inn Itacaré" loading="lazy">
-        </div>
-        <div class="room-card-body">
-          <h3>Standard Room</h3>
-          <p>Cozy private room with double bed, private bathroom, A/C, minibar, TV, clothes line, and Wi-Fi.</p>
-          <a href="https://wa.me/5521999231992" target="_blank" rel="noopener" class="btn-outline">Book a room</a>
-        </div>
-      </div>
-
-      <!-- Triple Room -->
-      <div class="room-card">
-        <div class="room-card-image">
-          <img src="https://lh3.googleusercontent.com/d/1xOtVzt7q0bpO0JXHXFAaUUJjz0LiYFYn=w800" alt="Triple Room at Surf Inn Itacaré" loading="lazy">
-        </div>
-        <div class="room-card-body">
-          <h3>Triple Room</h3>
-          <p>Comfortable room for up to 3 guests with double + single bed. All standard amenities included plus extra space.</p>
-          <a href="https://wa.me/5521999231992" target="_blank" rel="noopener" class="btn-outline">Book a room</a>
-        </div>
-      </div>
-
-      <!-- Quad Room -->
-      <div class="room-card">
-        <div class="room-card-image">
-          <img src="https://lh3.googleusercontent.com/d/1r8oNRfuY5oLf6_jaIGyc8wT7LcF88qLm=w800" alt="Quad Room at Surf Inn Itacaré" loading="lazy">
-        </div>
-        <div class="room-card-body">
-          <h3>Quad Room</h3>
-          <p>Our largest room for groups or families up to 4. Double bed + 2 singles, all standard amenities included.</p>
-          <a href="https://wa.me/5521999231992" target="_blank" rel="noopener" class="btn-outline">Book a room</a>
-        </div>
-      </div>
-
+    <div class="accomod-hero-photos">
+      <div class="ph"><img src="/assets/images/itacare/common/common-0.jpg" alt="Surf Inn Itacaré common area" loading="lazy"></div>
+      <div class="ph"><img src="/assets/images/itacare/common/common-1.jpg" alt="Surf Inn Itacaré deck" loading="lazy"></div>
+      <div class="ph"><img src="/assets/images/itacare/common/common-2.jpg" alt="Surf Inn Itacaré space" loading="lazy"></div>
+      <div class="ph"><img src="/assets/images/itacare/common/common-3.jpg" alt="Surf Inn Itacaré entrance" loading="lazy"></div>
+    </div>
+    <div class="accomod-hero-text">
+      <h2>Surf and Stay</h2>
+      <p>uncover the extraordinary experiences our Surf Camp in Itacar&eacute; has to offer</p>
+      <a href="/itacare/activities" class="btn-outline-light">Discover the experiences <span class="dot-icon"></span></a>
     </div>
   </section>
 
-  <!-- OUR SPACE -->
-  <section class="our-space">
-    <h2 class="our-space-title">Our Space</h2>
-    <div class="space-grid">
-      <div class="space-item">
-        <img src="https://lh3.googleusercontent.com/d/1fjuI7fJMopv5ifDYrWKRl0fG6jgah-t-=w1000" alt="Pool area at Surf Inn Itacaré" loading="lazy">
-      </div>
-      <div class="space-item">
-        <img src="https://lh3.googleusercontent.com/d/1_wnlos9lxiVayqdldEvv7bgT9Ch1nqGK=w800" alt="Common area at Surf Inn Itacaré" loading="lazy">
-      </div>
-      <div class="space-item">
-        <img src="https://lh3.googleusercontent.com/d/19t_cx-ukY15HzuHX4TYfg_DEArIvIXRj=w800" alt="Lounge area at Surf Inn Itacaré" loading="lazy">
-      </div>
-      <div class="space-item">
-        <img src="https://lh3.googleusercontent.com/d/1ypLLfdN18Lualir1H2vTZ2L9h-yLKjYM=w1000" alt="Restaurant and dining area at Surf Inn Itacaré" loading="lazy">
+  <!-- ROOMS: tabs | photo | description -->
+  <section class="rooms-section">
+    <div class="rooms-category" id="privatesCategory">
+      <div class="rooms-grid">
+        <!-- LEFT: tabs -->
+        <div class="rooms-left">
+          <span class="discover-tag">&#10148; DISCOVER</span>
+          <h2 class="rooms-heading">Privates</h2>
+          <button type="button" class="room-tab active" data-room="standard">Standard</button>
+          <button type="button" class="room-tab" data-room="triple">Triple<br>Room</button>
+          <button type="button" class="room-tab" data-room="quad">Quad<br>Room</button>
+          <p class="rooms-amenities">All options have private bathroom, A/C, minibar, TV and clothes line.</p>
+        </div>
+
+        <!-- MIDDLE: photo carousel -->
+        <div class="rooms-carousel" id="roomsCarousel">
+          <div class="carousel-card">
+            <div class="carousel-label">PRIVATE</div>
+            <img class="carousel-img" src="/assets/images/itacare/rooms/duplo/duplo-0.jpg" alt="Standard private room" loading="lazy">
+            <button class="carousel-nav prev" type="button" aria-label="Previous photo">&lsaquo;</button>
+            <button class="carousel-nav next" type="button" aria-label="Next photo">&rsaquo;</button>
+          </div>
+        </div>
+
+        <!-- RIGHT: description + book -->
+        <div class="rooms-right" id="roomsRight">
+          <h3 id="roomName">Standard Room</h3>
+          <p id="roomDesc">Cozy private room for 2 with double bed. Includes A/C, Wi-Fi, minibar, TV and clothes line. Private bathroom inside the room.</p>
+          <div class="rooms-right-spacer"></div>
+          <a href="https://wa.me/5521999231992" target="_blank" rel="noopener" class="btn-outline">Book a room <span class="dot-icon"></span></a>
+        </div>
       </div>
     </div>
   </section>
+
+  <!-- GALLERY -->
+  <section class="gallery">
+    <div class="g-item g-1">
+      <img src="/assets/images/itacare/common/common-4.jpg" alt="Surf Inn Itacaré" loading="lazy">
+    </div>
+    <div class="g-item g-2">
+      <img src="/assets/images/itacare/common/common-5.jpg" alt="Surf Inn Itacaré" loading="lazy">
+    </div>
+    <div class="g-item g-3">
+      <img src="/assets/images/itacare/common/common-6.jpg" alt="Surf Inn Itacaré" loading="lazy">
+    </div>
+    <div class="g-item g-4">
+      <img src="/assets/images/itacare/common/common-7.jpg" alt="Surf Inn Itacaré" loading="lazy">
+    </div>
+    <div class="g-item g-5">
+      <img src="/assets/images/itacare/common/common-8.jpg" alt="Surf Inn Itacaré" loading="lazy">
+    </div>
+  </section>
+
+  <!-- Palm trees divider -->
+  <div class="squiggle">
+    <svg viewBox="0 0 1400 160" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" preserveAspectRatio="none">
+      <defs>
+        <!-- Coconut palm A: tall, leaning slightly left -->
+        <g id="palm-a">
+          <!-- Trunk with gentle S curve -->
+          <path d="M 0 0 C -4 -30 -2 -68 -6 -98" />
+          <!-- 8 arching fronds that rise and droop -->
+          <!-- far-left (arc up then droops deep) -->
+          <path d="M -6 -98 C -30 -118 -56 -118 -68 -92 C -72 -76 -66 -70 -60 -68" />
+          <!-- mid-left -->
+          <path d="M -6 -98 C -28 -124 -54 -130 -64 -114 C -68 -102 -60 -100 -54 -100" />
+          <!-- upper-left -->
+          <path d="M -6 -98 C -18 -124 -38 -140 -42 -138 C -40 -130 -36 -124 -30 -120" />
+          <!-- near-vertical left -->
+          <path d="M -6 -98 C -8 -126 -16 -142 -18 -140 C -14 -134 -10 -128 -8 -122" />
+          <!-- near-vertical right -->
+          <path d="M -6 -98 C -4 -126 6 -142 10 -140 C 8 -134 4 -128 2 -122" />
+          <!-- upper-right -->
+          <path d="M -6 -98 C 8 -124 28 -140 34 -138 C 30 -130 24 -124 18 -120" />
+          <!-- mid-right -->
+          <path d="M -6 -98 C 20 -124 48 -130 56 -114 C 52 -102 44 -100 38 -100" />
+          <!-- far-right -->
+          <path d="M -6 -98 C 22 -118 50 -118 62 -92 C 64 -76 58 -70 50 -68" />
+          <!-- coconuts -->
+          <circle cx="-10" cy="-94" r="2" fill="currentColor" stroke="none" />
+          <circle cx="-4" cy="-92" r="2" fill="currentColor" stroke="none" />
+          <circle cx="2" cy="-95" r="2" fill="currentColor" stroke="none" />
+        </g>
+
+        <!-- Coconut palm B: shorter, leaning right -->
+        <g id="palm-b">
+          <path d="M 0 0 C 4 -24 2 -54 6 -82" />
+          <path d="M 6 -82 C -18 -102 -44 -100 -54 -76 C -56 -64 -52 -58 -46 -56" />
+          <path d="M 6 -82 C -18 -108 -42 -114 -50 -98 C -52 -88 -46 -86 -40 -86" />
+          <path d="M 6 -82 C -8 -108 -22 -124 -26 -122 C -24 -114 -20 -110 -16 -106" />
+          <path d="M 6 -82 C 6 -112 14 -124 18 -122 C 14 -116 10 -112 8 -108" />
+          <path d="M 6 -82 C 22 -108 40 -124 46 -122 C 42 -114 36 -110 30 -106" />
+          <path d="M 6 -82 C 28 -108 52 -114 58 -98 C 56 -88 48 -86 42 -86" />
+          <path d="M 6 -82 C 28 -102 54 -100 62 -76 C 62 -64 56 -58 50 -56" />
+          <circle cx="2" cy="-78" r="2" fill="currentColor" stroke="none" />
+          <circle cx="8" cy="-76" r="2" fill="currentColor" stroke="none" />
+        </g>
+      </defs>
+
+      <!-- gentle ground line -->
+      <path d="M 0 146 C 180 142 330 148 500 144 S 820 142 1000 146 S 1260 142 1400 144" />
+
+      <!-- palms sitting on the ground -->
+      <use href="#palm-a" x="200" y="146" />
+      <use href="#palm-b" x="470" y="146" />
+      <use href="#palm-a" x="720" y="146" />
+      <use href="#palm-b" x="980" y="146" />
+      <use href="#palm-a" x="1240" y="146" />
+    </svg>
+  </div>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
@@ -435,6 +651,7 @@
         </div>
       </div>
       <form class="contact-form" id="contactForm">
+        <input type="hidden" name="location" value="Itacaré">
         <input type="text" name="name" placeholder="Full name*" required>
         <input type="email" name="email" placeholder="E-mail*" required>
         <input type="tel" name="phone" placeholder="Phone*">
@@ -450,7 +667,7 @@
   <!-- FOOTER -->
   <footer class="footer">
     <div class="footer-top">
-      <a href="#" class="footer-logo"><img src="/assets/images/logo-light.svg" alt="Surf Inn" class="logo-svg"></a>
+      <a href="/" class="footer-logo"><img src="/assets/images/logo-light.svg" alt="Surf Inn" class="logo-svg"></a>
       <div class="footer-nav">
         <a href="#contact">Contato</a>
         <a href="/itacare#about">Sobre</a>
@@ -488,6 +705,86 @@
       btn.parentElement.classList.toggle('open');
     }
 
+    // Room tabs + carousel
+    (function() {
+      const ROOMS = {
+        standard: {
+          label: 'PRIVATE',
+          name: 'Standard Room',
+          desc: 'Cozy private room for 2 with double bed. Includes A/C, Wi-Fi, minibar, TV and clothes line. Private bathroom inside the room.',
+          photos: [
+            '/assets/images/itacare/rooms/duplo/duplo-0.jpg',
+            '/assets/images/itacare/rooms/duplo/duplo-1.jpg',
+            '/assets/images/itacare/rooms/duplo/duplo-2.jpg',
+            '/assets/images/itacare/rooms/duplo/duplo-3.jpg',
+            '/assets/images/itacare/rooms/duplo/duplo-4.jpg',
+          ],
+        },
+        triple: {
+          label: 'TRIPLE',
+          name: 'Triple Room',
+          desc: 'Comfortable private room for 3 guests with double + single bed. All amenities included plus extra space — perfect for small groups of friends.',
+          photos: [
+            '/assets/images/itacare/rooms/triplo/triplo-0.jpg',
+            '/assets/images/itacare/rooms/triplo/triplo-1.jpg',
+            '/assets/images/itacare/rooms/triplo/triplo-2.jpg',
+            '/assets/images/itacare/rooms/triplo/triplo-3.jpg',
+          ],
+        },
+        quad: {
+          label: 'QUAD',
+          name: 'Quad Room',
+          desc: 'Our largest private room for groups or families up to 4 guests. Double bed plus 2 singles, all standard amenities included.',
+          photos: [
+            '/assets/images/itacare/rooms/familia/familia-0.jpg',
+            '/assets/images/itacare/rooms/familia/familia-1.jpg',
+            '/assets/images/itacare/rooms/familia/familia-2.jpg',
+            '/assets/images/itacare/rooms/familia/familia-3.jpg',
+          ],
+        },
+      };
+      const carousel = document.getElementById('roomsCarousel');
+      if (!carousel) return;
+      const img = carousel.querySelector('.carousel-img');
+      const labelEl = carousel.querySelector('.carousel-label');
+      const prev = carousel.querySelector('.carousel-nav.prev');
+      const next = carousel.querySelector('.carousel-nav.next');
+      const tabs = document.querySelectorAll('.rooms-left .room-tab');
+      const nameEl = document.getElementById('roomName');
+      const descEl = document.getElementById('roomDesc');
+      let current = 'standard';
+      let idx = 0;
+      function render() {
+        const data = ROOMS[current];
+        const photos = data.photos;
+        if (idx < 0) idx = photos.length - 1;
+        if (idx >= photos.length) idx = 0;
+        img.src = photos[idx];
+        labelEl.textContent = data.label;
+        if (nameEl) nameEl.textContent = data.name;
+        if (descEl) descEl.textContent = data.desc;
+        tabs.forEach(t => t.classList.toggle('active', t.dataset.room === current));
+      }
+      tabs.forEach(t => t.addEventListener('click', () => {
+        current = t.dataset.room; idx = 0; render();
+      }));
+      prev.addEventListener('click', () => { idx -= 1; render(); });
+      next.addEventListener('click', () => { idx += 1; render(); });
+      render();
+    })();
+
+    // Navbar scroll effect
+    (function() {
+      const nav = document.querySelector('.navbar');
+      if (!nav) return;
+      function onScroll() {
+        if (window.scrollY > 40) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       const form = e.target;
@@ -519,5 +816,6 @@
       }
     });
   </script>
+  <script src="/assets/js/nav.js" defer></script>
 </body>
 </html>
