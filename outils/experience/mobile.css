@@ -1,0 +1,834 @@
+
+  /* ═══ Mobile, d'après anglify.com (branche main-anglify-mobile-inspi) ═══
+     État au 14/11/2026 (soir) : seuls les en-têtes sont adaptés (texte d'abord sur fond uni, vidéo entière dessous, onglets entre les deux).
+     Le reste de la page est celui de main. Les sections seront ramenées à un écran une par une, avec Kévin. Voir REGLES-MOBILE.md. */
+  @media (max-width:720px){
+    /* 1. En-têtes */
+    html[data-exp]:not(#z) :is([data-home-hero],[data-camp-hero],[data-who-hero]){display:flex !important;flex-direction:column !important;align-items:stretch !important;height:auto !important;min-height:0 !important;background:var(--encre) !important;background-image:none !important;}
+    html[data-exp]:not(#z) :is([data-home-hero],[data-camp-hero],[data-who-hero]) > :is(video,img){position:relative !important;inset:auto !important;order:2;width:100% !important;height:min(34vh,270px) !important;flex:0 0 auto;opacity:1 !important;}
+    html[data-exp]:not(#z) :is([data-home-hero],[data-camp-hero],[data-who-hero]) > div[style*="linear-gradient"]{display:none !important;}
+    html[data-exp]:not(#z) :is([data-home-hero],[data-camp-hero],[data-who-hero]) > div:not([style*="linear-gradient"]):not([style*="monospace"]){order:1;padding:calc(92px + env(safe-area-inset-top)) 22px 26px !important;}
+    html[data-exp]:not(#z) :is([data-home-hero],[data-camp-hero],[data-who-hero]) :is(h1,p,span,div){text-shadow:none !important;}
+    html[data-exp]:not(#z) [data-marque-geante]{font-size:clamp(58px,19vw,84px) !important;margin-bottom:6px !important;}
+    html[data-exp]:not(#z) :is([data-home-hero],[data-camp-hero],[data-who-hero]) h1{font-size:clamp(27px,7.6vw,33px) !important;margin-bottom:10px !important;}
+    html[data-exp]:not(#z) :is([data-home-hero],[data-camp-hero],[data-who-hero]) h1 ~ p{font-size:16px !important;line-height:1.45 !important;margin-bottom:16px !important;}
+    html[data-exp]:not(#z) [data-vid-attente]::before{display:none;}
+    html[data-exp]:not(#z) [data-indice-defilement]{display:none !important;}
+
+    /* Menu : en haut de page, sur le fond sombre de l'en-tête, les trois barres passent en clair */
+    html[data-exp][data-immersif]:not(#z) [data-nav-burger] span{background:var(--ecume) !important;}
+    html[data-exp]:not(#z) [data-camp-hero] > div:not([style*="linear-gradient"]):not([style*="monospace"]){padding-top:calc(78px + env(safe-area-inset-top)) !important;}
+    /* Retours de Kévin (14/11) : les vidéos d'en-tête à leur format d'origine (portrait 2:3), entières et bien mises en avant */
+    html[data-exp]:not(#z) :is([data-home-hero],[data-camp-hero]) > video{height:auto !important;aspect-ratio:2 / 3;max-height:82vh;object-fit:cover !important;}
+    /* … et plus d'apparition progressive du contenu de l'en-tête : tout est là d'emblée */
+    html:not(#z):not(#y) [data-home-hero-body] > *,html:not(#z):not(#y) [data-home-hero-body] > *:not(h1),html:not(#z):not(#y) :is([data-camp-hero],[data-who-hero]) > div > *{opacity:1 !important;transform:none !important;filter:none !important;transition:none !important;animation:none !important;pointer-events:auto !important;}
+    /* Pages camp : le menu des onglets se place entre le texte de l'en-tête et la vidéo (retour de Kévin du 14/11).
+       L'en-tête se « défait » (display:contents) pour que texte, onglets et vidéo deviennent trois blocs de la page, qu'on ordonne. */
+    html[data-exp]:not(#z) main:has(> [data-camp-hero]){display:flex !important;flex-direction:column;}
+    html[data-exp]:not(#z) main:has(> [data-camp-hero]) > *{order:4;}
+    html[data-exp]:not(#z) main > [data-camp-hero]{display:contents !important;}
+    html[data-exp]:not(#z) main > [data-camp-hero] > div:not([style*="linear-gradient"]):not([style*="monospace"]){order:1;background:var(--encre);width:100%;box-sizing:border-box;}
+    html[data-exp]:not(#z) main:has(> [data-camp-hero]) > #camp-tabbar{order:2;}
+    html[data-exp]:not(#z) main > [data-camp-hero] > :is(video,img){order:3;}
+    html[data-exp]:not(#z) main > [data-camp-hero] > div[style*="monospace"]{display:none !important;}
+  }
+
+  /* « La région » : les cartes prennent un air de carte postale, discrètement (idée de Kévin, 14/11).
+     Papier clair, photo dans une marge blanche, un petit timbre et son oblitération dans le coin, nom du lieu en serif. */
+  html[data-exp]:not(#z) [data-cartes-postales]{padding-bottom:26px !important;}
+  html[data-exp]:not(#z) [data-cartes-postales] > :is([data-genre="Surf"],[data-genre="Beach"],[data-genre="Nature"],[data-genre="Slow life"]){background:#FFFDF8 !important;border:0 !important;border-radius:5px !important;padding:9px 9px 0 !important;box-shadow:0 1px 2px rgba(12,59,50,.14),0 12px 26px rgba(12,59,50,.13) !important;position:relative;overflow:visible !important;}
+  html[data-exp]:not(#z) [data-cartes-postales] > :is([data-genre="Surf"],[data-genre="Beach"],[data-genre="Nature"],[data-genre="Slow life"]) > div:first-child{border-radius:2px !important;overflow:hidden;}
+  html[data-exp]:not(#z) [data-cartes-postales] > :is([data-genre="Surf"],[data-genre="Beach"],[data-genre="Nature"],[data-genre="Slow life"])::before{content:"";position:absolute;z-index:2;top:16px;right:16px;width:34px;height:41px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' view%42ox='0 0 40 48'%3E%3Crect x='3' y='3' width='34' height='42' fill='%23F7F4EA'/%3E%3Crect x='6' y='6' width='28' height='36' fill='%23128064'/%3E%3Ccircle cx='20' cy='19' r='7' fill='%23FFC531'/%3E%3Cpath d='M6 31q7-5 14 0t14 0v11H6z' fill='%230C3B32'/%3E%3Cpath d='M6 35q7-4 14 0t14 0' fill='none' stroke='%23F7F4EA' stroke-width='1.200'/%3E%3C/svg%3E") center / contain no-repeat;rotate:4deg;filter:drop-shadow(0 1px 2px rgba(0,0,0,.28));pointer-events:none;}
+  html[data-exp]:not(#z) [data-cartes-postales] > :is([data-genre="Surf"],[data-genre="Beach"],[data-genre="Nature"],[data-genre="Slow life"])::after{content:"";position:absolute;z-index:2;top:24px;right:42px;width:58px;height:25px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' view%42ox='0 0 70 30'%3E%3Cg fill='none' stroke='%230C3B32' stroke-width='1.300' stroke-linecap='round'%3E%3Cpath d='M2 6q8-5 16 0t16 0 16 0 16 0M2 13q8-5 16 0t16 0 16 0 16 0M2 20q8-5 16 0t16 0 16 0 16 0M2 27q8-5 16 0t16 0 16 0 16 0'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;opacity:.5;rotate:-7deg;pointer-events:none;mix-blend-mode:multiply;}
+  html[data-exp]:not(#z) [data-cartes-postales] > :is([data-genre="Surf"],[data-genre="Beach"],[data-genre="Nature"],[data-genre="Slow life"]):nth-child(even)::before{rotate:-3deg;}
+  html[data-exp]:not(#z):not(#y) [data-cartes-postales] > :is([data-genre="Surf"],[data-genre="Beach"],[data-genre="Nature"],[data-genre="Slow life"]) h3{font-family:var(--f-carte) !important;font-weight:700 !important;letter-spacing:-.01em !important;padding-bottom:8px;border-bottom:1px dotted rgba(12,59,50,.3);}
+  @media (min-width:721px){
+    html[data-exp]:not(#z) [data-cartes-postales] > :is([data-genre="Surf"],[data-genre="Beach"],[data-genre="Nature"],[data-genre="Slow life"]){transition:rotate .4s cubic-bezier(.2,.8,.2,1),translate .4s cubic-bezier(.2,.8,.2,1);}
+    html[data-exp]:not(#z) [data-cartes-postales] > :is([data-genre="Surf"],[data-genre="Beach"],[data-genre="Nature"],[data-genre="Slow life"]):hover{rotate:-.8deg;translate:0 -4px;}
+  }
+  @media (prefers-reduced-motion:reduce){html[data-exp]:not(#z) [data-cartes-postales] > :is([data-genre="Surf"],[data-genre="Beach"],[data-genre="Nature"],[data-genre="Slow life"]){transition:none !important;rotate:0deg !important;translate:none !important;}}
+
+
+  /* Les sorties (fête, musique, nuit) ne sont pas des paysages : pas de timbre, mais un air de billet d'entrée.
+     Deux encoches sur les côtés et une ligne de découpe pointillée entre la photo et le texte. */
+  html[data-exp]:not(#z) [data-cartes-postales] > :is([data-genre="Party"],[data-genre="Live music"],[data-genre="Night"]){background:#F1E8D5 !important;border:0 !important;border-radius:10px !important;position:relative;-webkit-mask:radial-gradient(circle 10px at 0 140px,#0000 97%,#000) 0 0/100% 100% no-repeat,radial-gradient(circle 10px at 100% 140px,#0000 97%,#000) 0 0/100% 100% no-repeat;-webkit-mask-composite:source-in;mask:radial-gradient(circle 10px at 0 140px,#0000 97%,#000) 0 0/100% 100% no-repeat,radial-gradient(circle 10px at 100% 140px,#0000 97%,#000) 0 0/100% 100% no-repeat;mask-composite:intersect;}
+  html[data-exp]:not(#z) [data-cartes-postales] > :is([data-genre="Party"],[data-genre="Live music"],[data-genre="Night"]) > div:last-child{border-top:2px dashed rgba(12,59,50,.4) !important;}
+  html[data-exp]:not(#z):not(#y) [data-cartes-postales] > :is([data-genre="Party"],[data-genre="Live music"],[data-genre="Night"]) h3{letter-spacing:.01em !important;}
+  html[data-exp]:not(#z) [data-cartes-postales] > :is([data-genre="Party"],[data-genre="Live music"],[data-genre="Night"]) > div:first-child > span{background:var(--encre) !important;color:var(--soleil) !important;border-radius:4px !important;letter-spacing:.14em !important;}
+
+
+  /* La tong n'est plus seule : une paire, qui marche (un pas l'une après l'autre) */
+  html[data-exp]:not(#z):not(#y) [data-bresil]::before,html[data-exp]:not(#z):not(#y) [data-bresil]::after{display:block !important;content:"";position:absolute;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' view%42ox='0 0 24 24'%3E%3Cg transform='rotate(24 12 12)'%3E%3Cpath d='M12 1.6c3.7 0 6.2 2.7 6.2 6.7 0 2.7-1 4.4-1.2 7-.2 2.700.6 6.400-5 6.400s-4.800-3.700-5-6.400c-.2-2.600-1.200-4.300-1.200-7 0-4 2.500-6.700 6.200-6.700z' fill='%23FFC531'/%3E%3Cpath d='M12 6.800 7.900 12.600M12 6.800l4.100 5.800' fill='none' stroke='%230E7A52' stroke-width='1.9' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='6.800' r='1.300' fill='%230E7A52'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;width:clamp(40px,4.2vw,62px);aspect-ratio:1;top:clamp(34px,5vw,70px);right:clamp(64px,9vw,150px);rotate:-6deg;animation:tong-pas 1.5s ease-in-out infinite !important;pointer-events:none;}
+  html[data-exp]:not(#z):not(#y) [data-bresil]::after{right:clamp(20px,5vw,96px);top:clamp(46px,6vw,86px);rotate:10deg;animation-delay:-.75s !important;}
+  @keyframes tong-pas{0%,100%{translate:0 0}25%{translate:-5px -9px}50%{translate:-10px 0}}
+  @media (max-width:720px){html[data-exp]:not(#z):not(#y) [data-bresil]::before{width:38px;top:22px;right:54px;}html[data-exp]:not(#z):not(#y) [data-bresil]::after{width:38px;top:30px;right:14px;}html[data-exp]:not(#z):not(#y) [data-bresil] > h2{padding-right:100px !important;}}
+  @media (prefers-reduced-motion:reduce){html[data-exp]:not(#z):not(#y) [data-bresil]::before,html[data-exp]:not(#z):not(#y) [data-bresil]::after{animation:none !important;}}
+
+  /* ═══ Retours de Kévin du 15/11 ═══ */
+  /* Galerie « Pris sur le vif » : neuf photos (trois retirées), 3 × 3 sur téléphone, une rangée de neuf sur ordinateur */
+  html[data-exp]:not(#z) [data-vrai]{grid-template-columns:repeat(9,1fr) !important;}
+  html[data-exp]:not(#z) [data-vrai] > *{aspect-ratio:3 / 4 !important;}
+  @media (max-width:900px){html[data-exp]:not(#z) [data-vrai]{grid-template-columns:repeat(3,1fr) !important;}html[data-exp]:not(#z) [data-vrai] > *{aspect-ratio:1 !important;}}
+  /* « Le Brésil, c'est… » : plus de petit titre au-dessus, le titre en très grand, la ligne « Brésilien ? » juste dessous */
+  html[data-exp]:not(#z) [data-bresil] > p:first-child{display:none !important;}
+  html[data-exp]:not(#z):not(#y) [data-bresil] > h2{font-size:clamp(50px,8.4vw,116px) !important;line-height:.95 !important;letter-spacing:-.03em !important;max-width:none !important;margin-bottom:10px !important;}
+  /* Fenêtres ouvertes (cartes du concept, galeries, planches, tunnel) : la page derrière ne défile plus */
+  /* (17/11/2026) La retenue ne vise plus tous les éléments de la fenêtre : posée sur une carte à coins arrondis, elle empêchait
+     la molette de faire défiler la fenêtre quand la souris était sur la carte. Elle reste sur la fenêtre et ses zones qui défilent. */
+  div[style*="position: fixed"][style*="inset: 0px"],div[style*="position: fixed"][style*="inset: 0px"] :is([style*="overflow: auto"],[style*="overflow-y: auto"],[style*="overflow: hidden auto"],[style*="overflow: scroll"]){overscroll-behavior:contain;}
+  @media (max-width:720px){
+    html[data-exp]:not(#z):not(#y) [data-bresil] > h2{font-size:clamp(46px,14vw,60px) !important;padding-right:100px !important;}
+    /* Avis : la section tient sur un écran, et on voit qu'elle défile (carte suivante qui dépasse, flèches, pastilles de notes sur une ligne) */
+    html[data-exp]:not(#z) section:has([data-rev-pill]){padding-top:32px !important;padding-bottom:28px !important;}
+    html[data-exp]:not(#z) section:has([data-rev-pill]) h2{margin-bottom:0 !important;}
+    html[data-exp]:not(#z) section:has([data-rev-pill]) div:has(> div > h2){gap:12px !important;margin-bottom:12px !important;}
+    html[data-exp]:not(#z) div:has(> [data-rev-pill]){flex-direction:row !important;flex-wrap:nowrap !important;overflow-x:auto;gap:8px !important;margin:0 -24px !important;padding:2px 24px 4px;scrollbar-width:none;}
+    html[data-exp]:not(#z) div:has(> [data-rev-pill])::-webkit-scrollbar{display:none;}
+    html[data-exp]:not(#z) div:has(> [data-rev-pill]) > *{flex:0 0 auto !important;padding:8px 14px !important;font-size:13.5px !important;}
+    html[data-exp]:not(#z) section:has([data-rev-pill]) [data-peek-arrows]{display:flex !important;justify-content:flex-end;margin:0 0 8px !important;}
+    html[data-exp]:not(#z) section:has([data-rev-pill]) [data-peek-arrows] > *{width:38px !important;height:38px !important;}
+    html[data-exp]:not(#z) section:has([data-rev-pill]) [data-peek-row]{gap:12px !important;margin-right:-24px;padding-right:24px;padding-bottom:6px !important;}
+    html[data-exp]:not(#z) section:has([data-rev-pill]) [data-peek-row] > *{flex:0 0 78% !important;padding:16px 18px !important;gap:8px !important;min-height:0 !important;}
+    html[data-exp]:not(#z) section:has([data-rev-pill]) [data-peek-row] > * > p{font-size:14.5px !important;line-height:1.45 !important;flex-grow:0 !important;}
+  }
+
+  /* Trait qui traînait en haut de l'écran : la bordure du menu restait visible quand le menu est transparent */
+  html[data-immersif]:not(#z):not(#y) [data-nav-top],html[data-flottant]:not(#z):not(#y) [data-nav-top],html[data-fusion]:not(#z):not(#y) [data-nav-top]{border-bottom-color:transparent !important;box-shadow:none !important;}
+  @media (max-width:720px){
+    /* Tongs : sous le bouton du menu, à côté du titre */
+    html[data-exp]:not(#z):not(#y) [data-bresil]::before{top:84px;right:58px;}
+    html[data-exp]:not(#z):not(#y) [data-bresil]::after{top:94px;right:18px;}
+  }
+
+  /* « Brésilien ? » : sous les photos sur téléphone, mais rapproché d'elles (retour de Kévin du 15/11) */
+  @media (max-width:720px){html[data-exp]:not(#z) [data-bresil] [data-bresil-note]{order:9 !important;margin:-26px 0 0 !important;position:relative;z-index:1;}}
+
+  /* Boutons principaux : même dessin partout (texte vert très foncé, graisse 800). Quatre rappels avaient le texte en vert moyen. */
+  html[data-exp]:not(#z):not(#y) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta],[style*="var(--principal)"]){color:var(--principal-texte) !important;font-weight:800 !important;}
+  html[data-exp]:not(#z):not(#y) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]) *{color:var(--principal-texte) !important;}
+
+  /* « Le Brésil, c'est… » : le sous-texte de chaque mot est retiré de l'affichage (les photos le disent déjà) ; il reste dans la page */
+  html[data-exp]:not(#z) [data-bresil] > [data-bresil-mots] + p{position:absolute !important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;}
+  html[data-exp]:not(#z) [data-bresil-mots]{margin-bottom:clamp(18px,2.4vw,30px) !important;}
+  /* Les tongs dansent : pas de passinho (baile funk). Quatre temps : pointe-talon qui pivote, pas croisé, petit saut, glissé. La seconde répond en miroir. */
+  html[data-exp]:not(#z):not(#y) [data-bresil]::before{animation:passinho-a 2.7s cubic-bezier(.3,.1,.3,1) infinite !important;transform-origin:50% 85%;}
+  html[data-exp]:not(#z):not(#y) [data-bresil]::after{animation:passinho-b 2.7s cubic-bezier(.3,.1,.3,1) infinite !important;transform-origin:50% 85%;}
+  @keyframes passinho-a{
+    0%{translate:0 0;rotate:-6deg}
+    10%{translate:-3px -5px;rotate:-34deg}
+    20%{translate:-6px 0;rotate:18deg}
+    30%{translate:-6px 0;rotate:-22deg}
+    45%{translate:9px -9px;rotate:26deg}
+    55%{translate:16px 0;rotate:-8deg}
+    65%{translate:16px 0;rotate:30deg}
+    78%{translate:6px -7px;rotate:-28deg}
+    90%{translate:0 0;rotate:12deg}
+    100%{translate:0 0;rotate:-6deg}}
+  @keyframes passinho-b{
+    0%{translate:0 0;rotate:10deg}
+    12%{translate:0 0;rotate:38deg}
+    22%{translate:4px -6px;rotate:-16deg}
+    32%{translate:7px 0;rotate:24deg}
+    45%{translate:7px 0;rotate:-30deg}
+    57%{translate:-12px -9px;rotate:14deg}
+    67%{translate:-18px 0;rotate:-26deg}
+    80%{translate:-18px 0;rotate:22deg}
+    92%{translate:-5px -6px;rotate:-10deg}
+    100%{translate:0 0;rotate:10deg}}
+
+  /* ═══ En-têtes mobiles à la manière d'outsite.co (Kévin, 15/11) ═══
+     La vidéo d'abord, sur un peu plus de la moitié de l'écran, sans texte dessus sauf la marque ; le titre et le reste juste dessous. */
+  @media (max-width:720px){
+    html[data-exp]:not(#z):not(#y) :is([data-home-hero],[data-camp-hero],[data-who-hero]) > :is(video,img){order:1 !important;height:min(58svh,150vw) !important;aspect-ratio:auto !important;max-height:none !important;}
+    html[data-exp]:not(#z):not(#y) :is([data-home-hero],[data-who-hero]) > div:not([style*="linear-gradient"]):not([style*="monospace"]){order:2 !important;padding-top:20px !important;}
+    html[data-exp]:not(#z):not(#y) main > [data-camp-hero] > :is(video,img){order:1 !important;}
+    html[data-exp]:not(#z):not(#y) main > [data-camp-hero] > div:not([style*="linear-gradient"]):not([style*="monospace"]){order:2 !important;padding-top:20px !important;}
+    html[data-exp]:not(#z):not(#y) main:has(> [data-camp-hero]) > #camp-tabbar{order:3 !important;}
+    /* La marque « SURF INN » reste sur la vidéo, en bas à gauche */
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body]{position:relative !important;}
+    html[data-exp]:not(#z):not(#y) [data-marque-geante]{position:absolute !important;left:22px;bottom:100%;margin:0 0 12px !important;text-shadow:0 4px 26px rgba(4,36,43,.45) !important;pointer-events:none;}
+  }
+
+  /* ═══ « Le Brésil, c'est… » : les photos tout de suite sous le titre, pour lire la phrase d'un trait ;
+     les quatre mots passent dessous, en pastilles de navigation (Kévin, 15/11) ═══ */
+  html[data-exp]:not(#z):not(#y) [data-bresil]{display:flex !important;flex-direction:column;}
+  html[data-exp]:not(#z):not(#y) [data-bresil] > h2{order:1;margin-bottom:clamp(6px,1vw,14px) !important;}
+  html[data-exp]:not(#z):not(#y) [data-bresil] > [data-hscroll]{order:2;padding-bottom:22px !important;}
+  html[data-exp]:not(#z):not(#y) [data-bresil] > [data-bresil-mots]{order:3;margin:0 0 14px !important;}
+  html[data-exp]:not(#z):not(#y) [data-bresil] > [data-bresil-note]{order:4 !important;margin:0 !important;}
+  /* Accueil, cartes des deux camps : puces un rien plus petites sur téléphone pour que les lignes courtes tiennent sur une ligne */
+  @media (max-width:720px){html[data-exp]:not(#z) section:has(> div > [data-camp-photo]) li,html[data-exp]:not(#z) section:has([data-camp-photo]) li{font-size:15.5px !important;gap:8px !important;}}
+
+  /* ═══ Premier écran mobile, deuxième version (Kévin, 15/11) ═══
+     Le premier écran ne montre que : la vidéo, presque entière (elle prend tout sauf 230 px), la marque, le titre, la phrase,
+     et le bouton flottant « Créer mon séjour ». Le formulaire et le reste n'apparaissent qu'au défilement. */
+  @media (max-width:720px){
+    html[data-exp]:not(#z):not(#y) :is([data-home-hero],[data-camp-hero]) > :is(video,img),html[data-exp]:not(#z):not(#y) main > [data-camp-hero] > :is(video,img){height:min(150vw,calc(100svh - 230px)) !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero] > div:not([style*="linear-gradient"]):not([style*="monospace"]),html[data-exp]:not(#z):not(#y) main > [data-camp-hero] > div:not([style*="linear-gradient"]):not([style*="monospace"]){padding-top:16px !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero] h1{margin-bottom:8px !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero] h1 + p{margin-bottom:104px !important;}
+    html[data-exp]:not(#z):not(#y) [data-camp-hero] h1{margin-bottom:6px !important;}
+    html[data-exp]:not(#z):not(#y) [data-camp-hero] h1 + p{margin-bottom:112px !important;}
+  }
+  @media (max-width:720px){
+    /* Pages camp : l'en-tête redevient un bloc (les onglets le suivent naturellement), le menu reste transparent sur la vidéo */
+    html[data-exp]:not(#z):not(#y) main > [data-camp-hero]{display:flex !important;order:1 !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero] > video{height:min(150vw,calc(100svh - 252px)) !important;}
+    html[data-exp]:not(#z):not(#y) main > [data-camp-hero] > :is(video,img){height:min(150vw,calc(100svh - 216px)) !important;}
+  }
+
+  /* 15/11 (soir) : les mots du Brésil reprennent leur dessin d'origine (grands, au trait, celui en cours en jaune souligné), sous les photos ;
+     « Envie de venir ? » revient sur fond vert. */
+  @media (max-width:720px){
+    /* Pages camp : la vidéo monte sous le menu transparent */
+    html[data-exp]:not(#z):not(#y) main > [data-camp-hero]{padding-top:0 !important;}
+  }
+
+  /* ═══ Premier écran mobile, version « capsule » (Kévin, 16/11) ═══
+     Vidéo, marque, titre, puis une capsule à deux champs (Destination, Dates) et le bouton « Créer mon séjour » ancré dessous.
+     La description vient sous le bouton, en deux temps : la phrase d'accroche, puis la phrase descriptive. « Voyageurs » est demandé dans le parcours. */
+  @media (max-width:720px){
+    html[data-exp]:not(#z):not(#y) [data-home-hero] > video{height:min(150vw,calc(100svh - 236px)) !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body]{display:flex !important;flex-direction:column;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] > h1{order:1;margin-bottom:14px !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] > div:has(> [data-hero-champ]){order:2;display:flex !important;flex-wrap:wrap !important;gap:0 !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] > h1 + p{order:3;margin:22px 0 0 !important;display:flex;flex-direction:column;gap:6px;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] > div:last-child{display:none !important;}
+    html[data-exp]:not(#z):not(#y) [data-desc-br]{display:none;}
+    html[data-exp]:not(#z):not(#y) [data-desc-b]{order:1;font-family:var(--f-carte) !important;font-style:italic;font-size:20px !important;line-height:1.25 !important;color:var(--soleil) !important;}
+    html[data-exp]:not(#z):not(#y) [data-desc-a]{order:2;font-size:15.5px !important;line-height:1.45 !important;color:rgba(247,244,234,.84) !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] div[data-hero-champ]{display:none !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] label[data-hero-champ]{flex:1 1 0 !important;min-width:0 !important;padding:10px 12px 10px 20px !important;overflow:hidden;border-radius:999px 0 0 999px !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] label[data-hero-champ]:nth-of-type(2){border-radius:0 999px 999px 0 !important;border-left:1px solid rgba(12,59,50,.16) !important;padding-left:16px !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] [data-hero-champ] > span:first-child{font-size:10px !important;letter-spacing:.06em !important;color:var(--encre-douce) !important;white-space:nowrap;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] [data-hero-champ] svg{right:14px !important;bottom:15px !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] > div:has(> [data-hero-champ]) > [data-primary-cta]{display:block !important;flex:1 1 100% !important;margin-top:10px !important;border-radius:999px !important;padding:15px !important;text-align:center;font-size:16px !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero] > div:not([style*="linear-gradient"]):not([style*="monospace"]){padding-bottom:30px !important;}
+    html[data-exp]:not(#z):not(#y) [data-camp-hero] h1 + p{margin-bottom:12px !important;}
+    /* Bulle WhatsApp : pas sur le premier écran de l'accueil, où elle chevauchait le bouton */
+    html[data-exp][data-immersif]:not(#z):not(#y) [data-wa-bubble]{opacity:0 !important;pointer-events:none !important;}
+  }
+  /* Module de l'en-tête : champs en blanc, flèche dans la couleur d'accent (elle restait bleue) */
+  html[data-exp]:not(#z):not(#y) [data-hero-champ]{background:#FFFFFF !important;}
+  html[data-exp]:not(#z):not(#y) [data-hero-champ] svg path{stroke:var(--accent) !important;}
+
+  /* ═══ Retours du 16/11 ═══ */
+  /* Bandes à faire glisser : elles ne bougent plus de haut en bas (elles avaient 8 px de jeu vertical) */
+  html[data-exp]:not(#z) :is([data-hscroll],[data-peek-row],[data-saisons],[data-pack-row]){overflow-y:hidden !important;overscroll-behavior-x:contain;}
+  @media (max-width:720px){
+    /* Module de l'en-tête : largeurs des trois champs */
+    /* Rio, « Votre séjour » : les puces ne sont plus affichées sur téléphone, la section tient sur un écran */
+    html[data-exp]:not(#z) [data-house="rio"] [data-puces-sejour]{display:none !important;}
+    /* Emplacement : textes repliés, à dérouler */
+    html[data-exp]:not(#z) [data-emplacement]{gap:0 !important;}
+    html[data-exp]:not(#z) [data-emplacement] > [data-pli]{border-bottom:1px solid rgba(12,59,50,.16);padding:14px 0 !important;cursor:pointer;align-items:center !important;position:relative;}
+    html[data-exp]:not(#z) [data-emplacement] > [data-pli] h3{margin:0 !important;padding-right:34px;}
+    html[data-exp]:not(#z) [data-emplacement] > [data-pli] h3::after{content:"";position:absolute;right:6px;top:26px;width:9px;height:9px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);rotate:45deg;transition:rotate .25s ease;}
+    html[data-exp]:not(#z) [data-emplacement] > [data-pli="1"] h3::after{rotate:-135deg;top:31px;}
+    html[data-exp]:not(#z) [data-emplacement] > [data-pli="0"] p{display:none !important;}
+    html[data-exp]:not(#z) [data-emplacement] > [data-pli="1"]{align-items:flex-start !important;}
+    html[data-exp]:not(#z) [data-emplacement] > [data-pli="1"] p{margin-top:8px !important;}
+  }
+  @media (max-width:720px){
+    html[data-exp]:not(#z) [data-carte-apercu]{min-height:0 !important;height:230px !important;}
+    html[data-exp]:not(#z) div:has(> [data-carte-apercu]){height:auto !important;min-height:0 !important;}
+  }
+
+  /* Puces des cartes camp de l'accueil : texte complet sur ordinateur, version courte sur téléphone (Kévin, 16/11) */
+  [data-court]{display:none;}
+  @media (max-width:720px){[data-long]{display:none !important;}[data-court]{display:inline !important;}}
+
+  /* iPhone : Safari zoome sur un champ dont le texte fait moins de 16 px. Tous les champs passent à 16 px sur téléphone ;
+     ceux du module de l'en-tête restent visuellement petits (16 px réduits à 80 %). */
+  @media (max-width:720px){
+    html:not(#z) :is(input,select,textarea){font-size:16px !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] [data-hero-champ] input{font-size:16px !important;transform:scale(.9);transform-origin:left center;width:111% !important;max-width:none !important;height:22px;line-height:22px;padding-right:0 !important;margin-right:-11%;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] [data-hero-champ]{overflow:hidden;}
+  }
+  @media (max-width:720px){
+    /* Capsule : le champ des dates est un peu plus large et son texte un peu plus petit, pour afficher « 10 déc. → 17 déc. 2026 » en entier */
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] label[data-hero-champ]:first-of-type{flex:.82 1 0 !important;padding-left:18px !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] label[data-hero-champ]:nth-of-type(2){flex:1.18 1 0 !important;padding-left:14px !important;padding-right:10px !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] label[data-hero-champ]:nth-of-type(2) input{transform:scale(.8) !important;width:125% !important;margin-right:-25% !important;}
+  }
+
+  /* 16/11 : galerie « La vie avec Surf Inn » retirée de l'accueil ; moins d'espace sous la ligne « Brésilien ? » */
+  html[data-exp]:not(#z) section:has(> div > [data-vrai]){display:none !important;}
+  @media (max-width:720px){html[data-exp]:not(#z):not(#y) [data-bresil]{padding-bottom:26px !important;}}
+
+  /* 16/11 : galerie « Le quotidien » des pages camp retirée (doublon avec le module Instagram, qui en reprend le titre) */
+  html[data-exp]:not(#z) section:has(> div > [data-quotidien]){display:none !important;}
+
+  /* Menu « Destination » sur téléphone : toujours au centre de l'écran, sur un voile, comme le calendrier */
+  @media (max-width:720px){
+    html:not(#z) [data-dm-pop]{top:50% !important;left:50% !important;transform:translate(-50%,-50%);width:min(340px,calc(100vw - 32px)) !important;}
+    html:not(#z) :has(+ [data-dm-pop])[style*="position: fixed"][style*="inset: 0px"]{background:rgba(12,59,50,.45) !important;}
+  }
+  @media (max-width:720px){
+    /* Capsule : pas de flèche dans « Destination » sur téléphone, elle recouvrait le texte */
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] label[data-hero-champ]:first-of-type svg{display:none !important;}
+  }
+
+  /* Voyageurs dans la fenêtre des dates : sur téléphone, hors du tunnel (qui a son propre champ) */
+  [data-dp-voyageurs]{display:none;}
+  @media (max-width:720px){
+    html:not(:has([data-screen-label="Request to book, funnel"])) [data-dp-voyageurs]{display:flex;}
+    html[data-exp]:not(#z) [data-dp-voyageurs] [data-step-btn]{background:#E3EEE5 !important;color:var(--encre) !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] label[data-hero-champ]:nth-of-type(2) input{transform:scale(.78) !important;width:128% !important;margin-right:-28% !important;}
+  }
+  @media (max-width:720px){
+    /* Calendrier : un peu plus large sur téléphone, et le résumé peut passer à la ligne (le bouton « Valider » était rogné) */
+    html:not(#z) [data-dp-pop]{width:min(348px,calc(100vw - 24px)) !important;}
+    html:not(#z) [data-dp-pop] > div:last-child{flex-wrap:wrap;gap:8px 12px !important;}
+    html:not(#z) [data-dp-pop] > div:last-child > span:first-child{font-size:12.5px !important;}
+    html:not(#z) [data-dp-pop] > div:last-child > div{margin-left:auto;}
+  }
+  @media (max-width:720px){html:not(#z) [data-dp-voyageurs] > div{gap:8px !important;}html:not(#z):not(#y) [data-dp-voyageurs] [data-step-btn]{width:38px !important;height:38px !important;min-width:0 !important;min-height:0 !important;padding:0 !important;margin:0 !important;}}
+  @media (max-width:720px){
+    /* Capsule : même taille de texte dans « Destination » et « Dates » (16 px réduits à 82 %) */
+    html[data-exp]:not(#z):not(#y):not(#x) [data-home-hero-body] label[data-hero-champ] input{transform:scale(.82) !important;width:122% !important;margin-right:-22% !important;}
+    html[data-exp]:not(#z):not(#y):not(#x) [data-home-hero-body] label[data-hero-champ]:first-of-type{flex:.8 1 0 !important;padding-left:18px !important;padding-right:6px !important;}
+    html[data-exp]:not(#z):not(#y):not(#x) [data-home-hero-body] label[data-hero-champ]:nth-of-type(2){flex:1.2 1 0 !important;padding-left:14px !important;padding-right:6px !important;}
+    /* Phrase d'accroche : la police de la marque (celle de « SURF INN »), et non plus une serif italique */
+    html[data-exp]:not(#z):not(#y):not(#x) [data-desc-b]{font-family:'Londrina Solid',sans-serif !important;font-style:normal !important;font-weight:900 !important;font-size:27px !important;line-height:1.02 !important;letter-spacing:.01em !important;text-transform:uppercase;color:var(--soleil) !important;}
+    html[data-exp]:not(#z):not(#y) [data-home-hero-body] > h1 + p{gap:10px !important;}
+  }
+
+  /* Menu mobile : une tong marque la page en cours (choix de Kévin, piste D) */
+  html[data-exp]:not(#z):not(#y) [data-nav-mobile] > a{position:relative;}
+  html[data-exp]:not(#z):not(#y) [data-nav-mobile] > a[data-on="1"]{padding-left:.95em !important;}
+  html[data-exp]:not(#z):not(#y) [data-nav-mobile] > a[data-on="1"]::before{content:"";position:absolute;left:0;top:50%;width:.78em;height:.78em;margin-top:-.39em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' view%42ox='0 0 24 24'%3E%3Cg transform='rotate(24 12 12)'%3E%3Cpath d='M12 1.6c3.7 0 6.2 2.7 6.2 6.7 0 2.7-1 4.4-1.2 7-.2 2.700.6 6.400-5 6.400s-4.800-3.700-5-6.400c-.2-2.600-1.200-4.300-1.200-7 0-4 2.500-6.700 6.200-6.700z' fill='%23FFC531'/%3E%3Cpath d='M12 6.800 7.900 12.600M12 6.800l4.100 5.800' fill='none' stroke='%230E7A52' stroke-width='1.9' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='6.800' r='1.300' fill='%230E7A52'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;rotate:-8deg;animation:menu-tong .5s cubic-bezier(.3,1.5,.5,1) .25s both;}
+  @keyframes menu-tong{from{opacity:0;translate:-14px 0;rotate:-40deg}to{opacity:1;translate:0 0;rotate:-8deg}}
+  @media (prefers-reduced-motion:reduce){html[data-exp]:not(#z):not(#y) [data-nav-mobile] > a[data-on="1"]::before{animation:none;}}
+
+  /* Timbre des cartes postales : les planches sur le sable, l'image d'ouverture du site (choix de Kévin, piste E) */
+  html[data-exp]:not(#z):not(#y) [data-cartes-postales] > :is([data-genre="Surf"],[data-genre="Beach"],[data-genre="Nature"],[data-genre="Slow life"])::before{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' view%42ox='0 0 60 74'%3E%3Crect width='60' height='74' fill='%23FFFDF8'/%3E%3Crect x='1' y='1' width='58' height='72' fill='none' stroke='%23D9D2C2' stroke-width='2.6' stroke-dasharray='0.1 4.6' stroke-linecap='round'/%3E%3Csvg x='6' y='6' width='48' height='62' view%42ox='0 0 48 62' overflow='hidden'%3E%3Crect width='48' height='62' fill='%23E9D9B4'/%3E%3Cg transform='translate(7 30) rotate(-6)'%3E%3Cellipse rx='3.6' ry='19' fill='%231E6FB0'/%3E%3Cpath d='M0 -17V17' stroke='%23F7F4EA' stroke-width='.7' opacity='.7'/%3E%3Cellipse cx='4' cy='5' rx='3.6' ry='19' fill='%23000' opacity='.12'/%3E%3C/g%3E%3Cg transform='translate(16 35) rotate(4)'%3E%3Cellipse rx='3.6' ry='19' fill='%23F2542D'/%3E%3Cpath d='M0 -17V17' stroke='%23F7F4EA' stroke-width='.7' opacity='.7'/%3E%3Cellipse cx='4' cy='5' rx='3.6' ry='19' fill='%23000' opacity='.12'/%3E%3C/g%3E%3Cg transform='translate(25 30) rotate(-3)'%3E%3Cellipse rx='3.6' ry='19' fill='%23128064'/%3E%3Cpath d='M0 -17V17' stroke='%23F7F4EA' stroke-width='.7' opacity='.7'/%3E%3Cellipse cx='4' cy='5' rx='3.6' ry='19' fill='%23000' opacity='.12'/%3E%3C/g%3E%3Cg transform='translate(34 35) rotate(6)'%3E%3Cellipse rx='3.6' ry='19' fill='%23FFC531'/%3E%3Cpath d='M0 -17V17' stroke='%23F7F4EA' stroke-width='.7' opacity='.7'/%3E%3Cellipse cx='4' cy='5' rx='3.6' ry='19' fill='%23000' opacity='.12'/%3E%3C/g%3E%3Cg transform='translate(42 30) rotate(-4)'%3E%3Cellipse rx='3.6' ry='19' fill='%237A4FA0'/%3E%3Cpath d='M0 -17V17' stroke='%23F7F4EA' stroke-width='.7' opacity='.7'/%3E%3Cellipse cx='4' cy='5' rx='3.6' ry='19' fill='%23000' opacity='.12'/%3E%3C/g%3E%3C/svg%3E%3C/svg%3E") !important;width:54px !important;height:67px !important;top:14px !important;right:14px !important;rotate:5deg;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3)) !important;}
+  html[data-exp]:not(#z):not(#y) [data-cartes-postales] > :is([data-genre="Surf"],[data-genre="Beach"],[data-genre="Nature"],[data-genre="Slow life"]):nth-child(even)::before{rotate:-4deg;}
+  html[data-exp]:not(#z):not(#y) [data-cartes-postales] > :is([data-genre="Surf"],[data-genre="Beach"],[data-genre="Nature"],[data-genre="Slow life"])::after{top:26px !important;right:52px !important;width:66px !important;height:28px !important;opacity:.55 !important;}
+  /* Phrase d'accroche de l'accueil : écriture au feutre, placée sous le texte descriptif (choix de Kévin, piste 5) */
+  @media (max-width:720px){html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-desc-b]{font-family:'Permanent Marker','Londrina Solid',cursive !important;font-weight:400 !important;font-style:normal !important;text-transform:none !important;font-size:24px !important;line-height:1.12 !important;letter-spacing:0 !important;rotate:-1.5deg;order:3 !important;margin-top:12px !important;transform-origin:left center;color:var(--soleil) !important;}}
+  /* Capsule de l'accueil : libellés et valeurs un peu plus gros (retour de Kévin du 14/11/2026) */
+  @media (max-width:720px){
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-home-hero-body] [data-hero-champ] > span:first-child{font-size:12px !important;letter-spacing:.05em !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-home-hero-body] label[data-hero-champ] input{transform:scale(.9) !important;width:111% !important;margin-right:-11% !important;}
+  }
+  @media (max-width:375px){html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-home-hero-body] label[data-hero-champ] input{transform:scale(.84) !important;width:119% !important;margin-right:-19% !important;}}
+  /* ═══ Retours de Kévin du 14/11/2026 (soir) ═══ */
+  /* Textes d'introduction des camps : version courte sur téléphone, texte complet sur ordinateur */
+  html[data-exp] [data-txt-court]{display:none;}
+  @media (max-width:720px){
+    html[data-exp] [data-house="rio"] p:has(> [data-txt-court="rio"]) > [data-txt-long],html[data-exp] [data-house="itacare"] p:has(> [data-txt-court="itacare"]) > [data-txt-long]{display:none;}
+    html[data-exp] [data-house="rio"] [data-txt-court="rio"],html[data-exp] [data-house="itacare"] [data-txt-court="itacare"]{display:inline;}
+    /* Aperçu, « Le camp » : plus de puces sur téléphone, pour Itacaré comme pour Rio */
+    html[data-exp]:not(#z) [data-puces-sejour]{display:none !important;}
+    /* Un bouton reste sur une seule ligne */
+    html[data-exp]:not(#z) :is([data-primary-cta],[data-vers-onglet]){white-space:nowrap !important;max-width:100%;}
+  }
+  /* Bas de l'accueil : accès direct aux deux camps, sous « Créer mon séjour » */
+  html[data-exp] [data-vers-camps]{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:18px;}
+  html[data-exp] [data-vers-camps] > span{cursor:pointer;border:1.5px solid rgba(247,244,234,.75);color:var(--ecume);background:rgba(12,59,50,.28);border-radius:999px;padding:11px 20px;font-weight:700;font-size:16px;line-height:1.2;white-space:nowrap;transition:background .2s,color .2s;}
+  html[data-exp] [data-vers-camps] > span:hover,html[data-exp] [data-vers-camps] > span:focus-visible{background:var(--ecume);color:var(--encre);}
+  @media (max-width:375px){html[data-exp]:not(#z):not(#y) [data-vers-onglet]{padding-left:22px !important;padding-right:22px !important;}}
+  /* ═══ En-tête des pages camp sur téléphone : piste A retenue par Kévin (14/11/2026). Comme l'accueil : le nom du camp sur la vidéo,
+     puis le bloc vert avec le titre, les dates, le bouton et la phrase du camp au feutre ; les onglets restent dans le premier écran. ═══ */
+  html[data-exp] :is([data-marque-camp],[data-camp-dates],[data-barre-dates],[data-barre-fond]){display:none !important;}
+  @media (max-width:720px){
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) main > [data-camp-hero]{--vh-camp:min(150vw,calc(100svh - 384px));}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-house="itacare"] main > [data-camp-hero]{--vh-camp:min(150vw,calc(100svh - 408px));}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) main > [data-camp-hero] > :is(video,img){height:var(--vh-camp) !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) main > [data-camp-hero] > [data-marque-camp]{display:block !important;position:absolute !important;order:0 !important;left:0;right:0;top:calc(var(--vh-camp) - 66px);margin:0 !important;padding:0 22px !important;width:auto !important;box-sizing:border-box;background:transparent !important;font-family:'Londrina Solid',sans-serif;font-weight:900;font-size:clamp(46px,14.6vw,58px);line-height:.86;text-transform:uppercase;color:#fff;white-space:nowrap;z-index:3;pointer-events:none;text-shadow:0 2px 16px rgba(0,0,0,.3);}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) main > [data-camp-hero] > [data-marque-camp]::before{content:'';position:absolute;z-index:-1;left:0;right:0;top:-80px;bottom:-16px;background:linear-gradient(180deg,rgba(6,40,34,0) 0%,rgba(6,40,34,.55) 100%);}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-house="itacare"] [data-marque-camp]{font-size:clamp(40px,12.6vw,50px) !important;}
+    html[data-exp] [data-marque-camp] b{font-weight:900;color:var(--soleil);display:none;}
+    html[data-exp] [data-house="rio"] [data-marque-camp] b[data-camp="rio"],html[data-exp] [data-house="itacare"] [data-marque-camp] b[data-camp="itacare"]{display:inline;}
+    html[data-exp] [data-house="itacare"] [data-marque-camp] b{color:#F5A25A;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) main > [data-camp-hero] > [data-camp-encart]{order:2 !important;display:flex !important;flex-direction:column;gap:12px;padding:16px 22px 20px !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-camp-encart] > p:first-child,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-camp-encart] > [data-hero-tagline] + p{display:none !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-camp-encart] h1{order:1;font-size:24px !important;line-height:1.14 !important;margin:0 !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-camp-encart] > div:last-child{order:2;display:flex !important;flex-direction:column !important;align-items:stretch !important;gap:10px !important;margin:0 !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-camp-encart] [data-hero-tagline]{order:3;font-family:'Permanent Marker','Londrina Solid',cursive !important;font-weight:400 !important;font-size:21px !important;line-height:1.12 !important;letter-spacing:0 !important;rotate:-1.5deg;transform-origin:left center;margin:4px 0 0 !important;color:var(--soleil) !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-camp-encart] [data-hero-tagline] *{color:inherit !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-house="itacare"] [data-camp-encart] [data-hero-tagline]{color:#F5A25A !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) :is([data-camp-dates],[data-barre-dates]){display:flex !important;flex:0 0 auto !important;min-width:0 !important;width:100%;box-sizing:border-box !important;background:#FFFFFF !important;border-radius:999px !important;padding:8px 22px !important;gap:0 !important;box-shadow:none !important;overflow:hidden;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) :is([data-camp-dates],[data-barre-dates]) > span:first-child{font-size:12px !important;letter-spacing:.05em !important;color:var(--encre-douce,#3F5F56) !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) :is([data-camp-dates],[data-barre-dates]) input{font-size:16px !important;transform:scale(.9);transform-origin:left center;width:111% !important;max-width:none !important;height:22px;line-height:22px;color:var(--encre) !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-camp-encart] [data-primary-cta]{display:block !important;width:100% !important;box-sizing:border-box !important;text-align:center;padding:15px !important;margin:0 !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-camp-encart] > div:last-child > div{gap:0 !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-camp-encart] > div:last-child > div > span{font-size:14px !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-camp-encart] > div:last-child > div > span:last-child{display:none !important;}
+  }
+  /* Pages camp, au défilement : la barre du bas propose les dates et « Créer mon séjour » (à la place du seul bouton flottant) */
+  @media (max-width:780px){
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-page-root]:is([data-house="rio"],[data-house="itacare"]) [data-barre-fond]{display:block !important;position:fixed;left:0;right:0;bottom:0;height:calc(74px + env(safe-area-inset-bottom));z-index:59;background:rgba(247,244,234,.97);box-shadow:0 -6px 20px rgba(6,40,34,.14);}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-page-root]:is([data-house="rio"],[data-house="itacare"]) [data-barre-dates]{position:fixed;left:12px;box-shadow:inset 0 0 0 1.5px rgba(12,59,50,.18) !important;bottom:calc(11px + env(safe-area-inset-bottom));width:calc(46% - 17px) !important;height:52px;z-index:61;padding:5px 18px !important;justify-content:center;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-page-root]:is([data-house="rio"],[data-house="itacare"]) [data-barre-dates] input{transform:scale(.82);width:122% !important;}
+    html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-page-root]:is([data-house="rio"],[data-house="itacare"]) [data-mobile-cta]{left:auto !important;right:12px !important;bottom:calc(11px + env(safe-area-inset-bottom)) !important;width:calc(54% - 17px) !important;height:52px;box-sizing:border-box;padding:0 8px !important;border-radius:999px !important;font-size:16px !important;white-space:nowrap;}
+    html[data-exp]:has([data-page-root]:is([data-house="rio"],[data-house="itacare"]) [data-barre-fond]) [data-wa-bubble]{bottom:calc(86px + env(safe-area-inset-bottom)) !important;}
+  }
+
+/* Retours d'Alexis du 14/11/2026 : sur iPhone, le pied de page du site apparaissait sous la barre du bas du parcours
+   (la barre d'outils translucide de Safari laisse voir ce qui dépasse). Le fond du parcours est prolongé vers le bas. */
+@media (max-width:780px){
+  html[data-exp]:not(#z) [data-screen-label="Request to book, funnel"]{box-shadow:0 50vh 0 0 #FFFBF3;}
+}
+
+/* Retour de Kévin du 16/11/2026 : sous le bouton de l'accueil, la note Google et la phrase « quelqu'un de l'équipe »
+   reviennent. La vidéo cède la hauteur de ces deux lignes. */
+@media (max-width:720px){
+  html[data-exp]:not(#z):not(#y):not(#x) [data-home-hero-body] > div:last-child{display:flex !important;order:2;margin-top:12px !important;gap:2px 14px !important;justify-content:center !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-home-hero-body] > div:last-child > span{font-size:14px !important;line-height:1.4 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-home-hero-body] > div:last-child > span:last-child{flex:1 1 100%;font-weight:400 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-home-hero] > video{height:min(150vw,calc(100svh - 308px)) !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-home-hero-body] > div:last-child > span:nth-child(2){display:none !important;}
+}
+
+/* Retours de Kévin du 16/11/2026 : le concept tient en un écran (quatre cartes sur deux colonnes, pastilles gardées),
+   la photo de « Pour qui » est plus basse. */
+@media (max-width:720px){
+  html[data-exp]:not(#z):not(#y):not(#x) [data-verbes]{display:grid !important;grid-template-columns:1fr 1fr !important;gap:10px !important;align-items:stretch;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-verbes] > *{position:static !important;top:auto !important;margin:0 !important;border-radius:16px !important;box-shadow:0 4px 14px rgba(6,50,59,.08) !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-verbes] > * > div:first-child{aspect-ratio:1 / 1 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-verbes] > * > div:first-child > span[aria-hidden]{width:28px !important;height:28px !important;top:8px !important;right:8px !important;font-size:18px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-verbes] > * > div:last-child{padding:10px 10px 12px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-verbes] h3{font-size:18px !important;line-height:1.1 !important;margin:0 0 8px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-verbes] > * > div:last-child > div{gap:5px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-verbes] > * > div:last-child > div > span{font-size:12px !important;line-height:1.2 !important;padding:4px 8px 4px 5px !important;gap:4px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-verbes] > * > div:last-child > div > span img{width:14px !important;height:14px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-pour-qui] [data-m-img]{min-height:0 !important;height:310px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-pour-qui] [data-m-img] img{object-position:50% 45% !important;}
+}
+
+/* Retours de Kévin du 16/11/2026 (suite) : le haut de l'écran de l'iPhone reste crème (essai en vert foncé abandonné).
+   Premier écran de l'accueil : sous le bouton, seule la note Google ; la phrase « quelqu'un de l'équipe » vient juste après,
+   sous le bas de l'écran (visible dès qu'on défile), avant la description. La vidéo prend toute la hauteur restante, quelle que soit la taille du téléphone, sans
+   espace ajouté entre la note Google et la phrase (essai abandonné : il créait un grand vide sur iPhone). */
+@media (max-width:720px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-home-hero-body] > div:last-child{display:contents !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-home-hero-body] > div:last-child > span{display:block !important;text-align:center;flex:0 0 auto !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-home-hero-body] > div:last-child > span:first-child{order:2;margin:12px 0 0 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-home-hero-body] > div:last-child > span:nth-child(2){display:none !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-home-hero-body] > div:last-child > span:last-child{order:2;margin:6px 0 0 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-home-hero] > video{height:calc(100svh - 262px) !important;}
+}
+
+/* Essai demandé par Kévin le 16/11/2026 : cartes du concept sans les pastilles (Surf, Futevôlei…) sur téléphone.
+   Pour les remettre, supprimer ce bloc. */
+@media (max-width:720px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-verbes] > * > div:last-child > div{display:none !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t) [data-verbes] h3{margin:0 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-verbes] > * > div:last-child{padding:12px 12px 13px !important;}
+}
+
+/* Demandes de Kévin du 16/11/2026 : la fenêtre des cartes du concept (Apprendre, Travailler…) occupe tout l'écran sans
+   défiler. Le texte garde ses interlignes d'origine. La photo a la même hauteur dans les quatre fenêtres, pour que le titre
+   et le texte soient toujours au même endroit ; les liens précédent / suivant restent en bas. Cette hauteur est tout ce
+   que laisse le texte le plus long (mesuré : 500 px sur un écran étroit, 490 à partir de 385 px, 465 à partir de 410 px). */
+@media (max-width:720px){
+  html[data-exp]:not(#z):not(#y):not(#x) [data-fenetre-concept]{padding:12px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-fenetre-concept] > div{height:calc(100dvh - 24px) !important;max-height:none !important;display:flex !important;flex-direction:column;border-radius:20px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-fenetre-concept] > div > div:nth-child(2){min-height:0 !important;height:max(120px,calc(100dvh - 24px - var(--txt-concept,531px)));flex:0 0 auto;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-fenetre-concept] > div > div:nth-child(3){flex:1 1 auto;display:flex;flex-direction:column;padding:24px 22px 22px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-fenetre-concept] > div > div:nth-child(3) > div:last-child{margin-top:auto !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-fenetre-concept] ul + div:empty{display:none !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-fenetre-concept] ul{margin-bottom:14px !important;}
+}
+@media (max-width:720px) and (max-height:760px){
+  html[data-exp]:not(#z):not(#y):not(#x) [data-fenetre-concept] > div > div:nth-child(3){padding:18px 20px 16px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-fenetre-concept] h3 + p{margin-bottom:14px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-fenetre-concept] ul{gap:8px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-fenetre-concept] > div > div:nth-child(3) > div:last-child{padding-top:12px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) [data-fenetre-concept] ul{margin-bottom:14px !important;}
+}
+
+/* Correction du 16/11/2026 : hors des pages camp, le champ « Dates » de la barre du bas ne doit pas exister. Il apparaissait
+   dans la page en même temps que le bouton flottant et la décalait de 52 px (saut pendant le défilement sur l'accueil). */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t) [data-page-root]:not([data-house="rio"]):not([data-house="itacare"]) :is([data-barre-dates],[data-barre-fond]){display:none !important;}
+/* La bulle WhatsApp ne recouvre pas la navigation de la fenêtre du concept. */
+html:has([data-fenetre-concept]) [data-wa-bubble]{display:none !important;}
+
+/* Fin de l'accueil : section « Choisissez votre camp » (16/11/2026), deux cartes photo vers Rio et Bahia. Toutes largeurs. */
+html[data-exp] [data-suite-camps]{background:var(--ecume);padding:clamp(44px,6vw,88px) clamp(22px,5vw,72px) clamp(48px,6vw,96px);}
+html[data-exp] [data-suite-camps] > div{max-width:1240px;margin:0 auto;}
+html[data-exp] [data-suite-camps] [data-suite-eyebrow]{font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--mer);margin:0 0 10px;}
+html[data-exp] [data-suite-camps] h2{font-family:var(--f-titre);font-weight:700;font-size:var(--t-section);line-height:1.08;color:var(--encre);margin:0 0 20px;}
+html[data-exp] [data-suite-grille]{display:grid;grid-template-columns:1fr 1fr;gap:clamp(10px,2vw,24px);}
+html[data-exp] [data-suite-carte]{position:relative;border-radius:16px;overflow:hidden;aspect-ratio:3 / 4;background:var(--encre);cursor:pointer;}
+html[data-exp] [data-suite-carte] > img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:scale .6s ease;}
+html[data-exp] [data-suite-carte]:hover > img{scale:1.04;}
+html[data-exp] [data-suite-voile]{position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,59,50,0) 35%,rgba(12,59,50,.86) 100%);}
+html[data-exp] [data-suite-texte]{position:absolute;left:12px;right:12px;bottom:12px;color:var(--ecume);}
+html[data-exp] [data-suite-carte] h3{font-family:var(--f-titre);font-weight:700;font-size:var(--t-carte);line-height:1.05;color:var(--ecume);margin:0;}
+html[data-exp] [data-suite-carte] p{font-size:12px;line-height:1.3;margin:4px 0 0;color:rgba(247,244,234,.9);}
+html[data-exp] [data-suite-lien]{display:inline-block;font-weight:700;font-size:14px;line-height:1;margin-top:10px;color:var(--soleil);}
+html[data-exp] [data-suite-carte]:focus-visible{outline:3px solid var(--soleil);outline-offset:3px;}
+@media (min-width:781px){
+  html[data-exp] [data-suite-carte]{aspect-ratio:16 / 9;border-radius:24px;}
+  html[data-exp] [data-suite-texte]{left:28px;right:28px;bottom:26px;}
+  html[data-exp] [data-suite-carte] p{font-size:16px;}
+  html[data-exp] [data-suite-lien]{font-size:16px;margin-top:14px;}
+}
+
+/* Demande de Kévin du 16/11/2026 : en bas des pages Rio et Itacaré, le module de réservation reprend celui du haut de page
+   (champ « Dates » en pilule blanche, bouton pleine largeur). La destination est déjà connue et les voyageurs se règlent
+   dans le parcours : ces deux champs ne sont plus affichés sur téléphone. */
+@media (max-width:780px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-appel] > div:last-child > div:first-of-type{flex-direction:column !important;flex-wrap:nowrap !important;gap:10px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-appel] > div:last-child > div:first-of-type > label:first-of-type,html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-appel] > div:last-child > div:first-of-type > div{display:none !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-appel] > div:last-child > div:first-of-type > label:nth-of-type(2){display:flex !important;flex:0 0 auto !important;min-width:0 !important;width:100%;box-sizing:border-box !important;background:#FFFFFF !important;border-radius:999px !important;padding:8px 22px !important;gap:0 !important;box-shadow:none !important;overflow:hidden;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-appel] > div:last-child > div:first-of-type > label:nth-of-type(2) > span:first-child{font-size:12px !important;letter-spacing:.05em !important;color:var(--encre-douce,#3F5F56) !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-appel] > div:last-child > div:first-of-type > label:nth-of-type(2) input{font-size:16px !important;transform:scale(.9);transform-origin:left center;width:111% !important;max-width:none !important;height:22px;line-height:22px;color:var(--encre) !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-appel] > div:last-child > div:first-of-type > [data-primary-cta]{display:block !important;flex:0 0 auto !important;width:100% !important;min-width:0 !important;min-height:0 !important;box-sizing:border-box !important;text-align:center;padding:15px !important;margin:0 !important;border-radius:999px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-appel] > div:last-child > div:last-of-type{gap:2px 14px !important;margin-top:14px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-appel] > div:last-child > div:last-of-type > span{font-size:14px !important;line-height:1.4 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-appel] > div:last-child > div:last-of-type > span:last-child{flex:1 1 100%;font-weight:400 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-appel] > div:last-child > p{margin-bottom:24px !important;}
+}
+
+/* Fenêtres du concept : hauteur du texte le plus long, mesurée à chaque largeur d'écran et dans chaque langue
+   (audit/retours/calib.mjs). La photo prend exactement le reste. Bloc généré : relancer la mesure si les textes changent. */
+@media (max-width:720px){ html[data-exp][lang|="en"] [data-fenetre-concept]{--txt-concept:484px;} }
+@media (min-width:392px) and (max-width:720px){ html[data-exp][lang|="en"] [data-fenetre-concept]{--txt-concept:470px;} }
+@media (min-width:401px) and (max-width:720px){ html[data-exp][lang|="en"] [data-fenetre-concept]{--txt-concept:457px;} }
+@media (min-width:411px) and (max-width:720px){ html[data-exp][lang|="en"] [data-fenetre-concept]{--txt-concept:433px;} }
+@media (min-width:432px) and (max-width:720px){ html[data-exp][lang|="en"] [data-fenetre-concept]{--txt-concept:430px;} }
+@media (max-width:720px){ html[data-exp][lang|="fr"] [data-fenetre-concept]{--txt-concept:531px;} }
+@media (min-width:378px) and (max-width:720px){ html[data-exp][lang|="fr"] [data-fenetre-concept]{--txt-concept:507px;} }
+@media (min-width:390px) and (max-width:720px){ html[data-exp][lang|="fr"] [data-fenetre-concept]{--txt-concept:481px;} }
+@media (min-width:402px) and (max-width:720px){ html[data-exp][lang|="fr"] [data-fenetre-concept]{--txt-concept:457px;} }
+@media (min-width:429px) and (max-width:720px){ html[data-exp][lang|="fr"] [data-fenetre-concept]{--txt-concept:431px;} }
+@media (min-width:446px) and (max-width:720px){ html[data-exp][lang|="fr"] [data-fenetre-concept]{--txt-concept:430px;} }
+@media (max-width:720px){ html[data-exp][lang|="pt"] [data-fenetre-concept]{--txt-concept:480px;} }
+@media (min-width:367px) and (max-width:720px){ html[data-exp][lang|="pt"] [data-fenetre-concept]{--txt-concept:470px;} }
+@media (min-width:409px) and (max-width:720px){ html[data-exp][lang|="pt"] [data-fenetre-concept]{--txt-concept:444px;} }
+@media (min-width:424px) and (max-width:720px){ html[data-exp][lang|="pt"] [data-fenetre-concept]{--txt-concept:433px;} }
+@media (min-width:434px) and (max-width:720px){ html[data-exp][lang|="pt"] [data-fenetre-concept]{--txt-concept:420px;} }
+@media (max-width:720px) and (max-height:760px){ html[data-exp][lang|="en"] [data-fenetre-concept]{--txt-concept:454px;} }
+@media (min-width:388px) and (max-width:720px) and (max-height:760px){ html[data-exp][lang|="en"] [data-fenetre-concept]{--txt-concept:437px;} }
+@media (min-width:397px) and (max-width:720px) and (max-height:760px){ html[data-exp][lang|="en"] [data-fenetre-concept]{--txt-concept:427px;} }
+@media (min-width:407px) and (max-width:720px) and (max-height:760px){ html[data-exp][lang|="en"] [data-fenetre-concept]{--txt-concept:403px;} }
+@media (min-width:428px) and (max-width:720px) and (max-height:760px){ html[data-exp][lang|="en"] [data-fenetre-concept]{--txt-concept:400px;} }
+@media (max-width:720px) and (max-height:760px){ html[data-exp][lang|="fr"] [data-fenetre-concept]{--txt-concept:501px;} }
+@media (min-width:374px) and (max-width:720px) and (max-height:760px){ html[data-exp][lang|="fr"] [data-fenetre-concept]{--txt-concept:477px;} }
+@media (min-width:386px) and (max-width:720px) and (max-height:760px){ html[data-exp][lang|="fr"] [data-fenetre-concept]{--txt-concept:451px;} }
+@media (min-width:398px) and (max-width:720px) and (max-height:760px){ html[data-exp][lang|="fr"] [data-fenetre-concept]{--txt-concept:427px;} }
+@media (min-width:425px) and (max-width:720px) and (max-height:760px){ html[data-exp][lang|="fr"] [data-fenetre-concept]{--txt-concept:401px;} }
+@media (min-width:442px) and (max-width:720px) and (max-height:760px){ html[data-exp][lang|="fr"] [data-fenetre-concept]{--txt-concept:400px;} }
+@media (max-width:720px) and (max-height:760px){ html[data-exp][lang|="pt"] [data-fenetre-concept]{--txt-concept:437px;} }
+@media (min-width:405px) and (max-width:720px) and (max-height:760px){ html[data-exp][lang|="pt"] [data-fenetre-concept]{--txt-concept:411px;} }
+@media (min-width:420px) and (max-width:720px) and (max-height:760px){ html[data-exp][lang|="pt"] [data-fenetre-concept]{--txt-concept:403px;} }
+@media (min-width:430px) and (max-width:720px) and (max-height:760px){ html[data-exp][lang|="pt"] [data-fenetre-concept]{--txt-concept:387px;} }
+
+/* Demande de Kévin du 17/11/2026 : au toucher, « Créer mon séjour » ne passe plus au vert et la petite tong n'apparaît plus.
+   Sur un écran tactile, l'effet de survol restait collé après le passage du doigt. Le survol à la souris est inchangé. */
+@media (hover:none){
+  html[data-exp]:not(#z):not(#y):not(#x) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover{background:var(--principal) !important;color:var(--principal-texte) !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover *{color:var(--principal-texte) !important;}
+  html[data-exp]:not(#z):not(#y):not(#x) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover::after{width:0 !important;margin-left:0 !important;}
+  /* Même chose pour « Continuer » et les autres boutons jaunes du parcours de réservation. */
+  html[data-exp]:not(#z):not(#y):not(#x) [style*="var(--principal)"]:hover{background:var(--principal) !important;}
+}
+
+/* Demande de Kévin du 17/11/2026 : « Le Brésil, c'est… » prend moins de place sur téléphone. Titre sur une ligne,
+   marges resserrées, cartes un peu plus basses, les quatre mots sur une ligne. */
+@media (max-width:720px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-bresil]{padding-top:34px !important;padding-bottom:22px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-bresil] > h2{font-size:var(--t-page) !important;line-height:1.05 !important;white-space:nowrap;padding-right:96px !important;margin-bottom:14px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-bresil]::before{top:28px !important;right:58px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-bresil]::after{top:36px !important;right:18px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-bresil] [data-hscroll] > *{height:220px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-bresil-mots]{flex-wrap:wrap !important;gap:4px 12px !important;margin:14px 0 18px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u) [data-bresil-mots] > span{font-size:clamp(19px,5.6vw,24px) !important;-webkit-text-stroke-width:1px;white-space:nowrap;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w) [data-bresil] [data-bresil-note]{margin:0 !important;}
+}
+
+/* Retours de Meriem (17/11/2026) : note sous le prix des packages, ligne sous le titre de l'étape Options. Toutes largeurs. */
+html[data-exp] [data-prix-note]{display:block;font-family:var(--f-texte,'Chivo',sans-serif);font-weight:400;font-size:12px;line-height:1.3;color:var(--encre-douce,#3F5F56);margin-top:-6px;}
+html[data-exp] [data-options-note]{font-size:16px;line-height:1.45;color:var(--encre-douce,#3F5F56);margin:0 0 18px;}
+
+/* ═══ Retours de Kévin sur ordinateur (17/11/2026) ═══ */
+/* Menu des langues : texte toujours foncé sur son fond clair, même quand le menu du haut est blanc sur la vidéo. */
+html[data-exp] [data-menu-langues],html[data-exp] [data-menu-langues] span{color:var(--encre) !important;text-shadow:none !important;}
+/* Calendrier : « Effacer » et « Valider » passent à la ligne plutôt que de sortir du cadre. */
+html[data-exp] [data-dp-pied]{flex-wrap:wrap !important;row-gap:8px !important;}
+html[data-exp] [data-dp-pied] > span:first-child{white-space:normal !important;}
+html[data-exp] [data-dp-pied] > div{margin-left:auto;}
+@media (min-width:721px){
+  /* « SURF INN » sur la vidéo de l'accueil : toujours grand, mais il ne recouvre plus le titre ni la moitié de l'image. */
+  html[data-exp]:not(#z):not(#y) [data-home-hero-body] > [data-marque-geante]{font-size:clamp(84px,13vw,200px) !important;margin-bottom:clamp(8px,1.2vw,16px) !important;}
+  /* Tongs de « Le Brésil, c'est… » (demande de Kévin du 17/11/2026) : accrochées au titre, juste après les points de suspension, pour que le mouvement ramène l'œil vers le texte. */
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t) [data-bresil]::before,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t) [data-bresil]::after{display:none !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t) [data-bresil] > h2{position:relative;align-self:flex-start;width:fit-content;max-width:none !important;padding-right:0 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t) [data-bresil] > h2::before,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t) [data-bresil] > h2::after{content:"";position:absolute;display:block;width:.62em;aspect-ratio:1;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' view%42ox='0 0 24 24'%3E%3Cg transform='rotate(24 12 12)'%3E%3Cpath d='M12 1.6c3.7 0 6.2 2.7 6.2 6.7 0 2.7-1 4.4-1.2 7-.2 2.700.6 6.400-5 6.400s-4.800-3.700-5-6.400c-.2-2.600-1.200-4.300-1.200-7 0-4 2.500-6.700 6.200-6.700z' fill='%23FFC531'/%3E%3Cpath d='M12 6.800 7.900 12.600M12 6.800l4.100 5.800' fill='none' stroke='%230E7A52' stroke-width='1.9' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='6.800' r='1.300' fill='%230E7A52'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;transform-origin:50% 85%;pointer-events:none;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t) [data-bresil] > h2::before{left:calc(100% + .55em);top:.04em;animation:passinho-a 2.7s cubic-bezier(.3,.1,.3,1) infinite;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t) [data-bresil] > h2::after{left:calc(100% + 1.13em);top:.22em;animation:passinho-b 2.7s cubic-bezier(.3,.1,.3,1) infinite;}
+}
+
+/* Pages Rio et Itacaré sur ordinateur (17/11/2026) : comme sur téléphone, le nom « SURF INN RIO » / « SURF INN BAHIA » en grand
+   sur la vidéo, avec la couleur du camp. La petite étiquette au-dessus du titre, qui disait la même chose, est masquée. */
+@media (min-width:721px){
+  html[data-exp]:not(#z):not(#y) main > [data-camp-hero]{flex-direction:column !important;justify-content:flex-end !important;align-items:flex-start !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t) main > [data-camp-hero] > [data-marque-camp]{display:block !important;position:relative;z-index:2;box-sizing:border-box;width:100%;max-width:1500px;padding:0 clamp(24px,5vw,72px);margin:0 0 clamp(8px,1.2vw,16px);font-family:'Londrina Solid',sans-serif;font-weight:900;font-size:clamp(84px,13vw,200px);line-height:.82;letter-spacing:-.01em;text-transform:uppercase;white-space:nowrap;color:#FFFFFF;text-shadow:0 6px 40px rgba(4,36,43,.35);pointer-events:none;}
+  html[data-exp] main > [data-camp-hero] > [data-marque-camp] b{font-weight:900;color:var(--soleil);display:none;}
+  html[data-exp] [data-house="rio"] main > [data-camp-hero] > [data-marque-camp] b[data-camp="rio"],html[data-exp] [data-house="itacare"] main > [data-camp-hero] > [data-marque-camp] b[data-camp="itacare"]{display:inline;}
+  html[data-exp] [data-house="itacare"] main > [data-camp-hero] > [data-marque-camp] b{color:#F5A25A;}
+  html[data-exp]:not(#z):not(#y) main > [data-camp-hero] > [data-camp-encart] > p:first-child{display:none !important;}
+}
+
+/* Emplacement des pages camp sur ordinateur (17/11/2026) : mêmes blocs déroulants que sur téléphone, à Rio comme à Itacaré.
+   Les aperçus n'affichent plus les quatre puces de « Votre séjour ». */
+@media (min-width:721px){
+  html[data-exp]:not(#z) [data-emplacement]{gap:0 !important;}
+  html[data-exp]:not(#z) [data-emplacement] > [data-pli]{border-bottom:1px solid rgba(12,59,50,.16);padding:14px 0 !important;cursor:pointer;align-items:center !important;position:relative;}
+  html[data-exp]:not(#z) [data-emplacement] > [data-pli] h3{margin:0 !important;padding-right:34px;}
+  html[data-exp]:not(#z) [data-emplacement] > [data-pli] h3::after{content:"";position:absolute;right:6px;top:26px;width:9px;height:9px;border-right:2px solid var(--accent);border-bottom:2px solid var(--accent);rotate:45deg;transition:rotate .25s ease;}
+  html[data-exp]:not(#z) [data-emplacement] > [data-pli="1"] h3::after{rotate:-135deg;top:31px;}
+  html[data-exp]:not(#z) [data-emplacement] > [data-pli="0"] p{display:none !important;}
+  html[data-exp]:not(#z) [data-emplacement] > [data-pli="1"]{align-items:flex-start !important;}
+  html[data-exp]:not(#z) [data-emplacement] > [data-pli="1"] p{margin-top:8px !important;}
+  html[data-exp]:not(#z) [data-emplacement]{justify-content:flex-start !important;}
+  html[data-exp]:not(#z) [data-puces-sejour]{display:none !important;}
+}
+
+/* Fenêtre « Voir nos planches » (17/11/2026) : haut de fenêtre allégé. Les quatre tuiles de chiffres sont retirées (le texte
+   les dit déjà), le texte prend toute la largeur, la barre de filtres est plus fine et le compteur de modèles est masqué. */
+html[data-exp] [data-quiver-stats]{display:none !important;}
+html[data-exp] [data-quiver-head]{display:block !important;padding-top:clamp(22px,3vw,34px) !important;}
+html[data-exp] [data-quiver-head] > div:first-child > p:first-child{margin-bottom:8px !important;}
+html[data-exp] [data-quiver-head] h3{font-size:var(--t-section) !important;line-height:1.05 !important;}
+html[data-exp] [data-quiver-head] h3 + p{max-width:880px !important;margin-top:10px !important;}
+html[data-exp] [data-quiver-head] + div{margin-top:16px !important;padding-top:8px !important;padding-bottom:8px !important;}
+html[data-exp] [data-quiver-head] + div > [data-quiver-chips] + [data-quiver-chips]{margin-top:6px !important;}
+html[data-exp] [data-quiver-head] + div > p{display:none !important;}
+html[data-exp] [data-quiver-chips] span[style*="cursor"]{padding-top:6px !important;padding-bottom:6px !important;}
+
+/* En-têtes Rio et Bahia sur ordinateur (17/11/2026, soir) : le bandeau vert essayé en piste C est retiré à la demande de Kévin,
+   tout revient sur la vidéo en plein écran. On garde seulement le nom du camp à la taille réduite.
+   Écrit en min()/max() exprès : c'est le logo, il suit la largeur de l'écran et reste hors de l'échelle typographique. */
+@media (min-width:721px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) main > [data-camp-hero] > [data-marque-camp]{font-size:min(120px,max(64px,7.6vw)) !important;}
+  /* La vidéo occupe toute la hauteur de l'écran, pour un premier écran immersif (demande de Kévin). */
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) main > [data-camp-hero]{box-sizing:border-box !important;height:100vh !important;height:100svh !important;min-height:560px !important;max-height:none !important;}
+}
+
+/* Parcours sur ordinateur, étape Package (demande de Kévin du 17/11/2026) : l'information était serrée dans une colonne de 800 px
+   et il fallait défiler. L'étape prend la largeur de l'écran, les quatre cartes se partagent la ligne,
+   et les réglages du package choisi passent sur deux colonnes. */
+@media (min-width:1100px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-screen-label="Request to book, funnel"] div:has(> div > div > [data-pack-row]){max-width:1240px !important;padding-top:24px !important;padding-bottom:24px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-screen-label="Request to book, funnel"] [data-pack-row]{gap:18px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-screen-label="Request to book, funnel"] [data-pack-row] > *{flex:1 1 0 !important;min-width:0 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-screen-label="Request to book, funnel"] [data-pack-row] > * > div:first-child{aspect-ratio:auto !important;height:132px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-screen-label="Request to book, funnel"] [data-pack-row] > * > div:last-child{padding:18px 22px 20px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-screen-label="Request to book, funnel"] [data-pack-row] li{font-size:15px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-screen-label="Request to book, funnel"] [data-pack-config] > div:last-child > div{display:grid !important;grid-template-columns:1fr 1fr !important;gap:12px !important;}
+}
+
+/* Récapitulatif de la demande : les dates et le nombre de nuits sur une seule ligne (ordinateur et téléphone). */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-recap-row]:is([data-recap-k="Dates"],[data-recap-k="Stay"]) > span{display:inline !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-recap-row]:is([data-recap-k="Dates"],[data-recap-k="Stay"]) > span + span::before{content:" · ";}
+
+/* ── Corrections sûres de l'audit du 17/11/2026 ── */
+/* Petites étiquettes des pages Hébergement : même police que les autres étiquettes du site (plus de police « machine à écrire »). */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="font-family: monospace"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="font-family:monospace"]{font-family:inherit !important;letter-spacing:.1em !important;}
+/* Sous le pied de page, la place réservée à la barre fixe prend la couleur du pied de page au lieu d'une bande crème. */
+@media (max-width:920px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-page-root]{padding-bottom:0 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-page-root] footer{padding-bottom:calc(48px + 96px) !important;}
+  /* Liens du pied de page : zone de toucher de 44 px de haut, sans changer la mise en page (marge intérieure sur un élément en ligne). */
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-page-root] footer a{padding-top:10px !important;padding-bottom:10px !important;margin-top:-10px !important;margin-bottom:-10px !important;}
+}
+/* Tablette : la bulle WhatsApp ne recouvre plus la phrase du devis en bas de l'en-tête des pages camp. */
+@media (min-width:721px) and (max-width:1100px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) main > [data-camp-hero]{padding-bottom:84px !important;}
+}
+/* Guillemets des avis cités, selon la langue. */
+[data-guil="o"]::before{content:"\201C";}
+[data-guil="f"]::before{content:"\201D";}
+html[lang|="fr"] [data-guil="o"]::before{content:"\00AB\00A0";}
+html[lang|="fr"] [data-guil="f"]::before{content:"\00A0\00BB";}
+/* Bloc des planches Baltazar sur téléphone : le paragraphe et le bouton reviennent sur l'échelle (16 px au lieu de 15). */
+@media (max-width:720px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-shaper] p:not(:first-child){font-size:16px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-shaper] > div:first-child > span{font-size:16px !important;}
+}
+/* « Envoyer à un ami » : zone de toucher de 44 px, sans changer l'aspect du lien. */
+html[data-exp] [data-partager]{padding:13px 10px !important;margin-top:4px !important;}
+
+
+/* ── Lot couleurs et arrondis (17/11/2026, validé par Kévin) ── */
+/* Trois arrondis au lieu de seize : 10 px pour les champs, 18 px pour les cartes et les blocs, arrondi complet pour les boutons. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius: 16px;"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius:16px;"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius: 20px;"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius:20px;"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius: 22px;"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius:22px;"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius: 24px;"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius:24px;"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius: 28px;"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius:28px;"]{border-radius:18px !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius: 8px;"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius:8px;"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius: 12px;"],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [style*="border-radius:12px;"]{border-radius:10px !important;}
+/* Page Séjours, « Le déroulé d'un cours » : les blocs d'étapes prennent les arrondis des autres cartes. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-methode] > *{border-radius:18px !important;}
+/* Bahia : l'orange foncé remplace l'orange vif là où il sert de fond à un texte clair ou de texte sur fond clair (contraste 4,5 au moins). */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-house="itacare"] [style*="background: rgb(227, 113, 28)"]{background:#B8520F !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-house="itacare"] [style*="color: rgb(227, 113, 28)"]{color:#B8520F !important;}
+/* Bahia : le bouton principal prend l'orange foncé (contraste 4,7 avec le texte crème, contre 3,0 avec l'orange vif).
+   Le survol garde son comportement d'origine, d'où le « :not(:hover) ». */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-house="itacare"] :is([data-primary-cta],[data-mobile-cta],[data-coral][style*="cursor: pointer"]):not(:hover){background:#B8520F !important;}
+@media (hover:none){ html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-house="itacare"] :is([data-primary-cta],[data-mobile-cta],[data-coral][style*="cursor: pointer"]){background:#B8520F !important;} }
+/* Module du bas des pages camp, sur ordinateur (18/11/2026) : le titre, limité à 800 px de large, restait calé à gauche de son bloc
+   au lieu d'être centré comme le texte, le formulaire et les avis dessous. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-appel] h2{margin-left:auto !important;margin-right:auto !important;}
+/* Survol du bouton principal sur ordinateur (18/11/2026, demande de Kévin) : la petite tong laisse la place à la planche du parcours
+   de réservation, inclinée à 45° vers le haut. Les tongs de « Le Brésil, c'est… » et du menu ne changent pas. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta])::after{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' view%42ox='-26 -26 52 52'%3E%3Cg transform='rotate(-45) translate(-2 0)'%3E%3Cpath d='M-21 0C-21-4.8-13-6.8-3-6.8C9-6.8 19-3.8 25 0C19 3.8 9 6.8-3 6.8C-13 6.8-21 4.8-21 0Z' fill='%23F7F4EA' stroke='%230C3B32' stroke-width='1.6'/%3E%3Crect x='-14' y='-6.2' width='4.4' height='12.4' fill='%23FFC531'/%3E%3Cpath d='M15 -4.6C19.5 -3 22.6 -1.5 25 0C22.6 1.5 19.5 3 15 4.6Z' fill='%23F2542D'/%3E%3C/g%3E%3C/svg%3E") !important;height:1.8em !important;vertical-align:middle !important;margin-top:-.6em;margin-bottom:-.5em;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover::after{width:1.8em !important;margin-left:.25em !important;}
+/* Cartes de package des pages Séjours : mêmes réglages que celles du parcours sur ordinateur (photo de 132 px, marges, texte de 15 px). */
+@media (min-width:1100px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] > div:first-child{aspect-ratio:auto !important;height:132px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] > div:last-child{padding:18px 22px 20px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] li{font-size:15px !important;}
+}
+/* Cartes de package des pages Séjours : les anciennes règles de ces pages (titre plus gros, marges, jauge) ne s'appliquent plus,
+   et le téléphone reprend les réglages compacts du parcours. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack]{padding:0 !important;gap:0 !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] > div:last-child > span:first-child,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] > div:last-child > div:first-child > span:first-child{font-size:18px !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] [data-coral-text]{font-size:16px !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] li:first-child{display:flex !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] ul{display:flex !important;}
+@media (max-width:720px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] > div:first-child{aspect-ratio:auto !important;height:80px !important;margin:0 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] > div:last-child{padding:11px 14px 13px !important;gap:6px !important;margin:0 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] ul{gap:2px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] li{font-size:13px !important;line-height:1.3 !important;gap:7px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] li > span:first-child{margin-top:6px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] [data-coral-text]{font-size:14.5px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] > div:last-child > span:last-child{padding:8px !important;font-size:14px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] > div:last-child > p{font-size:14px !important;padding:0 !important;}
+}
+/* Puces des cartes de package : la couleur du camp, la même sur les pages Séjours et dans le parcours (le parcours gardait le rouge de l'ancienne charte). */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] li > span:first-child,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-pack-row] li > span:first-child{background:var(--principal,#FFC531) !important;}
+/* La ligne des nuits d'hébergement est affichée partout, téléphone compris, dans le parcours comme sur les pages Séjours. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-pack-row] li:first-child,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] li:first-child{display:flex !important;}
+/* Cartes de package, pages Séjours et parcours (18/11/2026) : en français, le prix dit déjà « par personne », la note est retirée ;
+   la place gagnée aère la liste. */
+html[lang|="fr"] :is([data-carte-pack],[data-pack-row]) [data-prix-note]{display:none !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] ul,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-pack-row] ul{gap:9px !important;}
+@media (max-width:720px){ html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-carte-pack] ul,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) [data-pack-row] ul{gap:6px !important;} }
+/* Noms des packages (18/11/2026, demande de Kévin) : ils étaient à 18 px, à peine plus grands que le texte courant. Ils prennent la taille
+   « titre de carte » de l'échelle typographique (21 px sur téléphone, 24 px sur ordinateur), comme les autres cartes du site.
+   Même réglage sur les pages Séjours et dans le parcours. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-carte-pack] > div:last-child > span:first-child,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-carte-pack] > div:last-child > div:first-child > span:first-child,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-pack-row] > * > div:last-child > span:first-child,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-pack-row] > * > div:last-child > div:first-child > span:first-child{font-size:var(--t-carte) !important;line-height:1.15 !important;letter-spacing:-.01em;}
+/* Puces des cartes de package : pas d'ombre ni de second point gris dessous. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-carte-pack],[data-pack-row]) li > span:first-child{box-shadow:none !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-carte-pack],[data-pack-row]) li > span:first-child::before,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-carte-pack],[data-pack-row]) li > span:first-child::after,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-carte-pack],[data-pack-row]) li::before,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-carte-pack],[data-pack-row]) li::after{content:none !important;}
+/* Pages camp sur téléphone (18/11/2026, demande de Kévin) : la vidéo gagne la hauteur de la barre d'onglets, pour que le premier écran
+   s'arrête sous la phrase d'accroche ; les onglets apparaissent au premier défilement. La hauteur du bloc vert est mesurée par
+   couche.js (variable --encart-h), parce qu'elle change avec la langue et la largeur du téléphone. */
+@media (max-width:720px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) main > [data-camp-hero]{--vh-camp:min(150vw,calc(100svh - var(--encart-h,325px)));}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-house="itacare"] main > [data-camp-hero]{--vh-camp:min(150vw,calc(100svh - var(--encart-h,349px)));}
+  /* Le dégradé sombre derrière le nom du camp descend jusqu'au bas de la vidéo (il s'arrêtait une dizaine de pixels avant). */
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) main > [data-camp-hero] > [data-marque-camp]::before{top:-80px !important;bottom:auto !important;height:146px !important;}
+}
+/* Trois retouches de couleur (18/11/2026, retours de Kévin sur la page Activités). */
+/* 1. L'étiquette « EXPÉRIENCES » sur le fond vert foncé était verte à Rio et orange foncé à Bahia, donc peu lisible : teintes claires. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-experiences] [data-coral-text]{color:#F5CE8E !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-house="itacare"] [data-experiences] [data-coral-text]{color:#F5A25A !important;}
+/* 2. La petite vague sous la page en cours, dans le menu et les onglets : la couleur du camp, plus le rouge de l'ancienne charte. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-nav-item],[data-camp-tab]) svg path{fill:currentColor !important;stroke:currentColor !important;} /* 18/11/2026 : plus de jaune ici, réservé aux boutons d'action ; le motif prend la couleur du texte du menu */
+/* 3. La bulle WhatsApp, vert foncé, se perdait sur les sections vert foncé : un fin liseré clair la détache de tous les fonds. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-wa-bubble]{box-shadow:0 0 0 1.5px rgba(247,244,234,.55),0 8px 24px rgba(12,59,50,.32) !important;}
+
+/* Vague du menu principal (18/11/2026, demande de Kévin) : blanche tant que le menu est posé sur la vidéo d'ouverture,
+   puis à la couleur du camp (jaune, orange à Bahia) dès que le menu prend son fond clair. */
+html[data-exp][data-immersif]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-nav-top] [data-nav-item] svg path{fill:#F7F4EA !important;stroke:#F7F4EA !important;}
+/* Le bouton du module de réservation est une boîte flexible : sans cette ligne, la planche du survol y était écrasée à zéro. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta])::after{flex:0 0 auto !important;}
+/* Liste « Choisir un camp » (18/11/2026) : le survol bleu de l'ancienne palette laisse la place au vert clair pour Rio
+   et à un voile de l'orange foncé de Bahia pour Itacaré. */
+html[data-exp]:not(#z):not(#y) [data-dm-house="rio"]:hover{background:#E3EEE5 !important;}
+html[data-exp]:not(#z):not(#y) [data-dm-house="itacare"]:hover{background:rgba(184,82,15,.14) !important;}
+/* Page Activités (18/11/2026, demandes de Kévin) : « Pour aller plus loin » prend la même couleur que « L'essentiel »
+   (à Rio il restait en vert foncé sur fond vert foncé), et sur ordinateur le titre des cartes grandit avec la carte. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-experiences] #camp-discovery > p:first-child{color:rgba(247,244,234,.7) !important;}
+@media (min-width:900px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-experiences] [data-hscroll] > div > div:last-child > span{font-size:min(24px,max(21px,1.9vw)) !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-experiences] [data-hscroll] > div > div:last-child{left:18px !important;right:18px !important;bottom:16px !important;}
+}
+/* Déroulé d'un cours (18/11/2026, capture de Kévin) : les quatre blocs ont un fond et des coins arrondis, mais gardaient
+   les marges de l'ancien dessin (texte collé au bord gauche, filet en haut). Ce sont maintenant de vraies cartes. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-methode] > *{padding:24px 24px 26px !important;border-top:0 !important;}
+/* Parcours de réservation : « Dates pas encore fixées » était resté dans le gris-bleu de l'ancienne palette. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-screen-label="Request to book, funnel"] label[style*="rgb(51, 86, 110)"]{color:#3F5F56 !important;}
+/* Boutons d'action (18/11/2026, audit validé par Kévin). Bahia revient à l'orange de la charte (#B8520F).
+   1. Au survol, le bouton garde sa teinte, un peu plus soutenue (jaune #F2B61F, orange #9C440B), au lieu de passer au vert.
+   2. La planche apparaît sans élargir le bouton : le texte glisse de 14 px vers la gauche et la planche prend la place libérée,
+      si bien que rien ne bouge autour.
+   3. Au clic, le bouton s'enfonce d'un pixel. 4. Le contour de navigation au clavier prend la couleur du texte (plus de bleu).
+   5. Une seule forme : le bouton du module de réservation est en pilule comme les autres. */
+:root{--principal-survol:#F2B61F;}
+[data-house="itacare"]{--principal-survol:#9C440B;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover{background:var(--principal-survol) !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta])::before{content:"";display:inline-block;width:0;margin-left:0;flex:0 0 auto;transition:margin-left .25s ease;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta])::after{transition:width .25s ease,margin-left .25s ease,margin-right .25s ease,opacity .2s ease !important;height:1.5em !important;margin-top:-.45em;margin-bottom:-.35em;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover::before{margin-left:-.875em;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover::after{width:1.5em !important;margin-left:.25em !important;margin-right:-.875em !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):active{transform:translateY(1px);filter:brightness(.95);}
+@media (hover:none){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover{background:var(--principal) !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-house="itacare"] :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover{background:#B8520F !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover::before{margin-left:0 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover::after{width:0 !important;margin-left:0 !important;margin-right:0 !important;}
+}
+@media (prefers-reduced-motion:reduce){ html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta])::before,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta])::after{transition:none !important;} html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):active{transform:none;} }
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) :is([tabindex="0"],a,button,input,textarea):focus-visible{outline-color:currentColor !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-hero-champ] ~ [data-primary-cta],html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-primary-cta][style*="border-radius: 10px"]{border-radius:999px !important;}
+/* Parcours de réservation (18/11/2026, demande de Kévin) : une couleur par camp CHOISI, quelle que soit la page d'où on vient.
+   Ouvert depuis la page d'Itacaré, le parcours gardait l'orange même quand on choisissait Rio, parce qu'il héritait des
+   couleurs de la page. Il repart maintenant des couleurs de Rio dès que le camp choisi n'est pas Itacaré. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-screen-label="Request to book, funnel"]:not([data-house="itacare"]){--accent:#0F7359;--accent-fond:#E3EEE5;--principal:#FFC531;--principal-texte:#0C3B32;--principal-survol:#F2B61F;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q):not(#p) [data-house="itacare"] [data-screen-label="Request to book, funnel"]:not([data-house="itacare"]) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):not(:hover){background:var(--principal) !important;color:var(--principal-texte) !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q):not(#p) [data-house="itacare"] [data-screen-label="Request to book, funnel"]:not([data-house="itacare"]) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover{background:var(--principal-survol) !important;color:var(--principal-texte) !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q):not(#p) [data-house="itacare"] [data-screen-label="Request to book, funnel"]:not([data-house="itacare"]) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]) *{color:var(--principal-texte) !important;}
+@media (hover:none){ html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q):not(#p) [data-house="itacare"] [data-screen-label="Request to book, funnel"]:not([data-house="itacare"]) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]){background:var(--principal) !important;color:var(--principal-texte) !important;} }
+/* Bouton du menu : il peut s'élargir un peu pour montrer la planche (choix de Kévin, la planche y était trop serrée). */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-nav-top] :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover::before{margin-left:0 !important;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-nav-top] :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover::after{margin-right:0 !important;margin-left:.35em !important;}
+/* Petite vague des cartes choisies dans le parcours : rouge de l'ancienne palette (orange vif à Bahia), remplacé par la
+   couleur du camp choisi (vert pour Rio, orange de la charte pour Bahia). */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q):not(#p) [data-screen-label="Request to book, funnel"] svg path:is([fill="#ED6267"],[fill="#ed6267"],[fill="#E3711C"]){fill:var(--accent) !important;}
+/* Itacaré (18/11/2026, demande de Kévin) : le jaune est la couleur de Rio et de la marque. Sur les pages d'Itacaré, les
+   chiffres, sous-titres et repères qui étaient en jaune prennent l'orange clair de Bahia (celui du mot « BAHIA » du titre),
+   lisible sur fond vert foncé, ce que l'orange foncé des boutons ne serait pas. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-house="itacare"]{--soleil:#F5A25A;--soleil-clair:#F5B98A;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-house="itacare"] [data-screen-label="Request to book, funnel"]:not([data-house="itacare"]){--soleil:#FFC531;--soleil-clair:#FFD566;}
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-house="itacare"] [style*="color: rgb(255, 197, 49)"]:not([data-primary-cta]):not([data-mobile-cta]):not([data-screen-label="Request to book, funnel"] *){color:#F5A25A !important;}
+/* En-tête photo de « Pour qui », « À propos » et « Travailler et surfer » (18/11/2026, demande de Kévin) : même hauteur de
+   photo et même position du titre sur les trois pages, donc la section suivante commence au même endroit.
+   Avant : 600, 620 et 640 px de haut, et un bloc de texte calé en bas, donc un titre plus ou moins haut selon la longueur du texte.
+   Le bloc de texte a maintenant une hauteur minimale commune (celle de la page la plus longue) et se remplit par le haut. */
+@media (min-width:721px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-who-hero]{height:min(74vh,640px) !important;box-sizing:content-box;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-who-hero] > div:not([style*="linear-gradient"]):not([style*="monospace"]){min-height:382px !important;box-sizing:border-box !important;display:flex !important;flex-direction:column !important;justify-content:flex-start !important;align-items:flex-start;}
+}
+@media (max-width:720px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-who-hero] > div:not([style*="linear-gradient"]):not([style*="monospace"]){min-height:337px !important;box-sizing:border-box !important;}
+}
+/* Parcours de réservation (18/11/2026, demande de Kévin) : quand le parcours amène vers un bloc à remplir (camp, dates,
+   type de chambre, packages, réglages de « Composer mon séjour »), le bloc s'arrête un peu sous l'en-tête au lieu de s'y coller. */
+html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-screen-label="Request to book, funnel"] :is([data-trip-dest],[data-trip-dates],[data-stay-types],[data-stay-options],[data-pack-row],[data-pack-config]){scroll-margin-top:16px !important;}
+/* Cookiebot éteint (18/11/2026) : le lien « Gérer mes cookies » du pied de page n'ouvrirait rien, il est masqué. */
+html[data-cookiebot="0"] [data-lien-cookies]{display:none !important;}
+/* Fenêtre de photos sur téléphone (18/11/2026, demande de Kévin) : le contenu est centré dans la hauteur de l'écran au lieu
+   d'être calé en haut. Deux espaces souples, avant et après le contenu, le centrent quand il y a de la place et s'effacent sinon (on défile normalement). */
+@media (max-width:720px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-gal-modal]::before,html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q) [data-gal-modal]::after{content:"";flex:1 0 0px;min-height:0;margin:-6px 0;}
+}
+/* Tant que la fenêtre est ouverte, le fond de la page passe au vert : sur iPhone, les zones autour de l'heure et de la barre
+   de navigation du navigateur prennent la couleur de la page, et restaient crème. */
+html[data-exp]:has([data-gal-modal]),html[data-exp]:has([data-gal-modal]) body{background:#0C3B32 !important;}
+/* Sélecteurs de dates et de camp ouverts depuis le parcours : ils sont posés hors du parcours et gardaient l'orange quand on
+   choisissait Rio depuis une page de Bahia. Ils reprennent les couleurs de Rio dès que le camp choisi n'est pas Itacaré. */
+html[data-exp]:has([data-screen-label="Request to book, funnel"]:not([data-house="itacare"])) [data-house="itacare"] :is([data-dp-pop],[data-dm-pop]){--accent:#0F7359;--accent-fond:#E3EEE5;--principal:#FFC531;--principal-texte:#0C3B32;--principal-survol:#F2B61F;--soleil:#FFC531;}
+/* ═══ Retours de Lucas du 20/11/2026 ═══
+   Accueil : le champ « Destination » plus large que « Dates ».
+   Pages Séjours et étape « Package » de la réservation : photo des cartes de package à 140 px de haut au lieu de 80 px (elles étaient trop petites et coupées). */
+@media (max-width:720px){
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q):not(#p):not(#o) [data-home-hero-body] label[data-hero-champ]:first-of-type{flex:1.2 1 0 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q):not(#p):not(#o) [data-home-hero-body] label[data-hero-champ]:nth-of-type(2){flex:.8 1 0 !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q):not(#p):not(#o) [data-carte-pack] > div:first-child{height:140px !important;}
+  html[data-exp]:not(#z):not(#y):not(#x):not(#w):not(#v):not(#u):not(#t):not(#s):not(#r):not(#q):not(#p):not(#o) [data-pack-row] > * > div:first-child{aspect-ratio:auto !important;height:140px !important;}
+}

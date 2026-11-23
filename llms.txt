@@ -1,0 +1,1805 @@
+# Surf Inn
+
+> Surf camps in Brazil: Rio de Janeiro (Recreio, Macumba beach) and Itacaré (Bahia). Surf lessons in small groups (3 students max per coach), accommodation by the beach, packages, local experiences. Requests are free and without commitment; the team replies with a personal quote.
+
+This file gives the text of the beta site https://surfinn-beta.vercel.app page by page, because the site is rendered with JavaScript. English version; French under /fr/, Portuguese under /pt/.
+
+## Pages
+- [Home](https://surfinn-beta.vercel.app/)
+- [Surf camp in Rio de Janeiro](https://surfinn-beta.vercel.app/surf-camp/rio-de-janeiro/)
+- [Rio: accommodation](https://surfinn-beta.vercel.app/surf-camp/rio-de-janeiro/accommodation/)
+- [Rio: activities](https://surfinn-beta.vercel.app/surf-camp/rio-de-janeiro/activities/)
+- [Rio: surf packages](https://surfinn-beta.vercel.app/surf-camp/rio-de-janeiro/packages/)
+- [Rio: surf guide](https://surfinn-beta.vercel.app/surf-camp/rio-de-janeiro/surf-guide/)
+- [Surf camp in Itacaré](https://surfinn-beta.vercel.app/surf-camp/itacare/)
+- [Itacaré: accommodation](https://surfinn-beta.vercel.app/surf-camp/itacare/accommodation/)
+- [Itacaré: activities](https://surfinn-beta.vercel.app/surf-camp/itacare/activities/)
+- [Itacaré: surf packages](https://surfinn-beta.vercel.app/surf-camp/itacare/packages/)
+- [Itacaré: surf guide](https://surfinn-beta.vercel.app/surf-camp/itacare/surf-guide/)
+- [Who it is for](https://surfinn-beta.vercel.app/who-is-it-for/)
+- [Work and surf: remote work at the camps](https://surfinn-beta.vercel.app/work-and-surf/)
+- [About us](https://surfinn-beta.vercel.app/about-us/)
+- [Reviews](https://surfinn-beta.vercel.app/reviews/)
+- [FAQ](https://surfinn-beta.vercel.app/faq/)
+- [Contact](https://surfinn-beta.vercel.app/contact/)
+
+
+## Home
+
+URL: https://surfinn-beta.vercel.app/
+
+More than a surf camp in Brazil.
+Join our surf camps in Rio de Janeiro and Itacaré, the two best places to surf in the country.
+Come for the waves. Catch the Brazilian one.
+DESTINATION
+DATES
+TRAVELERS
+−
+1
++
+Request to book
+★ 4.9/5 · 501 Google reviews
+Free, no commitment
+A real (and probably sandy) person replies fast.
+OUR TWO HOUSES
+Two surf camps.
+Two sides of Brazil.
+SURF INN RIO
+RIO DE JANEIRO · RECREIO
+Wake up in Rio's best surf neighborhood.
+·
+The neighborhood with the most surf spots in Rio, from Macumba to Grumari
+·
+Stay right on the beach, steps from the waves
+·
+All around you: live music, good restaurants and bars, a surf vibe and nature
+Explore the Surf Inn Rio camp →
+SURF INN BAHIA
+ITACARÉ · BAHIA
+Surf in the jungle. Belong to a bohemian town.
+·
+One of the best surf coasts in Brazil, with waves for every level
+·
+Surf in the middle of nature, on beaches framed by the Atlantic rainforest
+·
+Live music and cultural events in town, every day and every night
+Explore the Surf Inn Bahia camp →
+WHAT SURF INN IS
+A place to Learn. Work. Belong. Explore.
+Surf Inn offers four ways to live your trip: learn, work, belong and explore, through surf, music and the people you meet. Take all of it, or just the parts you want.
+Learn
+Surf
+Futevôlei
+Percussion
+Capoeira
+Work
+Starlink
+Coworking desk
+Belong
+Home on the beach
+Like-minded crew
+Explore
+Samba nights
+Local guides
+Live music
+WHY TRAVEL TO BRAZIL
+Brazil is about…
+Brasileiro? Você já sabe tudo isso. A casa também é sua, pula pra baixo.
+surfing.
+playing.
+belonging.
+discovering.
+Warm water all year, waves for every level and a friendly vibe in the lineup.
+Warm water, all year
+Waves 340+ days a year
+The friendliest lineups
+Waves for every level
+Surf in the jungle or in the city
+Photo: Wikimedia Commons, CC BY-SA
+Home of the Brazilian Storm
+Already picturing it?
+Share your travel plans with us: someone from our team replies fast (free, no commitment).
+Request to book
+REVIEWS
+They came for waves. They left with more.
+★★★★★
+4.9 · 501 Google reviews
+Surf Inn Rio · ★ 4.9 · 438 →
+Surf Inn Bahia · ★ 5.0 · 63 →
+‹
+›
+★★★★★
+“I originally planned to stay for just one week, but it didn't take long for me to extend my stay to an entire month, which already says everything about how special this place is. What made this experience so unique were the people. I met incredible individuals and felt welcomed, supported, and at home the entire time.”
+L
+Leif H.
+Surf Inn Rio · on Google, 2026
+★★★★★
+“I didn't have much time to plan this trip, so I left everything in Igor's hands, and he simply exceeded all expectations. The surf lessons were incredible; my instructor was very didactic and attentive, and the yoga classes completed a perfect package. I didn't have to worry about absolutely anything other than enjoying my days, and I even made friends for life!”
+Translated from Portuguese
+A
+Ariadne Z.
+Surf Inn Bahia · on Google, 2026
+★★★★★
+“I found the teachers to be the best I have ever experienced by a long, long way (have had lessons in a few countries). Duda in particular was so helpful from a technical perspective and in one hour I progressed so much. I am in my 40s and whilst I was the oldest person in my lessons by a long way, I still felt very welcome.”
+S
+Sarah P.
+Surf Inn Rio · on Google, 2025
+★★★★★
+“No doubt the best surf school in Itacare! They have the best instructors, never had better and I have surfed across Mexico, Portugal, Morocco and Australia. The whole team is super nice, very responsive and just make the experience perfect!”
+S
+Simon W.
+Surf Inn Bahia · on Google, 2025
+★★★★★
+“Literally My. Best. Birthday. Ever!!! Yoga. Massage. Surfing lesson. Surfing lesson. Massage. Yoga. Repeat. Warm, inclusive, friendly staff. Extraordinary value for the price. I felt safe and cared for at every moment (very important as a solo female Traveler).”
+N
+N. U.
+Surf Inn Rio · on Google, 2025
+★★★★★
+“It was just a short 5 minute walk away from the main noisy stretch making it such a peaceful sleeping experience. The host were so accommodating, I had the best time surfing and doing yoga daily which were all organised by the hostel. 100% recommend.”
+M
+Modena F.
+Surf Inn Bahia · on Google, 2026
+★★★★★
+“We did 4 surf lessons and felt very safe in the water even when the conditions were tough 2 days. One teacher has 3 people max., so the teachers are always close to you and supportive. The hostel offers activities every day, solo traveling people will definitely not get bored.”
+S
+Samira S.
+Surf Inn Rio · on Google, 2025
+★★★★★
+“I did a one week surfcamp with SurfInn organized and hosted by Igor. I had a wonderful time and can recommend it to everyone. Almost everday I had surf lessons which were very well instructed. The lessons that I was not able to attend were all refunded, very fair!”
+P
+Philipp G.
+Surf Inn Bahia · on Google, 2026
+★★★★★
+“The camp is situated in a small town, super authentic of Brazil: With a long beautiful beach, lots of people in the evening that are listening to music and dancing, but during the day it is very calm and chill. All surf teachers are very knowledgeable, they do not just push you into the water, but give you all the necessary informations (and theory which is very useful) to learn surfing the best way.”
+M
+Marine C.
+Surf Inn Rio · on Google, 2024
+★★★★★
+“The rooms are really clean and super accessible price wise. The employees are really nice and kind, speak very good english. On top of that, it is a unique experience if you want to surf and do yoga because the teachers are very professional. If you are visiting Itacaré, I would highly recommend Surf Inn.”
+K
+K. B.
+Surf Inn Bahia · on Google, 2026
+★★★★★
+“We spent an amazing 7 days there, in which we have made loads of new friendships whom we will cherish forever. The surf lessons, which were available through a package deal, were held in small groups so the teachers really took their time to help you improve. Highly recommend!”
+R
+Randolf T.
+Surf Inn Rio · on Google, 2025
+★★★★★
+“Amazing experience! I never thought I could surf! The beach and the people are wonderful, I will truly never forget this place and this experience.”
+C
+Caio M.
+Surf Inn Bahia · on Google, 2025
+WHO IT'S FOR
+Whatever your level, you belong here.
+●
+Beginners: First waves in the lineup, on easy beach breaks, three students max per coach
+●
+Intermediates & advanced: Small-group or private lessons and video analysis to break your plateau
+●
+Independent surfers: Daily guiding at the best spots, board rental can be included
+●
+Solo travelers: Come alone, leave with friends for life
+●
+Digital nomads: Coworking space and fast wifi for a real work/surf balance
+●
+Groups: Friend trips, couples and team retreats, we handle everything
+●
+Yoga lovers: Yoga lessons every day, Hatha, Vinyasa, Bhakti, included in your stay
+Your trip, built around you.
+Tell us your dates, your level and what makes you tick. A real person gets back to you fast with a quote.
+Request to book
+
+
+## Surf camp in Rio de Janeiro
+
+URL: https://surfinn-beta.vercel.app/surf-camp/rio-de-janeiro/
+
+SURF INN RIO
+Surf Camp Rio de Janeiro, Brazil
+Surf all day. Rio all night.
+Stay by Macumba Beach in Recreio, Rio's surf side, with local coaching, small-group surf lessons and some of the city's best-known breaks nearby.
+Request to book
+★ 4.9/5 · 438 Google reviews · Free, no commitment
+A real (and probably sandy) person replies fast.
+OVERVIEW
+THE CAMP
+EXPERIENCES
+SURF PACKAGES
+SURF GUIDE
+WHY SURF IN RIO
+Between the beach and the beat
+Surf the waves of Recreio, explore the wild beaches of Rio, and discover the city's rhythm. The perfect balance between a surf trip and a city adventure.
+5
+Nearby surf areas
+Macumba, Recreio, CCB, Prainha & Grumari. These beaches face different ways, so each one works best with a different swell, wind and tide. Shortboard and longboard waves, a walk apart.
+340+
+Surfable days a year
+Beach breaks catch every swell direction. Small days or big days, there is almost always a spot that works.
+26°C
+Water in summer
+Boardshorts and a lycra. A thin top for a few winter mornings, never a wetsuit battle.
+1
+Wave for every level, every day
+Mellow Macumba for first rides, Recreio's peaks to step up, Prainha and Grumari when it pumps. From beginner to world-class waves, something is always working.
+3
+Surfers max per coach
+Small-group surf lessons mean more individual feedback, more waves watched and coaching adapted to your level.
+YOUR STAY
+Surf Inn Rio · The camp
+One camp, three places, two minutes apart on foot. You sleep in one, you live in all three.
+·
+Private or shared rooms, 40 boards, 20 of them by César Baltazar
+·
+The Surf Club · a hostel with a pool, gym, sauna and restaurants
+·
+The Beach House · a quiet beachfront pousada with a kitchen
+·
+The Surf House · a house of surfers and artists with a pool, yoga, percussion and boards
+See the camp →
+LIFE IN RECREIO
+Between two sessions, a whole city to play in
+Beyond the surf lessons, everything you can add to your stay: coaching, guiding, recovery, music and days out. Build your trip item by item.
+Surf lessons
+Surfskate
+Footvolley & altinha
+Percussion classes
+Yoga lessons
+Hikes & viewpoints
+Community tours
+Discover all experiences →
+SURF LESSONS · THE METHOD
+How we teach
+01
+Three students max
+Every lesson runs with three students per coach, never more. Qualified, English-speaking coaches, and we never mix levels.
+02
+1h30, step by step
+30 minutes in the gym first: theory, the pop-up, repetitions. Then an hour in the water, with your coach right beside you.
+03
+Four lessons a day
+Lessons at 6:30, 8:30, 10:30 and 14:30. Coaches read the banks and tides each morning and take you where your level works best.
+04
+See yourself surf
+We film your session, then sit down with you to review it wave by wave: stance, timing, what to fix next lesson.
+See surf packages & lessons →
+THE LOCATION
+Recreio, Rio's surf side
+Surf Inn Rio
+Show the map
+Open in Google Maps →
+The neighborhood
+Recreio dos Bandeirantes: Rio's laid-back surf quarter. Juice bars, surf shops, restaurants and beach kiosks along Praia da Macumba, with a right and a left breaking at the Recreio corner. The city's energy without the tourist crush, and nature much closer.
+Getting here
+Fly into Rio (GIG or SDU). We arrange your door-to-door transfer, about 50 minutes from GIG, so you land, wave, and you're on the beach.
+Why this spot
+From where you stay, Praia da Macumba is right in front and Recreio's peaks are a short walk; Prainha and Grumari 10 minutes away; Ipanema and the city 40 minutes when you want them.
+THE REGION
+Recreio, Rio's best-kept secret
+Not the postcard Rio of Ipanema, and that's the point. Recreio is where cariocas actually surf, and everything below is minutes from where you stay.
+‹
+›
+SURF
+Praia da Macumba
+Rio's best all-round surf beach, a proper right AND a left. Heaven for longboards, while the canto do Recreio runs fast and hollow for shortboarders.
+BEACH
+Prainha
+A protected half-moon of sand backed by rainforest, many cariocas call it Rio's most beautiful beach. A surfers' sanctuary, minutes away, and its beach restaurant serves excellent food until 4 pm.
+NATURE
+Grumari & its park
+A wild beach inside a protected natural park: no buildings, no kiosk chains, just waves and green. The escape when the city feels close.
+LIVE MUSIC
+Small Riders
+The surf club right next to where you stay, live concerts Thursday through Sunday, and the whole young surf scene of Recreio in one place.
+PARTY
+Lua nights
+Some nights the beach lights a bonfire in the sand, musicians or a DJ, everyone barefoot, singing and dancing until late.
+NIGHT
+Forró & the bars
+Forró takes over the neighborhood most weekends, and the surf bars around Macumba fill up after the last session. A beer, live music, the whole lineup at the next table.
+Real days at Surf Inn Rio
+Taken by guests and the team, not by a photographer.
+LIFE ON INSTAGRAM
+Rio, one session at a time
+surfinnrio
+Surf camp · Recreio, Rio de Janeiro
+Follow
+Daily conditions, sessions and camp life.
+View on Instagram →
+REVIEWS
+What guests say about Surf Inn Rio
+Surf Inn Rio
+Google Reviews
+4.9
+★★★★★
+438 reviews
+5
+4
+3
+2
+1
+See all 438 reviews
+L
+Leif H.
+2026
+★★★★★
+I originally planned to stay for just one week, but it didn't take long for me to extend my stay to an entire month, which already says everything about how special this place is. What made this experience so unique were the people. I met incredible individuals and felt welcomed, supported, and at home the entire time.
+S
+Sarah P.
+2025
+★★★★★
+I found the teachers to be the best I have ever experienced by a long, long way (have had lessons in a few countries). Duda in particular was so helpful from a technical perspective and in one hour I progressed so much. I am in my 40s and whilst I was the oldest person in my lessons by a long way, I still felt very welcome.
+N
+N. U.
+2025
+★★★★★
+Literally My. Best. Birthday. Ever!!! Yoga. Massage. Surfing lesson. Surfing lesson. Massage. Yoga. Repeat. Warm, inclusive, friendly staff. Extraordinary value for the price. I felt safe and cared for at every moment (very important as a solo female Traveler).
+S
+Samira S.
+2025
+★★★★★
+We did 4 surf lessons and felt very safe in the water even when the conditions were tough 2 days. One teacher has 3 people max., so the teachers are always close to you and supportive. The hostel offers activities every day, solo traveling people will definitely not get bored.
+M
+Marine C.
+2024
+★★★★★
+The camp is situated in a small town, super authentic of Brazil: With a long beautiful beach, lots of people in the evening that are listening to music and dancing, but during the day it is very calm and chill. All surf teachers are very knowledgeable, they do not just push you into the water, but give you all the necessary informations (and theory which is very useful) to learn surfing the best way.
+R
+Randolf T.
+2025
+★★★★★
+We spent an amazing 7 days there, in which we have made loads of new friendships whom we will cherish forever. The surf lessons, which were available through a package deal, were held in small groups so the teachers really took their time to help you improve. Highly recommend!
+GOOD TO KNOW
+Good to know, before Rio
+Where will I stay in Rio?
++
+Is Recreio safe?
++
+How far is the airport?
++
+What if it's flat at Macumba?
++
+Can I see the "postcard Rio"?
++
+Do I need to bring my board?
++
+Rio is waiting. So are the waves.
+Tell us your dates and your level, our local team builds your Rio stay around you.
+DESTINATION
+Rio de Janeiro
+DATES
+TRAVELERS
+−
+1
++
+Request to book
+★ 4.9/5 · 501 Google reviews
+Free, no commitment
+A real (and probably sandy) person replies fast.
+
+### Questions and answers
+
+Q: Where will I stay in Rio?
+A: In one of our three places in Recreio: The Surf Club, The Beach House or The Surf House. You choose a private or a shared room when you send your request, our team picks the place and confirms it. Your surf lessons, yoga and experiences happen across the three, run by the Surf Inn team.
+
+Q: Is Recreio safe?
+A: It's Rio's laid-back family-and-surfers quarter, calmer than the tourist zones. Basic big-city street sense applies, and we brief you on arrival.
+
+Q: How far is the airport?
+A: About 50 minutes from GIG. We arrange door-to-door transfers, someone waits with your name when you land.
+
+Q: What if it's flat at Macumba?
+A: It rarely is, and when it is, Prainha, Grumari or a surfskate session cover the day.
+
+Q: Can I see the "postcard Rio"?
+A: Easily. Ipanema, Arpoador and the center are 40 minutes away. Many guests do one city day per week.
+
+Q: Do I need to bring my board?
+A: No. 40 boards in Recreio, 20 of them Baltazar Customs, shaped by César Baltazar, from softboards to longboards. Unlimited board rental can be added to any package.
+
+
+## Rio: accommodation
+
+URL: https://surfinn-beta.vercel.app/surf-camp/rio-de-janeiro/accommodation/
+
+SURF INN RIO
+Surf Camp Rio de Janeiro, Brazil
+Surf all day. Rio all night.
+Stay by Macumba Beach in Recreio, Rio's surf side, with local coaching, small-group surf lessons and some of the city's best-known breaks nearby.
+Request to book
+★ 4.9/5 · 438 Google reviews · Free, no commitment
+A real (and probably sandy) person replies fast.
+OVERVIEW
+THE CAMP
+EXPERIENCES
+SURF PACKAGES
+SURF GUIDE
+YOUR STAY
+Surf Inn Rio · The camp
+OUR SPACES
+One camp, three places, two minutes apart on foot. You sleep in one, you live in all three.
+12 photos
+The Surf Club
+The social heart of the camp. Surf, gym, sauna, restaurants, and the people you'll be surfing with all week.
+Pool
+Gym
+Sauna
+Restaurants
+Coworking
+Private & shared rooms
+11 photos
+The Beach House
+Calm and comfortable, right on the seafront. For the days you want to slow down and recharge.
+Beachfront rooms
+Kitchen
+Private rooms
+8 photos
+The Surf House
+Our cultural and wellness hub. Yoga every day, samba reggae percussion classes and 40+ boards to use during your stay.
+Pool
+Yoga classes
+Board rental
+Percussion
+Capoeira
+Private rooms
+HOW THE HUB WORKS
+·
+You sleep in one place, you use all three.
+·
+The three places are 2 minutes apart on foot.
+·
+Surf lessons start from The Surf Club. Yoga, percussion and boards are at The Surf House.
+·
+Our team on WhatsApp, from booking to departure.
+THE LOCAL CREW
+One camp, different spaces, one local crew.
+·
+With you from your first booking until you leave
+·
+Coaches, hosts and guides who live here
+·
+On WhatsApp the whole time, before and during your stay
+THE ROOMS
+Private or shared rooms, your call
+Pick the room, our team places you in the house that fits your dates.
+4 photos
+PRIVATE
+Double room
+Private bathroom
+Sleeps 2
+A/C
+Your own room, a proper bed, the ocean within earshot.
+7 photos
+PRIVATE
+Private ensuite, sea view
+Private bathroom
+Sea view
+A/C
+Wake up to the ocean, your own bathroom, the beach below.
+3 photos
+PRIVATE
+Room with shared bathroom
+Sleeps 2
+Shared bathroom
+A/C
+A private room, the bathroom down the hall.
+4 photos
+SHARED
+Mixed dorm
+Standard or Economy (15 beds)
+Lockers
+A/C
+Comfy bunks and roommates who become surf partners.
+4 photos
+SHARED
+Female dorm
+9 or 12 beds
+Female only
+Lockers
+A/C
+Same bunks, women only.
+BALTAZAR CUSTOMS
+Our shaper, our boards
+Shaped by César Baltazar, the first carioca pro surf champion, for the waves of Recreio, and all included in your unlimited rental.
+20
+boards shaped by Baltazar
+40
+boards in the rack
+Explore our quiver
+WHAT YOU GET
+Included in every stay
+ALWAYS INCLUDED
+✓
+Fast wifi & cowork
+✓
+Gym
+✓
+Board racks & wax
+✓
+Daily surf briefing
+✓
+Camp life
+Every stay comes with a place to work and train, and a camp full of people at night.
+ADD WHEN YOU WANT
++
+Surf lessons
++
+Breakfast
++
+Video analysis
++
+Board rental
++
+Yoga
++
+Airport transfer
++
+Massage
+Build the rest into your package, or add it day by day once you're here.
+Rio is waiting. So are the waves.
+Tell us your dates and your level, our local team builds your Rio stay around you.
+DESTINATION
+Rio de Janeiro
+DATES
+TRAVELERS
+−
+1
++
+Request to book
+★ 4.9/5 · 501 Google reviews
+Free, no commitment
+A real (and probably sandy) person replies fast.
+GOOD TO KNOW
+Good to know, before Rio
+Where will I stay in Rio?
++
+Is Recreio safe?
++
+How far is the airport?
++
+What if it's flat at Macumba?
++
+Can I see the "postcard Rio"?
++
+Do I need to bring my board?
++
+
+### Questions and answers
+
+Q: Where will I stay in Rio?
+A: In one of our three places in Recreio: The Surf Club, The Beach House or The Surf House. You choose a private or a shared room when you send your request, our team picks the place and confirms it. Your surf lessons, yoga and experiences happen across the three, run by the Surf Inn team.
+
+Q: Is Recreio safe?
+A: It's Rio's laid-back family-and-surfers quarter, calmer than the tourist zones. Basic big-city street sense applies, and we brief you on arrival.
+
+Q: How far is the airport?
+A: About 50 minutes from GIG. We arrange door-to-door transfers, someone waits with your name when you land.
+
+Q: What if it's flat at Macumba?
+A: It rarely is, and when it is, Prainha, Grumari or a surfskate session cover the day.
+
+Q: Can I see the "postcard Rio"?
+A: Easily. Ipanema, Arpoador and the center are 40 minutes away. Many guests do one city day per week.
+
+Q: Do I need to bring my board?
+A: No. 40 boards in Recreio, 20 of them Baltazar Customs, shaped by César Baltazar, from softboards to longboards. Unlimited board rental can be added to any package.
+
+
+## Rio: activities
+
+URL: https://surfinn-beta.vercel.app/surf-camp/rio-de-janeiro/activities/
+
+SURF INN RIO
+Surf Camp Rio de Janeiro, Brazil
+Surf all day. Rio all night.
+Stay by Macumba Beach in Recreio, Rio's surf side, with local coaching, small-group surf lessons and some of the city's best-known breaks nearby.
+Request to book
+★ 4.9/5 · 438 Google reviews · Free, no commitment
+A real (and probably sandy) person replies fast.
+OVERVIEW
+THE CAMP
+EXPERIENCES
+SURF PACKAGES
+SURF GUIDE
+EXPERIENCES
+Between two sessions, a whole city to play in
+Core experiences are what we run at the camp. Discovery is what you can add to your trip, with people from here.
+CORE EXPERIENCES
+With Surf Inn
+Surf lessons
+3 students max, 1 hour in the water
+Surf guiding
+The best spot of the day, with a local
+Surfskate
+Carve on land, progress in the water
+Video analysis
+Your session, wave by wave
+Massage & recovery
+Everything the paddling asked for
+Yoga
+Every day, with a teacher who surfs
+Percussion classes
+Every Tuesday, with carnival musicians
+Capoeira
+Ginga, music and play
+DISCOVERY
+Things to do in Rio, beyond the surf
+Hikes & viewpoints
+Pedra do Telégrafo and the wild coast west of the city.
+Samba nights in Lapa
+A real roda, the crowd singing every word.
+Fishing with locals
+Out at dawn, back with lunch.
+A day in Rio
+Selarón, Sugarloaf and more, with a local
+Favela tour with a local guide
+A neighbourhood, told by someone who grew up there.
+Footvolley & altinha
+Feet only, on the sand in front of the camp.
+Request to book
+Tell us what you want to add, we organise it with people from here.
+Rio is waiting. So are the waves.
+Tell us your dates and your level, our local team builds your Rio stay around you.
+DESTINATION
+Rio de Janeiro
+DATES
+TRAVELERS
+−
+1
++
+Request to book
+★ 4.9/5 · 501 Google reviews
+Free, no commitment
+A real (and probably sandy) person replies fast.
+
+
+## Rio: surf packages
+
+URL: https://surfinn-beta.vercel.app/surf-camp/rio-de-janeiro/packages/
+
+SURF INN RIO
+Surf Camp Rio de Janeiro, Brazil
+Surf all day. Rio all night.
+Stay by Macumba Beach in Recreio, Rio's surf side, with local coaching, small-group surf lessons and some of the city's best-known breaks nearby.
+Request to book
+★ 4.9/5 · 438 Google reviews · Free, no commitment
+A real (and probably sandy) person replies fast.
+OVERVIEW
+THE CAMP
+EXPERIENCES
+SURF PACKAGES
+SURF GUIDE
+SURF PACKAGES
+Surf lessons: pick a package. Or create your own.
+Build it yourself, or start from one of three tried-and-true formulas. Nothing is locked, our local team adjusts everything afterwards.
++
+Create your own package
+Your room as the base, then as many surf and yoga lessons as you want, breakfast, boards. Or accommodation only.
+Build mine
+Surf In Rio
+3 nights / 4 days
+from €185 / R$ 1,150
+INCLUDED
+3 nights in a shared or private room
+4 Surf lessons
+1 Yoga lesson
+Start from this →
+Onda Carioca
+5 nights / 6 days
+from €370 / R$ 2,290
+INCLUDED
+5 nights in a shared or private room
+4 Surf lessons
+1 Surfskate
+1 Yoga lesson
+Video analysis
+Massage
+Start from this →
+Surf Intensive
+7 nights / 8 days
+from €590 / R$ 3,660
+INCLUDED
+7 nights in a shared or private room
+8 Surf lessons
+1 Surfskate
+1 Surf guidance
+2 Yoga lessons
+Video analysis
+Massage
+Start from this →
+"From" is the low-season price in a shared room. Prices move with season and availability, your exact price comes with your request.
+Every level has a plan
+Beginner
+Softboards at Macumba, our mellow home spot. Depending on the sea, we head for the lineup waves from the very first lesson, with a coach never more than a wave away.
+Intermediate
+Break the plateau: video analysis, punchier peaks at Recreio, and drills on the surfskate to fix your turns between sessions.
+Advanced
+Dawn missions to Prainha and Grumari when the swell is right, step-up boards in the quiver, and a guide who knows every bank.
+How a session goes
+1
+Spot & briefing
+Your coach picks the day's best spot for your level and walks you through banks, currents and the plan.
+2
+Warm-up on land
+Mobility, pop-up drills in the sand, and the one thing you'll each focus on today.
+3
+In the water
+With your coach in the lineup, three students max, every wave watched and corrected live.
+4
+Debrief
+What clicked, what to fix, and what tomorrow looks like, over fresh fruit back at the camp.
+Everything's provided
+Board for your level
+Leash
+Wax
+Boards, leashes and wax are included in every lesson, and the full quiver is there to rent between sessions.
+
+
+## Rio: surf guide
+
+URL: https://surfinn-beta.vercel.app/surf-camp/rio-de-janeiro/surf-guide/
+
+SURF INN RIO
+Surf Camp Rio de Janeiro, Brazil
+Surf all day. Rio all night.
+Stay by Macumba Beach in Recreio, Rio's surf side, with local coaching, small-group surf lessons and some of the city's best-known breaks nearby.
+Request to book
+★ 4.9/5 · 438 Google reviews · Free, no commitment
+A real (and probably sandy) person replies fast.
+OVERVIEW
+THE CAMP
+EXPERIENCES
+SURF PACKAGES
+SURF GUIDE
+SURF GUIDE
+When to surf in Rio, season by season
+Waves basically all year, what changes is the size, the crowd and how long you stay in the water. The short version:
+Dec – Mar
+Summer
+Feriados: Réveillon · Carnaval
+Water
+24–26°C
+Air
+28–38°C
+Waves
+0.5–1.2 m
+Crowd
+Lively
+Beach season, small, sunny, perfect for learning. Carnival in February.
+Apr – Jun
+Autumn
+Feriados: Tiradentes
+Water
+23–24°C
+Air
+22–28°C
+Waves
+1–2 m
+Crowd
+Medium
+The sweet spot: consistent swell, mellow weather, emptier lineups.
+Jul – Sep
+Winter
+Feriados: Férias de julho
+Water
+21–22°C
+Air
+18–26°C
+Waves
+1.5–2.5 m
+Crowd
+Quiet
+Swell season. The biggest, cleanest days of the year.
+Oct – Nov
+Spring
+Water
+22–23°C
+Air
+24–30°C
+Waves
+0.8–1.5 m
+Crowd
+Medium
+Warming up again, friendly waves and long evenings.
+The surf spots
+Praia da Macumba
+All levels
+Our home spot, right opposite the Surf Club. Mellow, sandy-bottom peaks, where most first waves happen.
+Recreio
+All levels
+Punchier peaks along the same stretch, something for everyone, every day.
+Prainha
+Advanced
+Rio's best wave, inside a nature reserve 10 minutes away. Hollow, powerful, worth the trip.
+Grumari
+Intermediate
+Wild, undeveloped beach next door, fewer people, more space to push yourself.
+What to wear
+Boardshorts or bikini with a lycra, all year.
+Whenever you come, your coaches pick the right spot for the day, that's what surf guidance is for.
+Ocean safety, handled
+Every morning starts with a spot briefing: banks, currents, where to paddle out and where not to. Beginners surf lifeguarded, sandy-bottom stretches only, and our coaches are trained in ocean rescue and first aid.
+Rio is waiting. So are the waves.
+Tell us your dates and your level, our local team builds your Rio stay around you.
+DESTINATION
+Rio de Janeiro
+DATES
+TRAVELERS
+−
+1
++
+Request to book
+★ 4.9/5 · 501 Google reviews
+Free, no commitment
+A real (and probably sandy) person replies fast.
+
+
+## Surf camp in Itacaré
+
+URL: https://surfinn-beta.vercel.app/surf-camp/itacare/
+
+SURF INN BAHIA
+Surf Camp Itacaré, Bahia, Brazil
+Where the jungle meets the swell.
+Warm water, wild beaches and a rainforest at your back, surf at nature's pace in Bahia. Surf and bohemia.
+Request to book
+★ 5.0/5 · 63 Google reviews · Free, no commitment
+A real (and probably sandy) person replies fast.
+OVERVIEW
+THE CAMP
+EXPERIENCES
+SURF PACKAGES
+SURF GUIDE
+WHY SURF IN ITACARÉ
+Surf in the middle of the Mata Atlântica
+One road, a dozen waves, rainforest in between. Tiririca, Bahia's most consistent beach break, is five minutes on foot.
+5
+Beaches on foot
+Tiririca, Resende, Ribeira, Praia da Costa, Prainha. All a short walk from the house, each one working on a different tide.
+25°C+
+Water, all year round
+Bikini and boardshorts in July as in January. You will never own a wetsuit here.
+12/12
+Months with waves
+South swells in winter, east swells in summer, beaches facing every direction. There is no off-season in Itacaré.
+1
+Wave for every level, every day
+Punchy Tiririca, sheltered Ribeira, long fun walls at Engenhoca. Whatever the tide and your level, the right peak is working somewhere.
+0
+Buildings on the beach
+Engenhoca and Havaizinho are national-park beaches: sand, forest, a few surfers. That's the whole view.
+7/7
+A party in town every night
+Forró, samba, reggae, live music. Every night of the week has its own party somewhere in town, a five-minute walk from your bed.
+THE CAMP
+A house wrapped in green
+Right in the center of Itacaré, the best location there is: a leafy garden full of birdsong, a quiver of boards and a welcoming place to come back to.
+·
+Double and shared rooms, A/C, breakfast included
+·
+Yoga every day, included, and a gym
+·
+Starlink and a quiet coworking corner
+Discover the camp →
+LIFE AT THE CAMP
+Between two sessions, a whole world to play in
+Beyond the surf lessons, everything you can add to your stay: coaching, guiding, recovery, music and days out. Build your trip item by item.
+Surf lessons
+Yoga every day
+Capoeira
+Whale watching
+Waterfall hikes
+Rafting with locals
+Discover all experiences →
+SURF LESSONS · THE METHOD
+How we teach
+01
+Three students max
+Every lesson runs with three students per coach, never more. Qualified, English-speaking coaches, and we never mix levels.
+02
+2 hours, step by step
+30 minutes on the sand first: theory, the pop-up, repetitions adapted to you. Then 1h30 in the water, with live feedback from your coach.
+03
+Every morning at 8:00
+Lessons start at 8:00. Coaches read the banks and tides each morning and take you where your level works best.
+04
+See yourself surf
+We film your session, then sit down with you to review it wave by wave: stance, timing, what to fix next lesson.
+See surf packages & lessons →
+THE LOCATION
+Itacaré, the surf capital of Bahia
+Surf Inn Bahia
+Show the map
+Open in Google Maps →
+The town
+A fishing village turned bohemian surf town: cobbled streets, açaí counters, capoeira circles at sunset. Everything walkable, everyone friendly.
+Getting here
+Fly into Ilhéus (IOS), 1h15 from the camp along a coastal road. We arrange the transfer, you'll want the window seat. From Salvador: an Uber to the ferry, cross to Bom Despacho, then the bus to Itacaré. About six hours door to door, and an easy one.
+Why this spot
+Tiririca, the town's main wave, is a short walk; four more beaches hide within 20 minutes of trail. Different directions, different moods: something always works.
+THE REGION
+Why everyone falls for Itacaré
+A fishing town swallowed by jungle, where the day belongs to the waves and the night always has a plan.
+‹
+›
+PARTY
+A party every night
+Forró, samba, reggae, live music, every night of the week has its own party somewhere in town. You never have to look far.
+SURF
+Tiririca
+Itacaré's star wave, two steps from town, fast, punchy, and home to national championships.
+BEACH
+Four beaches, one trail
+Tiririca, da Costa, Ribeira, Prainha, one jungle trail, four coves framed by Mata Atlântica. Prainha alone is worth the trip.
+NATURE
+Waterfalls everywhere
+A dozen cachoeiras within reach for flat days, swim, jump, picnic under the falls.
+CULTURE
+Capoeira & roda culture
+Capoeira was never a show here, rodas happen in the streets of town, and everyone's invited to clap, sing or play.
+SLOW LIFE
+Rio de Contas at sunset
+SUP, canoe or boat on the Rio de Contas at golden hour, where the jungle meets the sea, the calm side of Itacaré.
+FOOD
+Tapioca, açaí, moqueca
+A tapioca cart at the trailhead, açaí bowls after the session, and moqueca baiana for dinner. Eating here is half the trip.
+LIFE ON INSTAGRAM
+Bahia, straight from the trail
+surfinnbahia
+Surf camp · Itacaré, Bahia
+Follow
+Daily conditions, sessions and camp life.
+View on Instagram →
+REVIEWS
+What guests say about Surf Inn Bahia
+Surf Inn Bahia
+Google Reviews
+5.0
+★★★★★
+63 reviews
+5
+4
+3
+2
+1
+See all 63 reviews
+A
+Ariadne Z.
+2026 · translated from Portuguese
+★★★★★
+I didn't have much time to plan this trip, so I left everything in Igor's hands, and he simply exceeded all expectations. The surf lessons were incredible; my instructor was very didactic and attentive, and the yoga classes completed a perfect package. I didn't have to worry about absolutely anything other than enjoying my days, and I even made friends for life!
+S
+Simon W.
+2025
+★★★★★
+No doubt the best surf school in Itacare! They have the best instructors, never had better and I have surfed across Mexico, Portugal, Morocco and Australia. The whole team is super nice, very responsive and just make the experience perfect!
+M
+Modena F.
+2026
+★★★★★
+It was just a short 5 minute walk away from the main noisy stretch making it such a peaceful sleeping experience. The host were so accommodating, I had the best time surfing and doing yoga daily which were all organised by the hostel. 100% recommend.
+P
+Philipp G.
+2026
+★★★★★
+I did a one week surfcamp with SurfInn organized and hosted by Igor. I had a wonderful time and can recommend it to everyone. Almost everday I had surf lessons which were very well instructed. The lessons that I was not able to attend were all refunded, very fair!
+K
+K. B.
+2026
+★★★★★
+The rooms are really clean and super accessible price wise. The employees are really nice and kind, speak very good english. On top of that, it is a unique experience if you want to surf and do yoga because the teachers are very professional. If you are visiting Itacaré, I would highly recommend Surf Inn.
+C
+Caio M.
+2025
+★★★★★
+Amazing experience! I never thought I could surf! The beach and the people are wonderful, I will truly never forget this place and this experience.
+GOOD TO KNOW
+Good to know, before Itacaré
+How do I get to Itacaré?
++
+Is the wifi good enough for work?
++
+What happens on flat days?
++
+Do I need to bring my board?
++
+Do I need cash in town?
++
+The jungle keeps no schedule. Neither will you.
+Tell us your dates and your level, our local team builds your Itacaré stay around you.
+DESTINATION
+Itacaré
+DATES
+TRAVELERS
+−
+1
++
+Request to book
+★ 4.9/5 · 501 Google reviews
+Free, no commitment
+A real (and probably sandy) person replies fast.
+
+### Questions and answers
+
+Q: How do I get to Itacaré?
+A: Fly to Ilhéus (IOS), then about 1h15 by road. We arrange the transfer, you land, we take it from there.
+
+Q: Is the wifi good enough for work?
+A: Yes. Starlink at the camp, with a call-friendly coworking corner. Video calls run fine.
+
+Q: What happens on flat days?
+A: A cacao farm, the gym, waterfalls, a boat on the Rio de Contas, a party in town. Flat days have a way of becoming favorite days.
+
+Q: Do I need to bring my board?
+A: No. Boards for every level are at the house, some of them shaped by César Baltazar, from softboards to shortboards. Unlimited board rental can be added to any package.
+
+Q: Do I need cash in town?
+A: Cards and Pix cover almost everything; a little cash helps at beach kiosks and small bars.
+
+
+## Itacaré: accommodation
+
+URL: https://surfinn-beta.vercel.app/surf-camp/itacare/accommodation/
+
+SURF INN BAHIA
+Surf Camp Itacaré, Bahia, Brazil
+Where the jungle meets the swell.
+Warm water, wild beaches and a rainforest at your back, surf at nature's pace in Bahia. Surf and bohemia.
+Request to book
+★ 5.0/5 · 63 Google reviews · Free, no commitment
+A real (and probably sandy) person replies fast.
+OVERVIEW
+THE CAMP
+EXPERIENCES
+SURF PACKAGES
+SURF GUIDE
+SURF INN BAHIA
+A house wrapped in green
+Right in the center of Itacaré, the best location there is: a leafy garden full of birdsong, a quiver of boards and a welcoming place to come back to.
+See all photos
+Stay close to everything, surrounded by green. Surf Inn Bahia brings you the laid-back side of Itacaré, in the center of town, a short walk from the beaches and restaurants.
+COMMON SPACES
+Life happens between the rooms
+Breakfast included every morning, yoga deck, gym, coworking corner with Starlink, lounge with the board rack, garden with hammocks. All inside the house, in the center of Itacaré.
+‹
+›
+THE HEART
+Breakfast, every morning
+Fresh fruit & honey
+Tapioca & eggs
+Local coffee
+Papaya, mango and pineapple cut that morning, tapioca, eggs, bread still warm, under the tiled roof, with the jungle right outside the doors.
+OUTDOORS
+Yoga deck & garden
+Sunrise yoga
+Hammocks
+Birdsong
+A wooden deck up in the canopy for sunrise yoga and breathwork, and a garden of hammocks you'll fight over. Yoga every day, included in your stay.
+WORK CORNER
+The coworking corner
+Starlink
+Real desks
+Call-friendly
+High-speed satellite internet (Starlink), proper desks and a corner that works for calls, the jungle handles the background sound. Some rooms have a desk too; ask when you book.
+THE LOUNGE
+Lounge & board rack
+Board rack
+Sofas & hammocks
+Open all day
+The heart of the house under the tiled roof: the boards lined up by the door, sofas for the between-sessions slump, hammocks for the after-lunch one.
+GYM
+Gym & surf training
+Free weights
+Balance boards
+Mobility
+A small open-air gym for the days the ocean is flat or your paddle arms need help: weights, balance boards and mobility work, coached when you want it.
+THE ROOMS
+Rooms you'll want to wake up in
+Wood, white linen, a fan or the A/C, and the forest doing the wake-up call. Pick your own corner or share one with future surf partners.
+ROOM
+Double room
+Sleeps 2
+Ensuite
+Fan / A/C
+Simple and beautiful: wood, white linen, and jungle sounds instead of an alarm clock.
+ROOM
+Shared room
+3-4 beds
+Lockers
+A/C
+Breezy rooms under high ceilings, fall asleep to crickets, wake up to surf check.
+BALTAZAR CUSTOMS
+Our shaper, our boards
+Part of our rack is shaped by César Baltazar, the first carioca pro surf champion. Leave your board at home.
+1st
+carioca pro surf champion, our shaper
+WHAT YOU GET
+Included in every stay
+ALWAYS INCLUDED
+✓
+Breakfast
+✓
+Starlink wifi & cowork
+✓
+Gym & surf training
+✓
+Yoga classes
+✓
+Board racks & wax
+Every stay comes with the house: breakfast under the tiled roof, a place to work and train, and the whole house at night.
+ADD WHEN YOU WANT
++
+Surf lessons
++
+Video analysis
++
+Board rental
++
+Transfer from Ilhéus
++
+Waterfall trips
++
+Massage
+Build the rest into your package, or add it day by day once you're here.
+The jungle keeps no schedule. Neither will you.
+Tell us your dates and your level, our local team builds your Itacaré stay around you.
+DESTINATION
+Itacaré
+DATES
+TRAVELERS
+−
+1
++
+Request to book
+★ 4.9/5 · 501 Google reviews
+Free, no commitment
+A real (and probably sandy) person replies fast.
+
+
+## Itacaré: activities
+
+URL: https://surfinn-beta.vercel.app/surf-camp/itacare/activities/
+
+SURF INN BAHIA
+Surf Camp Itacaré, Bahia, Brazil
+Where the jungle meets the swell.
+Warm water, wild beaches and a rainforest at your back, surf at nature's pace in Bahia. Surf and bohemia.
+Request to book
+★ 5.0/5 · 63 Google reviews · Free, no commitment
+A real (and probably sandy) person replies fast.
+OVERVIEW
+THE CAMP
+EXPERIENCES
+SURF PACKAGES
+SURF GUIDE
+EXPERIENCES
+Between two sessions, a whole world to play in
+Core experiences are what we run at the camp. Discovery is what you can add to your trip, with people from here.
+CORE EXPERIENCES
+With Surf Inn
+Surf lessons
+3 students max, 1h30 in the water
+Surf guiding
+Beginners to advanced surfers
+Video analysis
+Your session, wave by wave
+Yoga every day
+Under the roof, jungle behind
+Massage & recovery
+Everything the paddling asked for
+Capoeira
+Born in Bahia, played in a circle
+Coworking
+Starlink and a quiet corner to work
+Footvolley & altinha
+Feet only, on the sand at sunset
+DISCOVERY
+Things to do in Itacaré, beyond the surf
+SEASONAL
+Whale watching
+Humpbacks pass the coast, July to October.
+Rafting with locals
+Warm water rapids through the Atlantic forest.
+Waterfall hikes
+Jungle trails, cold fresh water, back for the afternoon session.
+Fishing with locals
+Out at dawn with the fishermen of Itacaré.
+Cacao farm
+Open the pod, taste the pulp, follow the bean.
+Moqueca & Bahian cooking
+Dendê, coconut milk, a clay pot and the people who cook it.
+Request to book
+Tell us what you want to add, we organise it with people from here.
+The jungle keeps no schedule. Neither will you.
+Tell us your dates and your level, our local team builds your Itacaré stay around you.
+DESTINATION
+Itacaré
+DATES
+TRAVELERS
+−
+1
++
+Request to book
+★ 4.9/5 · 501 Google reviews
+Free, no commitment
+A real (and probably sandy) person replies fast.
+
+
+## Itacaré: surf packages
+
+URL: https://surfinn-beta.vercel.app/surf-camp/itacare/packages/
+
+SURF INN BAHIA
+Surf Camp Itacaré, Bahia, Brazil
+Where the jungle meets the swell.
+Warm water, wild beaches and a rainforest at your back, surf at nature's pace in Bahia. Surf and bohemia.
+Request to book
+★ 5.0/5 · 63 Google reviews · Free, no commitment
+A real (and probably sandy) person replies fast.
+OVERVIEW
+THE CAMP
+EXPERIENCES
+SURF PACKAGES
+SURF GUIDE
+SURF PACKAGES
+Surf lessons: pick a package. Or create your own.
+Build it yourself, or start from one of three tried-and-true formulas. Nothing is locked, our local team adjusts everything afterwards.
++
+Create your own package
+Your room as the base, then as many surf and yoga lessons as you want, breakfast, boards. Or accommodation only.
+Build mine
+Surf In Bahia
+3 nights / 4 days
+from €170 / R$ 1,050
+INCLUDED
+3 nights in a shared or private room
+4 Surf lessons
+1 Yoga lesson
+Start from this →
+Onda Baiana
+5 nights / 6 days
+from €340 / R$ 2,110
+INCLUDED
+5 nights in a shared or private room
+4 Surf lessons
+1 Yoga lesson
+Video analysis
+Guided waterfall hike
+Start from this →
+Surf Intensive
+7 nights / 8 days
+from €550 / R$ 3,410
+INCLUDED
+7 nights in a shared or private room
+8 Surf lessons
+1 Surf guidance
+2 Yoga lessons
+Video analysis
+Massage
+Waterfall hike
+Start from this →
+"From" is the low-season price in a shared room. Prices move with season and availability, your exact price comes with your request.
+Every level has a plan
+Beginner
+Gentle starts at Concha and Itacarezinho, warm water, soft boards, and green waves sooner than you think.
+Intermediate
+Tiririca becomes your playground: punchy peaks a walk away, video analysis to sharpen your lines, new trail spots every day.
+Advanced
+Jeribucaçu and Engenhoca on the right swell, dawn hikes to empty peaks, and a guide who reads this coast like a tide chart.
+How a session goes
+1
+Spot & briefing
+Your coach picks the day's best spot for your level and walks you through banks, currents and the plan.
+2
+Warm-up on land
+Mobility, pop-up drills in the sand, and the one thing you'll each focus on today.
+3
+In the water
+With your coach in the lineup, three students max, every wave watched and corrected live.
+4
+Debrief
+What clicked, what to fix, and what tomorrow looks like, over fresh fruit back at the camp.
+Everything's provided
+Board for your level
+Leash
+Wax
+Boards, leashes and wax are included in every lesson, and the full quiver is there to rent between sessions.
+
+
+## Itacaré: surf guide
+
+URL: https://surfinn-beta.vercel.app/surf-camp/itacare/surf-guide/
+
+SURF INN BAHIA
+Surf Camp Itacaré, Bahia, Brazil
+Where the jungle meets the swell.
+Warm water, wild beaches and a rainforest at your back, surf at nature's pace in Bahia. Surf and bohemia.
+Request to book
+★ 5.0/5 · 63 Google reviews · Free, no commitment
+A real (and probably sandy) person replies fast.
+OVERVIEW
+THE CAMP
+EXPERIENCES
+SURF PACKAGES
+SURF GUIDE
+SURF GUIDE
+When to surf in Itacaré, season by season
+The water never gets cold and the waves never really stop, the seasons just change the flavor:
+Dec – Mar
+Summer
+Feriados: Réveillon · Carnaval
+Water
+27–28°C
+Air
+28–34°C
+Waves
+0.5–1.2 m
+Crowd
+Lively
+Sunny, playful waves and the town at its brightest. Beginner heaven.
+Apr – Jun
+Green season
+Feriados: Tiradentes
+Water
+26–27°C
+Air
+25–30°C
+Waves
+0.5–1.5 m
+Crowd
+Quiet
+Bigger swell, short tropical showers, everything intensely green.
+Jul – Sep
+Winter
+Feriados: Férias de julho
+Water
+25–26°C
+Air
+23–28°C
+Waves
+0.5–1.5 m
+Crowd
+Quiet
+The most consistent swell of the year, and still boardshorts weather.
+Oct – Nov
+Spring
+Water
+26–27°C
+Air
+26–31°C
+Waves
+0.8–1.5 m
+Crowd
+Medium
+Mellow, warm and uncrowded, a local favorite.
+The surf spots
+Praia do Pontal
+Beginner
+Protected and gentle, a short boat ride across the river from town, where first pop-ups happen.
+Engenhoca
+Beginner · Intermediate
+A jungle-trail classic: left and right peaks framed by rainforest.
+Ribeira
+Beginner · Intermediate
+Sheltered and forgiving, the town's gentle option a short walk away.
+Tiririca
+Intermediate · Advanced
+The town's main wave, a short walk away. Fast, fun beach break with real push.
+Jeribucaçu
+Advanced
+River-mouth wave at the end of a wild trail, heavier, hollower, worth earning.
+What to wear
+Boardshorts or bikini plus a lycra for the sun, that's it, twelve months a year. The water stays at 25°C or more.
+Whenever you come, your coaches pick the right spot for the day, that's what surf guidance is for.
+Ocean safety, handled
+Every session starts with a spot briefing: rips, rocks, river mouths and where to sit. Beginners stay on protected, sandy-bottom beaches, and our coaches are trained in ocean rescue and first aid.
+The jungle keeps no schedule. Neither will you.
+Tell us your dates and your level, our local team builds your Itacaré stay around you.
+DESTINATION
+Itacaré
+DATES
+TRAVELERS
+−
+1
++
+Request to book
+★ 4.9/5 · 501 Google reviews
+Free, no commitment
+A real (and probably sandy) person replies fast.
+
+
+## Who it is for
+
+URL: https://surfinn-beta.vercel.app/who-is-it-for/
+
+WHO IT'S FOR
+A surf camp designed for four ways of traveling.
+Not quite a surf camp, not a hostel, not a coliving. Surf Inn is its own thing. Here's who thrives here, honestly.
+01 · LEARN
+You want to go home better at something
+Learning is one of the best ways to live a trip. At Surf Inn, everything is set up to spark your curiosity and give you the best conditions to learn, in surf, music or any other discipline, whether you're starting out or looking to progress.
+★★★★★
+"Comparing to other surf camps I have been to, I'm confident to say that here I improved the most. The teachers will be selected according to your level and goal. Gamechanger is the ratio of teachers to students, which was never more than 1:3 during my stay. Besides surfing the hostel is pretty nice, offers daily activities and is located just across from the ocean."
+N
+Nish
+on Google
+02 · WORK
+You work remotely and want the ocean back in your days
+Surf Inn is an ideal place to work: everything is set up for remote workers. High-speed internet (Starlink), a quiet coworking corner for calls, rooms with a desk on request, and a timezone (GMT-3) that leaves your afternoons free on European hours, and your mornings on North American ones.
+★★★★★
+"I originally planned to stay for just one week, but it didn't take long for me to extend my stay to an entire month, which already says everything about how special this place is. What made this experience so unique were the people. I met incredible individuals and felt welcomed, supported, and at home the entire time."
+L
+Leif
+on Google
+03 · BELONG
+You travel and want a place that feels like people, not a program
+Surf Inn is also simply a great place for a holiday, for a few days or several weeks, without booking a single lesson: the beach, the evenings, the sunsets in Rio and Itacaré. And a natural meeting point for travelers.
+★★★★★
+"We spent an amazing 7 days there, in which we have made loads of new friendships whom we will cherish forever. The surf lessons, which were available through a package deal, were held in small groups so the teachers really took their time to help you improve. Highly recommend!"
+R
+Randolf
+on Google
+04 · EXPLORE
+You want to see Brazil from the inside
+Surf Inn aims to give everyone an authentic Brazil and to share the country's cultural richness through all its activities, rooted in community-based tourism.
+★★★★★
+"The camp is situated in a small town, super authentic of Brazil: With a long beautiful beach, lots of people in the evening that are listening to music and dancing, but during the day it is very calm and chill. All surf teachers are very knowledgeable, they do not just push you into the water, but give you all the necessary informations (and theory which is very useful) to learn surfing the best way."
+M
+Marine
+on Google
+E AÍ, BRASILEIRO?
+Isso aqui também é seu.
+O Surf Inn não é clube de gringo. Metade da mesa fala português, os mestres são daqui, e feriado é temporada alta de amizade. Carnaval, Tiradentes, réveillon, férias de julho. Escapada de fim de semana ou temporada inteira: chega mais.
+Bora?
+Recognized yourself?
+Tell us which of the four you are (or which mix), our local team shapes the stay around it.
+Request to book
+
+
+## About us
+
+URL: https://surfinn-beta.vercel.app/about-us/
+
+ABOUT US
+We are beyond the surf camp business.
+We're here to make memories. Surf is the best way we know to start one.
+MEET LUCAS
+Why Surf Inn exists
+Lucas started Surf Inn so that a week in Brazil would feel like living here, not visiting. We're Brazilian, and we host the Brazilian way: you don't check in, you're welcomed in.
+OUR PILLARS
+What our hearts beat for
+Surf
+Three students max per coach, surf guiding, video analysis, and a rack of boards for every level.
+Music
+Samba reggae on Tuesdays, capoeira on Wednesdays, and live music whenever it starts, which is often.
+Community
+Travel is mostly about the people you meet. Here, everyone makes friends quickly and easily: guests, coaches and neighbors.
+Wellbeing
+Sunrise yoga, waterfall walks, a massage, and the quiet before the camp wakes up.
+THE TEAM
+The people who make it home
+Lucas
+Founder & Surf Inn Rio manager
+Founded Surf Inn and runs the Rio camp. Musician, surfer, and the one with the ideas.
+Igor
+Surf Inn Bahia manager
+Runs the house in Itacaré and produces music, the rooms, the kitchen, the soundtrack.
+Marek
+Brand
+Looks after how Surf Inn shows up, the words, the images, the feeling.
+Kévin
+Marketing & strategy
+Looks after marketing and strategy: getting Surf Inn known and preparing what comes next.
+The moments we live for
+No staged photos. This is us, the team, the guests, the days in between.
+Surfing together
+Playing music together
+Training our bodies
+Practicing new activities
+Sound like your kind of people?
+Tell us about yourself, our local team (real humans, probably sandy) builds your stay in Rio or Itacaré.
+Request to book
+
+
+## Reviews
+
+URL: https://surfinn-beta.vercel.app/reviews/
+
+REVIEWS
+Reviews of our surf camps in Rio and Itacaré
+★★★★★
+Rio de Janeiro · 4.9 · 438 on Google →
+★★★★★
+Itacaré · 5.0 · 63 on Google →
+All
+Surf Inn Rio
+Surf Inn Bahia
+★★★★★
+“I originally planned to stay for just one week, but it didn't take long for me to extend my stay to an entire month, which already says everything about how special this place is. What made this experience so unique were the people. I met incredible individuals and felt welcomed, supported, and at home the entire time.”
+L
+Leif H.
+Surf Inn Rio · on Google, 2026
+★★★★★
+“I didn't have much time to plan this trip, so I left everything in Igor's hands, and he simply exceeded all expectations. The surf lessons were incredible; my instructor was very didactic and attentive, and the yoga classes completed a perfect package. I didn't have to worry about absolutely anything other than enjoying my days, and I even made friends for life!”
+Translated from Portuguese
+A
+Ariadne Z.
+Surf Inn Bahia · on Google, 2026
+★★★★★
+“I found the teachers to be the best I have ever experienced by a long, long way (have had lessons in a few countries). Duda in particular was so helpful from a technical perspective and in one hour I progressed so much. I am in my 40s and whilst I was the oldest person in my lessons by a long way, I still felt very welcome.”
+S
+Sarah P.
+Surf Inn Rio · on Google, 2025
+★★★★★
+“No doubt the best surf school in Itacare! They have the best instructors, never had better and I have surfed across Mexico, Portugal, Morocco and Australia. The whole team is super nice, very responsive and just make the experience perfect!”
+S
+Simon W.
+Surf Inn Bahia · on Google, 2025
+★★★★★
+“Literally My. Best. Birthday. Ever!!! Yoga. Massage. Surfing lesson. Surfing lesson. Massage. Yoga. Repeat. Warm, inclusive, friendly staff. Extraordinary value for the price. I felt safe and cared for at every moment (very important as a solo female Traveler).”
+N
+N. U.
+Surf Inn Rio · on Google, 2025
+★★★★★
+“It was just a short 5 minute walk away from the main noisy stretch making it such a peaceful sleeping experience. The host were so accommodating, I had the best time surfing and doing yoga daily which were all organised by the hostel. 100% recommend.”
+M
+Modena F.
+Surf Inn Bahia · on Google, 2026
+★★★★★
+“We did 4 surf lessons and felt very safe in the water even when the conditions were tough 2 days. One teacher has 3 people max., so the teachers are always close to you and supportive. The hostel offers activities every day, solo traveling people will definitely not get bored.”
+S
+Samira S.
+Surf Inn Rio · on Google, 2025
+★★★★★
+“I did a one week surfcamp with SurfInn organized and hosted by Igor. I had a wonderful time and can recommend it to everyone. Almost everday I had surf lessons which were very well instructed. The lessons that I was not able to attend were all refunded, very fair!”
+P
+Philipp G.
+Surf Inn Bahia · on Google, 2026
+★★★★★
+“The camp is situated in a small town, super authentic of Brazil: With a long beautiful beach, lots of people in the evening that are listening to music and dancing, but during the day it is very calm and chill. All surf teachers are very knowledgeable, they do not just push you into the water, but give you all the necessary informations (and theory which is very useful) to learn surfing the best way.”
+M
+Marine C.
+Surf Inn Rio · on Google, 2024
+★★★★★
+“The rooms are really clean and super accessible price wise. The employees are really nice and kind, speak very good english. On top of that, it is a unique experience if you want to surf and do yoga because the teachers are very professional. If you are visiting Itacaré, I would highly recommend Surf Inn.”
+K
+K. B.
+Surf Inn Bahia · on Google, 2026
+★★★★★
+“We spent an amazing 7 days there, in which we have made loads of new friendships whom we will cherish forever. The surf lessons, which were available through a package deal, were held in small groups so the teachers really took their time to help you improve. Highly recommend!”
+R
+Randolf T.
+Surf Inn Rio · on Google, 2025
+★★★★★
+“Amazing experience! I never thought I could surf! The beach and the people are wonderful, I will truly never forget this place and this experience.”
+C
+Caio M.
+Surf Inn Bahia · on Google, 2025
+★★★★★
+“This is definitely more than just a surf camp; it's an unforgettable experience! The vibe at Surf Inn Rio is unbeatable. The instructors are not just knowledgeable but also incredibly fun and motivating. They made learning to surf a breeze, and I felt like part of a big, accepting, and welcoming surfing family.”
+G
+Gabriel G.
+Surf Inn Rio · on Google, 2023
+★★★★★
+“Had a surf lesson (beginner) with Igor it was the best surf lesson I ever had. He was cool and I progressed a lot, as he was paying attention to important detail allowing me to learn quickly. If you stay several days he can also prepare a program to progress as fast as possible. I would 100% recommend”
+V
+Valentin G.
+Surf Inn Bahia · on Google, 2025
+★★★★★
+“Comparing to other surf camps I have been to, I'm confident to say that here I improved the most. The teachers will be selected according to your level and goal. Gamechanger is the ratio of teachers to students, which was never more than 1:3 during my stay. Besides surfing the hostel is pretty nice, offers daily activities and is located just across from the ocean.”
+N
+Nish
+Surf Inn Rio · on Google, 2024
+★★★★★
+“Constant feedback from a very experienced instructor, couldn't have asked for a better introduction to surfing. The information was provided in such a way that felt very applicable to what you were doing, and I could feel myself understanding the concept better and batter almost by every wave.”
+C
+Christian L.
+Surf Inn Bahia · on Google, 2025
+★★★★★
+“I really wanted to learn to surf so I booked a total of 8 hours. You can choose between different times, which is perfect for early birds but also late risers. The surf instructors are all very friendly, attentive and always in a good mood. An absolute heartfelt recommendation, whether for beginners, advanced or professionals!”
+M
+Magdalena P.
+Surf Inn Rio · on Google, 2025
+★★★★★
+“The best pausada that I have been in itacare. It felt like home. People working there were so nice. For those who want to have a surf routine and chill vibe this is the perfect placeeee”
+L
+Lea M.
+Surf Inn Bahia · on Google, 2026
+★★★★★
+“As a beginner surfer, there is an area you can go on the beach with smaller waves (but still good size) to learn. There are much bigger waves as well for the more advanced. The instructors were great, I had three different guys and they were all super helpful and spoke good English. They put on activities every day so it's a good communal vibe, and will also do trips to other beaches nearby for surfing. It's super good value for what you pay.”
+W
+Will D.
+Surf Inn Rio · on Google, 2024
+★★★★★
+“The inn is beautiful, but what really makes the difference are the people. We were received with great affection and had impeccable service throughout our stay. The breakfast is simply delicious, everything made with great care!”
+Translated from Portuguese
+D
+Dayse F.
+Surf Inn Bahia · on Google, 2026
+★★★★★
+“Had a wonderful time doing the 5 day surf package! All of the instructors were friendly, helpful and patient, and lessons were either in a very small group or by myself! Video analysis session with Lucas was incredible helpful! The surrounding area was peaceful and safe.”
+A
+Abbey T.
+Surf Inn Rio · on Google, 2024
+★★★★★
+“I took a lesson with Igor and it was incredibly good! He corrected my movements and in the first lesson I was already catching several waves. The guys know all the awesome spots, definitely the best place for surf lessons in Itacaré.”
+Translated from Portuguese
+I
+Isabela F.
+Surf Inn Bahia · on Google, 2025
+★★★★★
+“I was only there for 3 nights (I did the surf package with 4 lessons) and felt like I could have spent weeks there! The staff are the best out of every hostel I've been to in South America. The surf lessons were so great I felt like I improved a lot in the short amount of time I was there. Every surf teacher was passionate about helping you make progress.”
+D
+Daphne L.
+Surf Inn Rio · on Google, 2023
+★★★★★
+“It's close to everything, which makes access very easy. The service was very good, the cook who serves breakfast is excellent, and the owner helped us with everything we needed. The rooms are comfortable and clean, everything working well. The location definitely improved our time in Itacaré and we will be back soon.”
+Translated from Portuguese
+L
+Luana M.
+Surf Inn Bahia · on Google, 2026
+★★★★★
+“I'd surfed before and let Lucas (camp organiser) know that I was hoping to progress and develop some more technique. I am so happy with how the surf lessons went, I'm definitely more confident on the board than before I came, and I know exactly what I need to work on to improve. 10/10 recommend for all, whether it's your first time or not, you'll be in good hands here.”
+J
+Johanna B.
+Surf Inn Rio · on Google, 2023
+★★★★★
+“Had eight surf classes in eight days and learned so much with the best surfteachers! It's a great place to enjoy nature, a chill and friendly vibe, while you're still pretty close to the city. I absolutely loved the free Yoga classes with Tiago, a perfect addition to the surfing. Thanks to the fun activities everyday, like volleyball at the beach or caipirinha lessons, it's very easy to socialize and meet new people.”
+L
+Luise E.
+Surf Inn Rio · on Google, 2024
+★★★★★
+“A few meters away from the beach, so we could enjoy breakfast while looking at the waves ;) All surf teachers did an amazing job, giving good advice and keeping up the good mood! As there very few students per teacher they could fully concentrate on helping you to progress, which was amazing! They offer many more other acitivites like hikes, yoga, skate surf etc.”
+F
+Francoise W.
+Surf Inn Rio · on Google, 2024
+★★★★★
+“All of the teachers are super professional and good vibes, we had so much fun in the water and always felt safe (which is not a given which bigger surf groups). If you travel alone, this is the perfect place, everyone is so kind and welcoming. we will come back!”
+D
+Dela M.
+Surf Inn Rio · on Google, 2024
+★★★★★
+“Both Lucas and Guile were great instructors. They did a good job assessing our capabilities and provided tailored classes. Plus, they speak perfect English, which was a huge plus if you want to receive advance tips other than getting someone 'who only knows how to push boards'. Highly recommend!”
+Y
+Y. X.
+Surf Inn Rio · on Google, 2023
+★★★★★
+“It was my first time that I went from white water to the green one and thanks to the professionalism of the Inn Surf teachers (Guillermo & Lukas), I managed to catch my first waves since the beginning! Very personal approach, willingness to see the student's improvement & result, theoretical & practical guidance and just lots of fun :)”
+A
+Anna
+Surf Inn Rio · on Google, 2022
+★★★★★
+“My first time surfing was here at the Surf Inn and due to great coaching i was able to stand up on the board immediately! I have been back here multiple times and know for sure i will come again. Thanks so much to Lucas and the whole team! Obrigada!”
+V
+Veronica V.
+Surf Inn Rio · on Google, 2024
+★★★★★
+“The rooms had everything you need and the location is right in front of the beach, so you can have breakfast with the most gorgeous views! The surf teachers do an amazing job at giving constructive feedback and helping you improve, all while keeping up a fun atmosphere. On top of that you can also go on hikes, take a dancing classs and much more.”
+L
+Laure W.
+Surf Inn Rio · on Google, 2024
+★★★★★
+“Best place to surf in Rio and best team to do it with! You can also spend time hiking, playing beach volley or enjoy the pool! Lukas is the best and so helpfull! Had a wonderful stay here and will for sure come back!”
+M
+Mattias Y.
+Surf Inn Rio · on Google, 2025
+
+
+## FAQ
+
+URL: https://surfinn-beta.vercel.app/faq/
+
+FAQ
+Surf camp in Brazil: your questions answered
+Can't find your question? WhatsApp us, a real person answers.
+Before you come
+Do I need a visa?
++
+What should I pack?
++
+Is Brazil safe?
++
+Rio or Itacaré: which camp should I choose?
++
+How do I get to the camp from the airport?
++
+On site
+Can I stay without taking any lessons?
++
+What are meals like?
++
+Is there wifi?
++
+The surf
+I've never surfed. Really never.
++
+What if the ocean is flat?
++
+Can I bring my own board?
++
+When is the best time to surf in Rio and Itacaré?
++
+How many days does it take to learn to surf?
++
+How warm is the water? Do I need a wetsuit?
++
+Booking & payment
+How much does a stay cost?
++
+Is my request a commitment?
++
+Can we book as a group?
++
+
+### Questions and answers
+
+Q: Do I need a visa?
+A: Most European and UK passports enter Brazil visa-free for up to 90 days. Since 10 April 2025, US, Canadian and Australian passports need an e-visa. Check your country's current agreement before booking flights.
+
+Q: What should I pack?
+A: Boardshorts or bikini, a lycra, reef-safe sunscreen, something for warm evenings. Boards and wetsuits live at the camp.
+
+Q: Is Brazil safe?
+A: Our neighborhoods are calm, residential and well known to us. We brief you on arrival with the same advice we'd give a friend, where to go, what to skip.
+
+Q: Rio or Itacaré: which camp should I choose?
+A: Rio if you want the city: Recreio's waves, samba, forró and nights out, with Rio's landmarks close by. Itacaré if you want nature: a small town between the jungle and wild beaches, warmer water and a slower pace. Many guests do both.
+
+Q: How do I get to the camp from the airport?
+A: For Rio, fly into GIG or SDU: the camp is about 50 minutes from GIG. For Itacaré, fly into Ilhéus (IOS), then about 1h15 by road. We arrange door-to-door transfers, and someone waits with your name when you land.
+
+Q: Can I stay without taking any lessons?
+A: Absolutely. A bed and the big table make a full stay, add activities whenever you like, including once you're here.
+
+Q: What are meals like?
+A: Breakfast is available at the camp (included in Itacaré, optional in Rio); for other meals we point you to our favorite local spots, or, in Rio, the kitchen is yours.
+
+Q: Is there wifi?
+A: Yes, good enough that guests work remotely for weeks. See the "Who it's for" page for the honest details.
+
+Q: What if the ocean is flat?
+A: Surfskate, SUP, hikes, fishing, capoeira, percussion classes. Flat days are a feature, not a bug.
+
+Q: Can I bring my own board?
+A: Of course, and airlines to Brazil are generally board-friendly. Or travel light and use our quiver.
+
+Q: When is the best time to surf in Rio and Itacaré?
+A: Both camps have waves all year. In Rio, April to June is the sweet spot, July to September brings the biggest swell, and December to March is small and sunny, perfect for learning. In Itacaré, July to September has the most consistent swell and summer is beginner heaven.
+
+Q: How many days does it take to learn to surf?
+A: Most guests ride their first wave on day one. To really progress, plan a week: our Surf Intensive package has 8 lessons over 7 nights, three students max per coach.
+
+Q: How warm is the water? Do I need a wetsuit?
+A: In Itacaré the water is 25°C or more all year: boardshorts or bikini, twelve months a year. In Rio it reaches 26°C in summer; on winter mornings a thin top or a shorty helps, and the camp has them.
+
+Q: How much does a stay cost?
+A: Packages start from €185 for 3 nights in Rio and from €170 in Itacaré, in a shared room in low season. Prices move with season and availability: our local team sends the exact price with your quote, and no payment happens online.
+
+Q: Is my request a commitment?
+A: No. The funnel sends your wishes to a human who gets back to you as soon as possible. You decide after the quote.
+
+Q: Can we book as a group?
+A: Yes, friend trips, couples, retreats. Tell us the headcount and we'll take it from there.
+
+
+## Contact
+
+URL: https://surfinn-beta.vercel.app/contact/
+
+CONTACT
+Fala com a gente
+Question, special request, or just want a human before you book? A real person answers fast.
+Write to us
+NAME
+EMAIL
+MESSAGE
+Send message
+Or WhatsApp us directly →
+Surf Inn Rio · Rio de Janeiro
+Avenida Paulo Tapajós, 616 · Recreio dos Bandeirantes, Rio de Janeiro · RJ, 22795-589, Brazil
+Surf Inn Bahia · Itacaré
+Rua Louro Amarelo, 240 · Conchas do Mar II, Itacaré · BA, 45530-000, Brazil
+
+
+## Contact
+
+WhatsApp Rio: +55 21 99923-1992 · WhatsApp Itacaré: +55 73 99825-7683 · Instagram: @surfinnrio, @surfinnbahia, @surfinnbrasil

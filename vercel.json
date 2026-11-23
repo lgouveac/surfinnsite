@@ -1,26 +1,148 @@
 {
-  "rewrites": [
-    { "source": "/api/contact", "destination": "/api/contact" },
-    { "source": "/home-new", "destination": "/index.html" },
-    { "source": "/rio-de-janeiro", "destination": "/rio-de-janeiro.html" },
-    { "source": "/itacar%C3%A9-new", "destination": "/itacare.html" },
-    { "source": "/itacare-new", "destination": "/itacare.html" },
-    { "source": "/itacar%C3%A9", "destination": "/itacare.html" },
-    { "source": "/itacare", "destination": "/itacare.html" },
-    { "source": "/rio-de-janeiro/activities", "destination": "/activities-rio.html" },
-    { "source": "/itacare/activities", "destination": "/activities-itacare.html" },
-    { "source": "/itacar%C3%A9/activities", "destination": "/activities-itacare.html" },
-    { "source": "/rio-de-janeiro/accommodations", "destination": "/accommodations-rio.html" },
-    { "source": "/itacare/accommodations", "destination": "/accommodations-itacare.html" },
-    { "source": "/itacar%C3%A9/accommodations", "destination": "/accommodations-itacare.html" },
-    { "source": "/blog", "destination": "/blog.html" }
-  ],
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        }
+      ]
+    },
     {
       "source": "/assets/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
+    }
+  ],
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/itacar%c3%a9/",
+      "destination": "/surf-camp/itacare/",
+      "permanent": true
+    },
+    {
+      "source": "/itacar%c3%a9-new/",
+      "destination": "/surf-camp/itacare/",
+      "permanent": true
+    },
+    {
+      "source": "/home-new/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/itacaré/",
+      "destination": "/surf-camp/itacare/",
+      "permanent": true
+    },
+    {
+      "source": "/itacar%C3%A9/",
+      "destination": "/surf-camp/itacare/",
+      "permanent": true
+    },
+    {
+      "source": "/itacaré-new/",
+      "destination": "/surf-camp/itacare/",
+      "permanent": true
+    },
+    {
+      "source": "/itacar%C3%A9-new/",
+      "destination": "/surf-camp/itacare/",
+      "permanent": true
+    },
+    {
+      "source": "/experiences-rio-de-janeiro/",
+      "destination": "/surf-camp/rio-de-janeiro/packages/",
+      "permanent": true
+    },
+    {
+      "source": "/experiences-itacare/",
+      "destination": "/surf-camp/itacare/packages/",
+      "permanent": true
+    },
+    {
+      "source": "/activities-rio-de-janeiro/",
+      "destination": "/surf-camp/rio-de-janeiro/activities/",
+      "permanent": true
+    },
+    {
+      "source": "/activities-itacare/",
+      "destination": "/surf-camp/itacare/activities/",
+      "permanent": true
+    },
+    {
+      "source": "/accomodations-rio-de-janeiro/",
+      "destination": "/surf-camp/rio-de-janeiro/accommodation/",
+      "permanent": true
+    },
+    {
+      "source": "/accomodations-itacare/",
+      "destination": "/surf-camp/itacare/accommodation/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-progress-faster-in-surfing-%E2%80%94-even-during-a-short-trip/",
+      "destination": "/blog/how-to-progress-faster-in-surfing-even-during-a-short-trip/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/how-to-progress-faster-in-surfing-—-even-during-a-short-trip/",
+      "destination": "/blog/how-to-progress-faster-in-surfing-even-during-a-short-trip/",
+      "permanent": true
+    },
+    {
+      "source": "/en/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/:chemin(.+)",
+      "destination": "/:chemin",
+      "permanent": true
+    },
+    {
+      "source": "/surf-camp/",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/fr/surf-camp/",
+      "destination": "/fr/",
+      "permanent": false
+    },
+    {
+      "source": "/pt/surf-camp/",
+      "destination": "/pt/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/((?!assets/|videos/|blog/|robots\\.txt|sitemap\\.xml|favicon)(?!.*(?:%7B|%7b|\\{|\\.))[^.]*)",
+      "destination": "/index.html"
     }
   ]
 }

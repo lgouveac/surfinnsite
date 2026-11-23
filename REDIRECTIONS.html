@@ -1,0 +1,155 @@
+<title>Redirections visitsurfinn.com</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Mise en page : une colonne de lecture, un tableau de correspondances, un bloc de configuration à copier. */
+:root {
+  --fond: #F3F6F4; --texte: #12302B; --doux: #4C6A64; --trait: #CFDDD8; --carte: #FFFFFF;
+  --mer: #0B6A73; --sable: #FFC531; --alerte: #B4532A; --code: #0F2925; --code-texte: #E6F2EE;
+  --titre: "Gabarito", "Chivo", system-ui, sans-serif;
+  --corps: "Chivo", system-ui, -apple-system, sans-serif;
+  --mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --fond: #0E1D1A; --texte: #E4EFEB; --doux: #9DB8B1; --trait: #29423D; --carte: #142824;
+  --mer: #5FC2C9; --sable: #FFD25E; --alerte: #F08A5D; --code: #08130F; --code-texte: #D7EBE5; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --fond: #0E1D1A; --texte: #E4EFEB; --doux: #9DB8B1; --trait: #29423D; --carte: #142824;
+  --mer: #5FC2C9; --sable: #FFD25E; --alerte: #F08A5D; --code: #08130F; --code-texte: #D7EBE5; color-scheme: dark }
+body { background: var(--fond); color: var(--texte); font: 16px/1.6 var(--corps); }
+.page { max-width: 920px; margin: 0 auto; padding-block: 40px 72px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px));
+  display: grid; gap: 36px; }
+header { display: grid; gap: 10px; }
+.sur { font: 600 12px/1 var(--corps); letter-spacing: .12em; text-transform: uppercase; color: var(--mer); }
+h1 { font: 700 clamp(30px, 5vw, 44px)/1.1 var(--titre); text-wrap: balance; }
+h2 { font: 700 22px/1.25 var(--titre); text-wrap: balance; margin-bottom: 10px; }
+p, li { max-width: 68ch; }
+.chapeau { color: var(--doux); font-size: 17px; }
+section { display: grid; gap: 10px; }
+ul, ol { padding-left: 1.3em; display: grid; gap: 6px; }
+code { font: 0.88em var(--mono); background: color-mix(in srgb, var(--mer) 10%, transparent); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+.tableau { overflow-x: auto; border: 1px solid var(--trait); border-radius: 10px; background: var(--carte); }
+table { border-collapse: collapse; width: 100%; min-width: 640px; font-size: 14.5px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--trait); vertical-align: top; }
+th { font: 600 12px/1.3 var(--corps); letter-spacing: .06em; text-transform: uppercase; color: var(--doux); }
+tr:last-child td { border-bottom: 0; }
+td code { background: none; padding: 0; }
+.fleche { color: var(--mer); font-weight: 700; }
+.etat { display: inline-block; font: 600 11.5px/1.5 var(--corps); padding: 1px 8px; border-radius: 99px; white-space: nowrap; }
+.etat.ok { background: color-mix(in srgb, var(--mer) 16%, transparent); color: var(--mer); }
+.etat.choix { background: color-mix(in srgb, var(--sable) 35%, transparent); color: var(--texte); }
+.decision { border-left: 4px solid var(--sable); background: var(--carte); padding: 16px 18px; border-radius: 0 10px 10px 0; display: grid; gap: 8px; }
+.code { position: relative; }
+pre { background: var(--code); color: var(--code-texte); font: 13px/1.55 var(--mono); padding: 18px; border-radius: 10px; overflow-x: auto; }
+button { font: 600 13px var(--corps); color: var(--texte); background: var(--sable); border: 0; border-radius: 6px; padding: 6px 12px; cursor: pointer; position: absolute; top: 10px; right: 10px; }
+button:focus-visible { outline: 2px solid var(--mer); outline-offset: 2px; }
+.note { color: var(--doux); font-size: 14px; }
+</style>
+
+<div class="page">
+  <header>
+    <span class="sur">Surf Inn · mise en production · 18/11/2026</span>
+    <h1>Plan de redirection de visitsurfinn.com</h1>
+    <p class="chapeau">L'ancien site Framer est remplacé par le nouveau site (projet Vercel <code>surfinn-beta</code>). Chaque ancienne adresse doit renvoyer, en une seule étape, vers la page équivalente du nouveau site, pour garder le référencement acquis et ne laisser aucun lien mort.</p>
+  </header>
+
+  <section>
+    <h2>Principes</h2>
+    <ul>
+      <li>Domaine de référence : <code>https://www.visitsurfinn.com</code>. L'adresse sans <code>www</code> redirige déjà vers <code>www</code> aujourd'hui : garder ce comportement.</li>
+      <li>Redirections permanentes. Vercel renvoie un code 308 avec <code>"permanent": true</code>, que Google traite comme un 301.</li>
+      <li>Une seule étape : la cible est l'adresse finale, barre oblique comprise. Le nouveau site ajoute une barre finale (<code>trailingSlash: true</code>) ; sans elle, on ajouterait une redirection de plus.</li>
+      <li>Les redirections restent en place au moins un an, idéalement sans limite.</li>
+      <li>Le nouveau site sert l'anglais à la racine, le français sous <code>/fr/</code> et le portugais sous <code>/pt/</code>. L'ancien site n'avait que des adresses anglaises : tout renvoie vers la version anglaise. Le nouveau site propose ensuite la langue du visiteur.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Correspondances</h2>
+    <p class="note">Les 13 adresses déclarées dans le sitemap actuel (<code>www.visitsurfinn.com/sitemap.xml</code>, relevé le 18/11/2026). Toutes les cibles existent sur le nouveau site.</p>
+    <div class="tableau">
+      <table>
+        <thead><tr><th>Ancienne adresse</th><th></th><th>Nouvelle adresse</th><th>Remarque</th></tr></thead>
+        <tbody>
+          <tr><td><code>/</code></td><td class="fleche">=</td><td><code>/</code></td><td><span class="etat ok">inchangée</span></td></tr>
+          <tr><td><code>/home-new</code></td><td class="fleche">→</td><td><code>/</code></td><td>Brouillon Framer resté public</td></tr>
+          <tr><td><code>/itacaré</code></td><td class="fleche">→</td><td><code>/surf-camp/itacare/</code></td><td>Adresse accentuée : déclarer aussi la forme encodée <code>/itacar%C3%A9</code></td></tr>
+          <tr><td><code>/itacaré-new</code></td><td class="fleche">→</td><td><code>/surf-camp/itacare/</code></td><td>Brouillon Framer resté public ; idem, forme encodée</td></tr>
+          <tr><td><code>/experiences-rio-de-janeiro</code></td><td class="fleche">→</td><td><code>/surf-camp/rio-de-janeiro/packages/</code></td><td>Les « expériences » sont les packages</td></tr>
+          <tr><td><code>/experiences-itacare</code></td><td class="fleche">→</td><td><code>/surf-camp/itacare/packages/</code></td><td></td></tr>
+          <tr><td><code>/activities-rio-de-janeiro</code></td><td class="fleche">→</td><td><code>/surf-camp/rio-de-janeiro/activities/</code></td><td></td></tr>
+          <tr><td><code>/activities-itacare</code></td><td class="fleche">→</td><td><code>/surf-camp/itacare/activities/</code></td><td></td></tr>
+          <tr><td><code>/accomodations-rio-de-janeiro</code></td><td class="fleche">→</td><td><code>/surf-camp/rio-de-janeiro/accommodation/</code></td><td>L'ancienne adresse avait une faute (un seul « m »)</td></tr>
+          <tr><td><code>/accomodations-itacare</code></td><td class="fleche">→</td><td><code>/surf-camp/itacare/accommodation/</code></td><td></td></tr>
+          <tr><td><code>/blog</code></td><td class="fleche">→</td><td><code>/</code></td><td><span class="etat choix">à décider</span> voir ci-dessous</td></tr>
+          <tr><td><code>/blog/surfing-in-rio-de-janeiro-the-complete-guide-for-2026</code></td><td class="fleche">→</td><td><code>/surf-camp/rio-de-janeiro/surf-guide/</code></td><td><span class="etat choix">à décider</span> page la plus proche : le guide des spots de Rio</td></tr>
+          <tr><td><code>/blog/how-to-progress-faster-in-surfing-—-even-during-a-short-trip</code></td><td class="fleche">→</td><td><code>/</code></td><td><span class="etat choix">à décider</span> aucune page équivalente. Le tiret long est encodé <code>%E2%80%94</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="decision">
+    <h2>Décision à prendre : les deux articles du blog</h2>
+    <p>Le nouveau site n'a pas de blog. Ces deux articles sont le seul contenu éditorial du site actuel, et le guide « Surfing in Rio de Janeiro » vise une recherche que font les voyageurs.</p>
+    <p><strong>Recommandé :</strong> reprendre les deux articles sur le nouveau site, aux <strong>mêmes adresses</strong> (<code>/blog/…</code>). Il n'y a alors aucune redirection à poser pour eux, et le référencement est intégralement conservé.</p>
+    <p><strong>À défaut :</strong> appliquer les redirections du tableau. Une page qui traite un autre sujet que l'article perd une partie du référencement de l'article.</p>
+    <p class="note">Avant de trancher, regarder dans Google Analytics (propriété Surf Inn) et dans Search Console combien de visites ces deux articles reçoivent.</p>
+  </section>
+
+  <section>
+    <h2>Configuration à ajouter dans <code>vercel.json</code></h2>
+    <p>À fusionner dans la liste <code>redirects</code> existante. Elle contient déjà les redirections de <code>/en/…</code> et de <code>/surf-camp/</code> : ne pas les retirer. Le bloc ci-dessous applique l'option « à défaut » pour le blog. Si les articles sont repris, supprimer les trois lignes <code>/blog</code>.</p>
+    <div class="code">
+      <button type="button" id="copier">Copier</button>
+<pre id="config">[
+  { "source": "/home-new", "destination": "/", "permanent": true },
+  { "source": "/itacaré", "destination": "/surf-camp/itacare/", "permanent": true },
+  { "source": "/itacar%C3%A9", "destination": "/surf-camp/itacare/", "permanent": true },
+  { "source": "/itacaré-new", "destination": "/surf-camp/itacare/", "permanent": true },
+  { "source": "/itacar%C3%A9-new", "destination": "/surf-camp/itacare/", "permanent": true },
+  { "source": "/experiences-rio-de-janeiro", "destination": "/surf-camp/rio-de-janeiro/packages/", "permanent": true },
+  { "source": "/experiences-itacare", "destination": "/surf-camp/itacare/packages/", "permanent": true },
+  { "source": "/activities-rio-de-janeiro", "destination": "/surf-camp/rio-de-janeiro/activities/", "permanent": true },
+  { "source": "/activities-itacare", "destination": "/surf-camp/itacare/activities/", "permanent": true },
+  { "source": "/accomodations-rio-de-janeiro", "destination": "/surf-camp/rio-de-janeiro/accommodation/", "permanent": true },
+  { "source": "/accomodations-itacare", "destination": "/surf-camp/itacare/accommodation/", "permanent": true },
+  { "source": "/blog/surfing-in-rio-de-janeiro-the-complete-guide-for-2026", "destination": "/surf-camp/rio-de-janeiro/surf-guide/", "permanent": true },
+  { "source": "/blog/:article*", "destination": "/", "permanent": true },
+  { "source": "/blog", "destination": "/", "permanent": true }
+]</pre>
+    </div>
+    <p class="note">L'ordre compte : la règle précise du guide de Rio doit rester avant la règle générale <code>/blog/:article*</code>. Les sources sont écrites sans barre finale ; vérifier que Vercel accepte aussi la variante avec barre (<code>/home-new/</code>), puisque <code>trailingSlash</code> est activé.</p>
+  </section>
+
+  <section>
+    <h2>Avant la bascule</h2>
+    <ol>
+      <li>Compléter l'inventaire : dans Search Console, rapport « Pages » (pages indexées), et dans Google Analytics, les pages d'entrée des 12 derniers mois. Toute adresse qui reçoit des visites et n'est pas dans le tableau doit être ajoutée.</li>
+      <li>Rapatrier les 12 images que le nouveau site charge encore depuis <code>framerusercontent.com</code> : elles disparaîtront à l'arrêt de l'abonnement Framer.</li>
+      <li>Remplacer <code>surfinn-beta.vercel.app</code> par <code>https://www.visitsurfinn.com</code> dans <code>sitemap.xml</code> et <code>llms.txt</code>, puis retirer le <code>noindex</code> dans <code>vercel.json</code> et dans <code>middleware.js</code>.</li>
+      <li>Ne résilier Framer qu'après la vérification ci-dessous.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Après la bascule</h2>
+    <ol>
+      <li>Tester chaque ancienne adresse : un seul saut (code 308 ou 301), puis un code 200 sur la page finale. Par exemple <code>curl -sI https://www.visitsurfinn.com/activities-itacare</code>.</li>
+      <li>Dans Search Console : soumettre le nouveau <code>sitemap.xml</code> et demander l'indexation de l'accueil et des deux pages camp.</li>
+      <li>Surveiller le rapport des erreurs 404 de Search Console pendant 4 semaines et ajouter une redirection pour toute ancienne adresse qui y apparaît.</li>
+      <li>Publier le conteneur Tag Manager <code>GTM-WH4MTLKG</code> le jour de la bascule.</li>
+    </ol>
+  </section>
+</div>
+
+<script>
+document.getElementById('copier').addEventListener('click', function () {
+  var b = this, t = document.getElementById('config').textContent;
+  function fait(msg) { b.textContent = msg; setTimeout(function () { b.textContent = 'Copier'; }, 1800); }
+  try {
+    navigator.clipboard.writeText(t).then(function () { fait('Copié'); }, function () { choisir(); });
+  } catch (e) { choisir(); }
+  function choisir() { var r = document.createRange(); r.selectNodeContents(document.getElementById('config')); var s = getSelection(); s.removeAllRanges(); s.addRange(r); fait('Sélectionné'); }
+});
+</script>

@@ -1,0 +1,67 @@
+  /* Bandeau cookies (Cookiebot) : une carte discrète en bas à gauche, aux couleurs du site, au lieu d'une fenêtre au milieu de l'écran */
+  #CybotCookiebotDialog{top:auto !important;left:20px !important;right:auto !important;bottom:20px !important;transform:none !important;width:min(430px,calc(100vw - 40px)) !important;max-width:none !important;min-width:0 !important;max-height:min(76vh,600px) !important;border-radius:18px !important;background:var(--ecume,#FFFBF3) !important;color:var(--encre,#234668) !important;font-family:inherit !important;box-shadow:0 14px 44px rgba(6,50,59,.22),0 0 0 1px rgba(6,50,59,.08) !important;padding:0 !important;overflow:hidden !important;}
+  #CybotCookiebotDialog *{font-family:inherit !important;}
+  #CybotCookiebotDialogHeader,#CybotCookiebotDialogPoweredByText,#CybotCookiebotDialog .CybotCookiebotDialogBodyBottomWrapper,#CybotCookiebotDialogBodyLevelWrapper,#CybotCookiebotDialog .CybotCookiebotScrollbarContainer{display:none !important;}
+  #CybotCookiebotDialogNav{border-bottom:1px solid rgba(6,50,59,.1) !important;}
+  #CybotCookiebotDialogNav .CybotCookiebotDialogNavItemLink{padding:10px 6px !important;font-size:12.5px !important;font-weight:700 !important;color:var(--encre-douce,#4A6A80) !important;border-bottom-width:2px !important;}
+  #CybotCookiebotDialogNav .CybotCookiebotDialogNavItemLink.CybotCookiebotDialogActive{color:var(--encre,#234668) !important;border-bottom-color:var(--encre,#234668) !important;}
+  #CybotCookiebotDialog .CybotCookiebotScrollContainer{min-height:0 !important;max-height:38vh !important;border-bottom:0 !important;padding:0 !important;}
+  #CybotCookiebotDialogBodyContent{padding:16px 20px 6px !important;letter-spacing:0 !important;}
+  #CybotCookiebotDialogBodyContentTitle{font-size:16px !important;font-weight:800 !important;margin:0 0 6px !important;color:var(--encre,#234668) !important;}
+  #CybotCookiebotDialogBodyContentText{font-size:13.5px !important;line-height:1.5 !important;color:var(--encre-douce,#4A6A80) !important;}
+  #CybotCookiebotDialog a,#CybotCookiebotDialog a:hover{color:var(--mer,#368CAF) !important;}
+  #CybotCookiebotDialogFooter{padding:10px 20px 16px !important;width:auto !important;}
+  #CybotCookiebotDialogBodyButtonsWrapper{display:flex !important;flex-direction:row !important;flex-wrap:wrap !important;gap:8px !important;}
+  #CybotCookiebotDialogFooter .CybotCookiebotDialogBodyButton{flex:1 1 calc(50% - 4px) !important;width:auto !important;max-width:none !important;margin:0 !important;padding:11px 12px !important;border-radius:999px !important;border:1.5px solid var(--encre,#234668) !important;background:transparent !important;color:var(--encre,#234668) !important;font-size:14px !important;font-weight:800 !important;}
+  #CybotCookiebotDialogFooter #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll{background:var(--encre,#234668) !important;color:var(--ecume,#FFF8EF) !important;order:2;}
+  #CybotCookiebotDialogFooter #CybotCookiebotDialogBodyButtonDecline{order:1;}
+  #CybotCookiebotDialogFooter #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection{order:3;flex-basis:100% !important;border:0 !important;padding:4px !important;font-size:12.5px !important;font-weight:700 !important;text-decoration:underline;color:var(--encre-douce,#4A6A80) !important;}
+  #CybotCookiebotDialog.CybotEdge{box-shadow:0 14px 44px rgba(6,50,59,.22) !important;}
+  @media (max-width:640px){
+    #CybotCookiebotDialog{left:0 !important;right:0 !important;bottom:0 !important;width:100% !important;border-radius:18px 18px 0 0 !important;max-height:70vh !important;}
+    #CybotCookiebotDialog .CybotCookiebotScrollContainer{max-height:30vh !important;}
+  }
+  #CybotCookiebotDialog input:checked + .CybotCookiebotDialogBodyLevelButtonSlider{background-color:var(--encre,#234668) !important;}
+  #CybotCookiebotDialogNav .CybotCookiebotDialogNavItemLink{font-size:11.5px !important;white-space:normal !important;line-height:1.2 !important;}
+  @media (max-width:640px){#CybotCookiebotDialog .CybotCookiebotScrollContainer{max-height:24vh !important;}}
+  /* Bandeau cookies sur téléphone : compact (environ un quart de l'écran), le texte défile dans son cadre */
+  @media (max-width:640px){
+    #CybotCookiebotDialog{max-height:none !important;height:auto !important;display:flex !important;flex-direction:column;border-radius:16px 16px 0 0 !important;box-shadow:0 -8px 30px rgba(6,50,59,.2) !important;}
+    #CybotCookiebotDialogNav .CybotCookiebotDialogNavItemLink{padding:7px 4px !important;font-size:11px !important;}
+    #CybotCookiebotDialog .CybotCookiebotScrollContainer{max-height:76px !important;min-height:0 !important;overflow-y:auto !important;}
+    #CybotCookiebotDialog .CybotCookiebotFader{display:none !important;}
+    #CybotCookiebotDialogTabContent,#CybotCookiebotDialogFooter{flex:0 0 auto !important;height:auto !important;}
+    #CybotCookiebotDialog.CybotCookiebotDialogActive #CybotCookiebotDialogTabContent:has(#CybotCookiebotDialogTabContentDetails:not(.CybotCookiebotDialogHide)) .CybotCookiebotScrollContainer,#CybotCookiebotDialogDetailBody{max-height:36vh !important;}
+    #CybotCookiebotDialogBodyContent{padding:10px 16px 2px !important;}
+    #CybotCookiebotDialogBodyContentTitle{font-size:14px !important;margin:0 0 3px !important;}
+    #CybotCookiebotDialogBodyContentText{font-size:12.5px !important;line-height:1.4 !important;}
+    #CybotCookiebotDialogFooter{padding:8px 16px calc(12px + env(safe-area-inset-bottom)) !important;}
+    #CybotCookiebotDialogBodyButtons,#CybotCookiebotDialogBodyButtonsWrapper{height:auto !important;max-height:none !important;overflow:visible !important;}
+    #CybotCookiebotDialogBodyButtonsWrapper{gap:6px 8px !important;}
+    #CybotCookiebotDialogFooter .CybotCookiebotDialogBodyButton{padding:9px 10px !important;font-size:13.5px !important;}
+    #CybotCookiebotDialogFooter #CybotCookiebotDialogBodyLevelButtonLevelOptinAllowallSelection{padding:0 !important;font-size:12px !important;}
+  }
+
+  /* Tunnel : les quatre packages tiennent sur une ligne sur ordinateur (le quatrième était hors écran) */
+  @media (min-width:900px){
+    [data-pack-row]{overflow:visible !important;scroll-snap-type:none !important;}
+    [data-pack-row] > *{flex:1 1 0 !important;min-width:0 !important;}
+  }
+  /* Tunnel : croix de sortie */
+  [data-tunnel-tete]{padding-right:64px !important;}
+  [data-tunnel-fermer]:focus-visible{outline:2px solid currentColor;outline-offset:2px;}
+
+  /* Accueil : le bouton du bas reprend celui du haut */
+  #create-your-package [data-cream-cta]{background:var(--soleil,#ED6267) !important;color:var(--encre,#FFF8EF) !important;}
+
+  /* Menu : « Nos surf camps », un seul intitulé qui ouvre les deux camps */
+  [data-nav-camps-menu]{opacity:0;visibility:hidden;translate:-50% 8px;transition:opacity .2s ease,translate .25s ease,visibility 0s linear .25s;}
+  [data-nav-camps]:hover:not([data-clos]) > [data-nav-camps-menu],[data-nav-camps]:focus-within:not([data-clos]) > [data-nav-camps-menu],[data-nav-camps][data-open="1"] > [data-nav-camps-menu]{opacity:1;visibility:visible;translate:-50% 0;transition-delay:0s;}
+  [data-nav-camps-menu] a img{transition:scale .6s cubic-bezier(.2,.8,.2,1);}
+  [data-nav-camps-menu] a:hover img{scale:1.06;}
+  [data-nav-camps] [data-chevron]{transition:rotate .25s ease;}
+  [data-nav-camps]:hover:not([data-clos]) [data-chevron],[data-nav-camps][data-open="1"] [data-chevron]{rotate:180deg;translate:0 4px;}
+  [data-ig-accueil] a img{transition:scale .5s cubic-bezier(.2,.8,.2,1);}
+  [data-ig-accueil] a:hover img{scale:1.06;}
+  @media (max-width:640px){[data-ig-accueil]{grid-template-columns:repeat(3,1fr) !important;}}
+  @media (prefers-reduced-motion:reduce){[data-nav-camps-menu],[data-nav-camps-menu] a img,[data-ig-accueil] a img{transition:none !important;}}

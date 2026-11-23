@@ -1,0 +1,251 @@
+
+  /* ═══ Direction « Maison » (branche refonte-maison, 12/11/2026) ═══
+     Même site, même contenu, même couche expérientielle : seul le registre change, pour parler à un public de 30 ans et plus.
+     Titres en serif (Fraunces), plus de cartes penchées ni de stickers, jaune réservé aux boutons et aux accents, mouvements plus lents.
+     Préfixe html[data-exp]:not(#z) : il l'emporte sur toutes les règles de couche.css sans avoir à les réécrire. */
+  :root{--f-titre:'Gabarito','Chivo',system-ui,sans-serif;--f-carte:var(--f-titre);--sable:#EFE8DC;--sable-fonce:#E0D5C2;}
+
+  /* 1. Titres : serif, graisse moyenne, tailles ramenées à une échelle éditoriale */
+  html[data-exp]:not(#z) :is(h1,h2,h3,h4,[style*="Bricolage Grotesque"],[data-bresil-mots] > span,[data-nav-mobile] > a,[data-chiffres] > * > span:first-child,[data-faits] > * > span:first-child,[data-methode] > * > div:first-child,[data-saisons] > * > div:first-child > div:first-child,[data-spots] > * > div:first-child > span:first-child,[data-experiences] [data-hscroll] > * > div:last-child > span:first-child,[data-equipe] > * > div:nth-child(2)){font-family:var(--f-titre) !important;font-weight:700 !important;letter-spacing:-.018em !important;font-optical-sizing:auto;}
+  html[data-exp]:not(#z) h1{font-weight:700 !important;letter-spacing:-.025em !important;line-height:1.02 !important;}
+  html[data-exp]:not(#z) section h2,html[data-exp]:not(#z) #create-your-package h2{font-size:clamp(34px,4.6vw,68px) !important;line-height:1.05 !important;font-weight:700 !important;letter-spacing:-.025em !important;text-wrap:balance;max-width:20em;}
+  html[data-exp]:not(#z) section h3{font-size:clamp(21px,1.9vw,27px) !important;line-height:1.15 !important;}
+  html[data-exp]:not(#z) [data-experiences] h3,html[data-exp]:not(#z) #camp-guide h3{font-size:clamp(26px,2.8vw,40px) !important;line-height:1.1 !important;font-weight:700 !important;}
+  html[data-exp]:not(#z) [data-profils] h2{font-size:clamp(24px,2.2vw,32px) !important;line-height:1.12 !important;letter-spacing:-.018em !important;}
+  html[data-exp]:not(#z) [data-coral-bg] h2{font-size:clamp(26px,2.8vw,38px) !important;}
+
+  /* 2. Plus rien n'est penché, plus de stickers, plus de cadres « polaroid » */
+  html[data-exp]:not(#z) :is([data-lieux],[data-tirages],[data-saisons],[data-verbes],[data-profils],[data-quotidien],[data-forfaits],[data-piliers],[data-hscroll]) > *,html[data-exp]:not(#z) [data-equipe] > * > div:first-child,html[data-exp]:not(#z) [data-pourquoi-photo]{rotate:0deg !important;}
+  html[data-exp]:not(#z) :is([data-lieux],[data-saisons],[data-verbes],[data-profils],[data-hscroll]) > *[data-vu]:hover{scale:1 !important;translate:0 -6px !important;}
+  html[data-exp]:not(#z) [data-bresil]::before,html[data-exp]:not(#z) [data-bresil]::after,html[data-exp]:not(#z) [data-pourquoi]::after{display:none !important;}
+  html[data-exp]:not(#z) :is([data-tirages],[data-quotidien]) > *{border:0 !important;border-radius:6px !important;margin-top:0 !important;margin-bottom:0 !important;}
+  html[data-exp]:not(#z) [data-quotidien] > *[data-vu]:hover{scale:1.04 !important;}
+  html[data-exp]:not(#z) [data-pourquoi-photo]{border-radius:6px !important;box-shadow:0 30px 60px rgba(6,50,59,.22) !important;}
+  html[data-exp]:not(#z) [data-equipe] > * > div:first-child{box-shadow:none !important;}
+  html[data-exp]:not(#z) [data-bresil] [data-hscroll] > *,html[data-exp]:not(#z) [data-experiences] [data-hscroll] > *,html[data-exp]:not(#z) [data-lieux] > *,html[data-exp]:not(#z) [data-saisons] > *,html[data-exp]:not(#z) [data-spots] > *{border-radius:8px !important;}
+  html[data-exp]:not(#z) [data-bresil] [data-hscroll] > *:nth-child(even){translate:0 28px;}
+  html[data-exp]:not(#z) [data-verbes] > *:hover > div:first-child > span[aria-hidden]{rotate:0deg !important;scale:1 !important;}
+
+  /* 3. Couleurs : le jaune ne sert plus d'aplat, il reste l'accent (boutons, chiffres, filets) */
+  html[data-exp]:not(#z) [data-tint],html[data-exp]:not(#z) [data-pourquoi]{background:var(--sable) !important;}
+  html[data-exp]:not(#z) [data-house="itacare"] [data-tint]{background:#E4EEE8 !important;}
+  html[data-exp]:not(#z) [data-coral-bg]{background:var(--encre) !important;}
+  html[data-exp]:not(#z) [data-coral-bg] :is(h2,p){color:var(--ecume) !important;}
+  html[data-exp]:not(#z) [data-coral-bg] [data-primary-cta],html[data-exp]:not(#z) [data-coral-bg] [data-primary-cta] *{background:var(--soleil) !important;color:var(--encre) !important;}
+  html[data-exp]:not(#z) :is([data-coral],[data-primary-cta],[data-mobile-cta]){box-shadow:none !important;letter-spacing:.01em;}
+  html[data-exp]:not(#z) [data-vers-onglet]{box-shadow:none !important;}
+  html[data-exp]:not(#z) [data-vers-onglet]:hover{translate:none !important;}
+
+  /* 4. « Le Brésil, c'est… » : mots en serif au trait fin, soulignement droit */
+  html[data-exp]:not(#z) [data-bresil-mots] > span{font-size:clamp(30px,4.6vw,66px) !important;font-weight:700 !important;-webkit-text-stroke:1px rgba(242,248,246,.6);padding-bottom:8px !important;}
+  html[data-exp]:not(#z) [data-bresil-mots] > span::after{height:2px;background:var(--soleil);}
+  html[data-exp]:not(#z) [data-bresil] [data-hscroll] h3{font-size:clamp(20px,1.8vw,25px) !important;}
+  /* Photos de la pellicule : cartes en largeur, au format des photos (elles étaient recadrées en hauteur, donc agrandies et floues), sans zoom lent */
+  html[data-exp]:not(#z) [data-bresil] [data-hscroll] > *{flex:0 0 clamp(340px,34vw,520px) !important;height:clamp(240px,23vw,340px) !important;}
+  html[data-exp]:not(#z) [data-bresil] [data-hscroll] img{animation:none !important;}
+  html[data-exp]:not(#z) [data-bresil] [data-hscroll] > * > div:last-child{padding-top:46px !important;}
+  html[data-exp]:not(#z) [data-bresil] [data-hscroll] > *:nth-child(even){translate:0 18px;}
+  /* Netteté : les photos ne sont plus agrandies pour glisser dans leur cadre (l'agrandissement de 14 à 18 % les rendait plus floues) */
+  html[data-exp]:not(#z) [data-m-img] > img,html[data-exp]:not(#z) #create-your-package > img,html[data-exp]:not(#z) [data-appel] > img,html[data-exp]:not(#z) [data-pourquoi-photo] img{scale:1 !important;translate:none !important;}
+  /* Vidéos de fond : invisibles tant qu'elles ne jouent pas (l'image d'attente est derrière), filet lumineux pendant le chargement */
+  html[data-exp] video[data-vid]{transition:opacity .7s ease;}
+  html[data-exp] video[data-vid]:not([data-vid-ok]){opacity:0 !important;}
+  video::-webkit-media-controls-overlay-play-button,video::-webkit-media-controls-play-button,video::-webkit-media-controls-panel{display:none !important;-webkit-appearance:none;opacity:0 !important;}
+  html[data-exp] [data-vid-attente]::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;z-index:6;pointer-events:none;background:linear-gradient(90deg,rgba(255,197,49,0),var(--soleil) 50%,rgba(255,197,49,0)) no-repeat;background-size:38% 100%;animation:maison-charge 1.3s ease-in-out infinite;}
+  @keyframes maison-charge{from{background-position:-60% 0}to{background-position:160% 0}}
+  @media (prefers-reduced-motion:reduce){html[data-exp] [data-vid-attente]::before{animation:none;background-size:100% 100%;opacity:.5;}html[data-exp] video[data-vid]{transition:none;}}
+  /* Pages camp : le menu des onglets est collé au bas de l'en-tête (une bande du fond de page apparaissait entre les deux) */
+  html[data-exp]:not(#z) #camp-tabbar{margin-top:0 !important;background:rgba(242,248,246,.97) !important;}
+  /* Galerie ouverte (expériences, chambres) sur téléphone : tout tient à l'écran, on peut faire défiler, rien ne dépasse derrière */
+  html:has([data-gal-modal]) [data-mobile-cta],html:has([data-gal-modal]) [data-wa-bubble],html:has([data-gal-modal]) [data-maree]{display:none !important;}
+  @media (max-width:720px){
+    html[data-exp]:not(#z) [data-gal-modal]{justify-content:flex-start !important;overflow-y:auto !important;touch-action:pan-x pan-y pinch-zoom !important;padding:calc(14px + env(safe-area-inset-top)) 16px calc(28px + env(safe-area-inset-bottom)) !important;gap:12px !important;background:rgba(6,50,59,.98) !important;box-sizing:border-box;}
+    html[data-exp]:not(#z) [data-gal-wrap]{width:100% !important;flex-shrink:0;}
+    html[data-exp]:not(#z) [data-gal-wrap] > div:first-child{height:min(44vh,400px) !important;}
+    html[data-exp]:not(#z) [data-gal-modal] > *{flex-shrink:0;}
+  }
+
+  /* 5. Chiffres : serif fin, plus petits, ils informent sans crier */
+  html[data-exp]:not(#z) [data-chiffres] > * > span:first-child,html[data-exp]:not(#z) [data-shaper] [data-faits] > * > span:first-child{font-size:clamp(44px,30cqi,72px) !important;font-weight:700 !important;line-height:1 !important;letter-spacing:-.03em !important;}
+  html[data-exp]:not(#z) [data-shaper] [data-faits] > * > span:first-child{font-size:clamp(48px,5vw,76px) !important;}
+  html[data-exp]:not(#z) [data-chiffres]{border-radius:10px !important;}
+  html[data-exp]:not(#z) [data-chiffres] h3{font-size:19px !important;margin-top:10px !important;}
+  html[data-exp]:not(#z) [data-methode] > *{border-top:1px solid rgba(6,50,59,.35) !important;}
+  html[data-exp]:not(#z) [data-methode] > * > div:first-child{font-size:clamp(40px,4vw,58px) !important;font-weight:700 !important;-webkit-text-stroke:0 !important;color:var(--mer) !important;line-height:1.05 !important;}
+  html[data-exp]:not(#z) [data-saisons] > * > div:first-child > div:first-child{font-size:clamp(26px,2.2vw,32px) !important;line-height:1.1 !important;}
+  html[data-exp]:not(#z) [data-spots] > * > div:first-child > span:first-child{font-size:21px !important;}
+  html[data-exp]:not(#z) [data-experiences] [data-hscroll] > * > div:last-child > span:first-child{font-size:clamp(17px,1.5vw,21px) !important;line-height:1.15 !important;}
+  html[data-exp]:not(#z) [data-equipe] > * > div:nth-child(2){font-size:24px !important;}
+  html[data-exp]:not(#z) [data-forfaits] > * > div:nth-of-type(2) > span:first-child{font-size:22px !important;}
+
+  /* 6. Mouvement : plus lent, moins de course, aucun rebond */
+  html[data-exp]:not(#z) [data-rev]:not([data-vu]){translate:0 16px;}
+  html[data-exp]:not(#z) [data-rev]{transition-duration:1.2s !important;}
+  html[data-exp]:not(#z) [data-inclus] > [data-rev]{scale:1 !important;transition:opacity .8s ease !important;}
+  html[data-exp]:not(#z) [data-spots] > [data-rev]:not([data-vu]){translate:0 14px;}
+
+  /* 7. Menu mobile */
+  html[data-exp]:not(#z) [data-nav-mobile] > a{font-size:clamp(32px,9.4vw,44px) !important;font-weight:700 !important;line-height:1.16 !important;}
+
+  @media (max-width:720px){
+    html[data-exp]:not(#z) section h2,html[data-exp]:not(#z) #create-your-package h2{font-size:clamp(32px,9vw,44px) !important;}
+    html[data-exp]:not(#z) [data-bresil-mots] > span{font-size:clamp(26px,7.6vw,36px) !important;}
+    html[data-exp]:not(#z) [data-bresil] [data-hscroll] > *:nth-child(even){translate:none;}
+    html[data-exp]:not(#z) [data-bresil] [data-hscroll] > *{flex-basis:82vw !important;height:clamp(210px,58vw,260px) !important;}
+    html[data-exp]:not(#z) [data-chiffres] > * > span:first-child{font-size:64px !important;}
+  }
+
+  /* Packages sur téléphone : chaque carte tient entière à l'écran (photo plus basse, texte resserré ; la ligne « X nuits en chambre… » est retirée, la durée est déjà dans la pastille) */
+  @media (max-width:720px){
+    html[data-exp]:not(#z) [data-forfaits] > *{padding-bottom:16px !important;gap:7px !important;}
+    html[data-exp]:not(#z) [data-forfaits] > * > div:first-child{aspect-ratio:auto !important;height:104px;margin-bottom:4px !important;}
+    html[data-exp]:not(#z) [data-forfaits] > * > *:not(:first-child){padding-left:18px !important;padding-right:18px !important;}
+    html[data-exp]:not(#z) [data-forfaits] > * > div:nth-of-type(3){margin-left:18px !important;margin-right:18px !important;padding:0 !important;}
+    html[data-exp]:not(#z) [data-forfaits] > * > span:last-child{margin-left:18px !important;margin-right:18px !important;}
+    html[data-exp]:not(#z) [data-forfaits] > * > p{font-size:14px !important;line-height:1.45 !important;}
+    html[data-exp]:not(#z) [data-forfaits] ul{gap:4px !important;}
+    html[data-exp]:not(#z) [data-forfaits] li{font-size:14px !important;line-height:1.35 !important;}
+    html[data-exp]:not(#z) [data-forfaits] li:first-child,html[data-exp]:not(#z) [data-pack-row] li:first-child{display:none !important;}
+    html[data-exp]:not(#z) [data-forfaits] ul:only-child,html[data-exp]:not(#z) [data-forfaits] div > span:first-child:not(:only-child):has(+ ul){display:none !important;}
+    html[data-exp]:not(#z) [data-forfaits] > * > [data-coral-text]{font-size:17px !important;}
+    html[data-exp]:not(#z) div:has(> div > [data-pack-row]) > p{display:none !important;}
+    html[data-exp]:not(#z) div:has(> div > [data-pack-row]) > h2{font-size:26px !important;margin-bottom:14px !important;}
+    html[data-exp]:not(#z) [data-pack-row] > * > div:first-child{aspect-ratio:auto !important;height:80px;}
+    html[data-exp]:not(#z) [data-pack-row] > * > div:last-child{padding:11px 14px 13px !important;gap:6px !important;}
+    html[data-exp]:not(#z) [data-pack-row] ul{gap:2px !important;}
+    html[data-exp]:not(#z) [data-pack-row] li{font-size:13px !important;line-height:1.3 !important;gap:7px !important;}
+    html[data-exp]:not(#z) [data-pack-row] li > span:first-child{margin-top:6px !important;}
+    html[data-exp]:not(#z) [data-pack-row] [data-coral-text]{font-size:14.5px !important;}
+    html[data-exp]:not(#z) [data-pack-row] > * > div:last-child > span:last-child{padding:8px !important;font-size:14px !important;}
+  }
+
+  /* Survol des boutons, partout pareil. Principal (jaune) : jaune plus soutenu. Secondaire (sombre) : bleu-vert « mer ».
+     Avant : rouge de l'ancienne charte à certains endroits, sombre à d'autres, rien ailleurs ; et le secondaire passait au jaune du principal. */
+  html[data-exp]:not(#z) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]){transition:background-color .2s ease,color .2s ease !important;}
+  html[data-exp]:not(#z) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover{background:#EEAE0A !important;color:var(--encre) !important;}
+  html[data-exp]:not(#z) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover *{color:var(--encre) !important;}
+  html[data-exp]:not(#z) [data-house="itacare"] :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover{background:#C9620F !important;color:#FFF8EF !important;}
+  html[data-exp]:not(#z) [data-house="itacare"] :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover *{color:#FFF8EF !important;}
+  html[data-exp]:not(#z) [data-vers-onglet]:hover{background:var(--mer) !important;color:var(--ecume) !important;}
+  html[data-exp]:not(#z) [data-house="itacare"] [data-vers-onglet]:hover{background:#2A7050 !important;}
+
+  /* ═══ Retours de Lucas (réunion du 12/11/2026), branche refonte-chaleur ═══
+     Plus chaud et plus brésilien : vert profond et crème à la place du bleu-vert froid, titres en linéale ronde (Gabarito)
+     plus petits et bien lisibles, survol vert, une tong ici et là. La bande du bas est retirée (voir experience.py). */
+  :root{--encre:#0C3B32;--encre-douce:#3F5F56;--mer:#0F7359;--ecume:#F7F4EA;--vert:#9AD9B9;}
+  html [style*="color: rgb(51, 86, 110)"]{color:#2B5148 !important;}
+  html[data-exp]:not(#z) #camp-tabbar{background:rgba(247,244,234,.97) !important;}
+  html[data-exp]:not(#z) :not([data-house="itacare"]) > main #camp-guide [style*="rgb(27, 53, 80)"]{background-color:#0F4A3E !important;border-color:rgba(247,244,234,.14) !important;}
+  /* Titres : tailles ramenées (ils étaient « géants »), interlignage confortable */
+  html[data-exp]:not(#z) h1{letter-spacing:-.02em !important;line-height:1.04 !important;}
+  html[data-exp]:not(#z) section h2,html[data-exp]:not(#z) #create-your-package h2{font-size:clamp(30px,3.7vw,54px) !important;line-height:1.06 !important;letter-spacing:-.018em !important;}
+  html[data-exp]:not(#z) [data-coral-bg] h2{font-size:clamp(24px,2.6vw,34px) !important;}
+  html[data-exp]:not(#z) [data-profils] h2{font-size:clamp(22px,2vw,28px) !important;}
+  html[data-exp]:not(#z) [data-chiffres] > * > span:first-child,html[data-exp]:not(#z) [data-shaper] [data-faits] > * > span:first-child{letter-spacing:-.02em !important;}
+  /* La serif reste là où elle fait « carte postale » : les cartes photo de « Le Brésil, c'est… » */
+  html[data-exp]:not(#z) [data-bresil] [data-hscroll] h3{font-family:var(--f-carte) !important;font-weight:700 !important;letter-spacing:-.01em !important;}
+  html[data-exp]:not(#z) [data-bresil-mots] > span{-webkit-text-stroke:1.3px rgba(247,244,234,.62);}
+  /* Une tong, discrète, dans « Le Brésil, c'est… » (à la place de la noix de coco) */
+  html[data-exp]:not(#z) [data-bresil]::before{display:block !important;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' view%42ox='0 0 24 24'%3E%3Cg transform='rotate(24 12 12)'%3E%3Cpath d='M12 1.6c3.7 0 6.2 2.7 6.2 6.7 0 2.7-1 4.4-1.2 7-.2 2.700.6 6.400-5 6.400s-4.800-3.700-5-6.400c-.2-2.600-1.200-4.300-1.200-7 0-4 2.500-6.700 6.200-6.700z' fill='%23FFC531'/%3E%3Cpath d='M12 6.800 7.900 12.600M12 6.800l4.100 5.800' fill='none' stroke='%230E7A52' stroke-width='1.9' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='6.800' r='1.300' fill='%230E7A52'/%3E%3C/g%3E%3C/svg%3E");animation:none !important;rotate:8deg;width:clamp(56px,6vw,92px);top:clamp(28px,5vw,64px);right:clamp(16px,6vw,110px);}
+  /* Bouton principal : au survol il passe du jaune au vert (« on avance »), avec une petite tong au bout */
+  html[data-exp]:not(#z) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta])::after{content:"";display:inline-block;width:0;height:1.05em;margin-left:0;vertical-align:-.18em;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' view%42ox='0 0 24 24'%3E%3Cg transform='rotate(24 12 12)'%3E%3Cpath d='M12 1.6c3.7 0 6.2 2.7 6.2 6.7 0 2.7-1 4.4-1.2 7-.2 2.700.6 6.400-5 6.400s-4.800-3.700-5-6.400c-.2-2.600-1.200-4.300-1.200-7 0-4 2.500-6.700 6.200-6.700z' fill='%23FFC531'/%3E%3Cpath d='M12 6.800 7.900 12.600M12 6.800l4.100 5.800' fill='none' stroke='%230E7A52' stroke-width='1.9' stroke-linecap='round'/%3E%3Ccircle cx='12' cy='6.800' r='1.300' fill='%230E7A52'/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat;opacity:0;transition:width .25s ease,margin-left .25s ease,opacity .2s ease;}
+  html[data-exp]:not(#z) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover::after{width:1.05em;margin-left:.45em;opacity:1;}
+  html[data-exp]:not(#z) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover,html[data-exp]:not(#z) [data-house="itacare"] :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover{background:var(--vert) !important;color:var(--encre) !important;}
+  html[data-exp]:not(#z) :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover *,html[data-exp]:not(#z) [data-house="itacare"] :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover *{color:var(--encre) !important;}
+  /* Vraies photos sur l'accueil : une grille simple, sans effet */
+  @media (max-width:900px){html[data-exp]:not(#z) [data-vrai]{grid-template-columns:repeat(4,1fr) !important;}}
+  @media (max-width:560px){html[data-exp]:not(#z) [data-vrai]{grid-template-columns:repeat(3,1fr) !important;gap:6px !important;}}
+  /* Tunnel : la planche avance d'étape en étape sur une ligne d'eau (à la place des barres) */
+  html[data-exp]:not(#z) [data-surf-etapes] > * > div:first-child{height:3px !important;border-radius:2px !important;background:rgba(12,59,50,.16) !important;position:relative;overflow:visible;}
+  html[data-exp]:not(#z) [data-surf-etapes] > [data-fait] > div:first-child{background:var(--mer) !important;}
+  html[data-exp]:not(#z) [data-surf-etapes] > [data-ici] > div:first-child::after{content:"";position:absolute;right:-6px;top:-10px;width:34px;height:14px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' view%42ox='-24 -9 52 18'%3E%3Cpath d='M-21 0C-21-4.8-13-6.8-3-6.8C9-6.8 19-3.8 25 0C19 3.8 9 6.8-3 6.8C-13 6.8-21 4.8-21 0Z' fill='%23F7F4EA' stroke='%230C3B32' stroke-width='1.4'/%3E%3Crect x='-14' y='-6.2' width='4.4' height='12.4' fill='%23FFC531'/%3E%3Cpath d='M15 -4.6C19.5 -3 22.6 -1.5 25 0C22.6 1.5 19.5 3 15 4.6Z' fill='%23F2542D'/%3E%3C/svg%3E") center / contain no-repeat;animation:surf-etape .7s cubic-bezier(.2,.8,.2,1) both;}
+  html[data-exp]:not(#z) [data-surf-etapes]{padding-top:8px;}
+  @keyframes surf-etape{from{translate:-46px 0;rotate:-8deg}60%{rotate:6deg}to{translate:0 0;rotate:0deg}}
+  @media (max-width:720px){
+    html[data-exp]:not(#z) section h2,html[data-exp]:not(#z) #create-your-package h2{font-size:clamp(27px,7.4vw,34px) !important;}
+    html[data-exp]:not(#z) h1{font-size:clamp(30px,8.4vw,38px) !important;}
+    html[data-exp]:not(#z) [data-bresil]::before{width:52px;top:20px;right:14px;}
+  }
+  @media (prefers-reduced-motion:reduce){html[data-exp]:not(#z) [data-surf-etapes] > [data-ici] > div:first-child::after{animation:none;}html[data-exp]:not(#z) :is([data-primary-cta],[data-coral],[data-mobile-cta])::after{transition:none;}}
+
+  /* Tunnel : la ligne d'eau ondule et la planche tangue dessus (retour de Kévin du 13/11) */
+  html[data-exp]:not(#z) [data-surf-etapes] > * > div:first-child{height:8px !important;border-radius:0 !important;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='8' view%42ox='0 0 28 8'%3E%3Cpath d='M0 4 Q7 0.500 14 4 T28 4' fill='none' stroke='%23000' stroke-width='2.400' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 50%;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='8' view%42ox='0 0 28 8'%3E%3Cpath d='M0 4 Q7 0.500 14 4 T28 4' fill='none' stroke='%23000' stroke-width='2.400' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x 0 50%;}
+  html[data-exp]:not(#z) [data-surf-etapes] > [data-fait] > div:first-child{animation:surf-houle 1.6s linear infinite;}
+  html[data-exp]:not(#z) [data-surf-etapes] > *{position:relative;}
+  html[data-exp]:not(#z) [data-surf-etapes] > [data-ici] > div:first-child::after{content:none !important;}
+  html[data-exp]:not(#z) [data-surf-etapes] > [data-ici]::before{content:"";position:absolute;right:-4px;top:-9px;width:36px;height:15px;z-index:1;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' view%42ox='-24 -9 52 18'%3E%3Cpath d='M-21 0C-21-4.8-13-6.8-3-6.8C9-6.8 19-3.8 25 0C19 3.8 9 6.8-3 6.8C-13 6.8-21 4.8-21 0Z' fill='%23F7F4EA' stroke='%230C3B32' stroke-width='1.4'/%3E%3Crect x='-14' y='-6.2' width='4.4' height='12.4' fill='%23FFC531'/%3E%3Cpath d='M15 -4.6C19.5 -3 22.6 -1.5 25 0C22.6 1.5 19.5 3 15 4.6Z' fill='%23F2542D'/%3E%3C/svg%3E") center / contain no-repeat;transform-origin:50% 90%;animation:surf-etape .8s cubic-bezier(.2,.8,.2,1) both,surf-tangue 1.6s ease-in-out .8s infinite;}
+  @keyframes surf-houle{from{-webkit-mask-position:0 50%;mask-position:0 50%}to{-webkit-mask-position:-28px 50%;mask-position:-28px 50%}}
+  @keyframes surf-tangue{0%,100%{translate:0 0;rotate:-5deg}50%{translate:0 -2.5px;rotate:6deg}}
+  @media (prefers-reduced-motion:reduce){html[data-exp]:not(#z) [data-surf-etapes] > [data-fait] > div:first-child,html[data-exp]:not(#z) [data-surf-etapes] > [data-ici]::before{animation:none !important;}}
+
+  /* Couleurs d'action, une logique par camp (13/11). Rio et le reste du site : sélection en vert, bouton principal jaune.
+     Itacaré, y compris son tunnel : sélection et bouton principal en orange. Plus aucun rouge de l'ancienne charte. */
+  :root{--accent:#0F7359;--accent-fond:#E3EEE5;--principal:#FFC531;--principal-texte:#0C3B32;--principal-survol:#F2B61F;}
+  [data-house="itacare"]{--accent:#B8520F;--accent-fond:#FBE8D6;--principal:#B8520F;--principal-texte:#FFF8EF;--principal-survol:#9C440B;}
+  html[data-exp]:not(#z) [style*="var(--principal)"]{color:var(--principal-texte) !important;transition:background-color .2s ease;}
+  html[data-exp]:not(#z) [style*="var(--principal)"]:hover{background:var(--principal-survol) !important;}
+  html[data-exp]:not(#z) [data-screen-label="Request to book, funnel"] [data-coral]:not([style*="cursor: pointer"]){background:var(--accent) !important;color:#FFF8EF !important;}
+  html[data-exp]:not(#z) [data-screen-label="Request to book, funnel"] input[type="checkbox"]{accent-color:var(--accent) !important;}
+  html[data-exp]:not(#z) [data-house="itacare"] :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover{background:var(--principal-survol) !important;color:#FFF8EF !important;}
+  html[data-exp]:not(#z) [data-house="itacare"] :is([data-primary-cta],[data-coral][style*="cursor: pointer"],[data-mobile-cta]):hover *{color:#FFF8EF !important;}
+  a:hover{color:var(--accent);}
+  html[data-exp]:not(#z) [data-nav-item]:hover,html[data-exp]:not(#z) [data-nav-item]:active{color:var(--accent) !important;}
+  html[data-immersif] [data-nav-top] [data-nav-item]:hover{color:var(--soleil) !important;}
+  /* Tunnel : une seule planche, qui glisse doucement d'une étape à l'autre, se cabre et laisse un sillage */
+  html[data-exp]:not(#z) [data-surf-etapes]{position:relative;}
+  html[data-exp]:not(#z) [data-surf-etapes] > [data-ici]::before{content:none !important;}
+  html[data-exp]:not(#z) [data-surf-planche]{position:absolute;left:0;top:-3px;width:46px;height:18px;margin-left:-40px;z-index:2;pointer-events:none;overflow:visible;translate:var(--px,0px) 0;transition:translate 1.7s cubic-bezier(.33,.02,.2,1);}
+  html[data-exp]:not(#z) [data-surf-planche] g{transform-origin:0 6px;transform-box:view-box;rotate:0deg;transition:rotate .6s ease;animation:surf-tangue2 1.7s ease-in-out infinite;}
+  html[data-exp]:not(#z) [data-surf-planche][data-file] g{animation:none;rotate:-11deg;}
+  html[data-exp]:not(#z) [data-surf-planche] .s-sillage{fill:none;stroke:var(--accent);stroke-width:1.7;stroke-linecap:round;opacity:0;transition:opacity .5s ease;}
+  html[data-exp]:not(#z) [data-surf-planche][data-file] .s-sillage{opacity:1;}
+  @keyframes surf-tangue2{0%,100%{translate:0 0;rotate:-4deg}50%{translate:0 -2px;rotate:5deg}}
+  @media (prefers-reduced-motion:reduce){html[data-exp]:not(#z) [data-surf-planche],html[data-exp]:not(#z) [data-surf-planche] g{transition:none !important;animation:none !important;}}
+
+  /* Anciennes couleurs (bleus, rouge) qui traînaient encore : tout passe sur la palette verte et crème (13/11) */
+  html[data-exp]:not(#z) :is([style*="background: rgb(222, 235, 242)"],[style*="background-color: rgb(222, 235, 242)"]){background-color:#E3EEE5 !important;}
+  html[data-exp]:not(#z) :is([style*="background: rgb(201, 218, 227)"],[style*="background-color: rgb(201, 218, 227)"]){background-color:#DCE6DB !important;}
+  html[data-exp]:not(#z) :is([style*="background: rgb(143, 208, 232)"],[style*="background-color: rgb(143, 208, 232)"]){background-color:#BFE5CF !important;}
+  html[data-exp]:not(#z) :is([style*="background: rgb(132, 200, 231)"],[style*="background-color: rgb(132, 200, 231)"]){background-color:#BFE5CF !important;}
+  html[data-exp]:not(#z) :is([style*="background: rgb(27, 53, 80)"],[style*="background-color: rgb(27, 53, 80)"]){background-color:#0F4A3E !important;}
+  html[data-exp]:not(#z) :is([style*="background: rgb(255, 217, 160)"],[style*="background-color: rgb(255, 217, 160)"]){background-color:#F3E3B5 !important;}
+  html[data-exp]:not(#z) [style*="color: rgb(126, 151, 168)"]{color:#6B8178 !important;}
+  html[data-exp]:not(#z) [style*="color: rgb(184, 203, 212)"]{color:rgba(247,244,234,.8) !important;}
+  html[data-exp]:not(#z) [style*="color: rgb(143, 208, 232)"]{color:#9AD9B9 !important;}
+  html[data-exp]:not(#z) [style*="color: rgb(159, 180, 196)"]{color:#8FA39B !important;}
+  html[data-exp]:not(#z) [style*="color: rgb(183, 198, 209)"]{color:#A9B8B0 !important;}
+  html[data-exp]:not(#z) [style*="color: rgb(196, 53, 59)"]{color:#9A4A0E !important;}
+  html[data-exp]:not(#z) :is(a,span,p)[style*="color: rgb(54, 140, 175)"]{color:var(--mer) !important;}
+  html[data-exp]:not(#z) :is([style*="solid rgb(54, 140, 175)"],[style*="dashed rgb(54, 140, 175)"],[style*="border-color: rgb(54, 140, 175)"]){border-color:var(--mer) !important;}
+  html[data-exp]:not(#z) :is([style*="solid rgb(35, 70, 104)"],[style*="dashed rgb(35, 70, 104)"],[style*="border-color: rgb(35, 70, 104)"]){border-color:var(--encre) !important;}
+  html[data-exp]:not(#z) :is([style*="solid rgb(237, 98, 103)"],[style*="dashed rgb(237, 98, 103)"],[style*="border-color: rgb(237, 98, 103)"]){border-color:var(--accent) !important;}
+  html[data-exp]:not(#z) :is(input,textarea,select){border-color:rgba(12,59,50,.28) !important;}
+  html[data-exp]:not(#z) #camp-tabbar [data-on="1"]{color:var(--accent) !important;}
+  html[data-exp]:not(#z) #camp-tabbar [data-on="0"]{color:var(--encre-douce) !important;}
+  html[data-exp]:not(#z) #camp-tabbar [data-tab-arrow],html[data-exp]:not(#z) #camp-tabbar::after{color:var(--accent) !important;}
+  html[data-exp]:not(#z) footer [style*="color: rgb(184, 203, 212)"]{color:rgba(247,244,234,.78) !important;}
+  html[data-exp]:not(#z) iframe{border-color:rgba(12,59,50,.15) !important;}
+  html[data-exp]:not(#z) body,html[data-exp]:not(#z) [data-page-root]{color:var(--encre);}
+  html[data-exp]:not(#z) main a:not([style*="color"]):not([data-nav-item]){color:var(--mer);}
+  html[data-exp]:not(#z) [style*="rgba(54, 140, 175"]:not([style*="background: rgba(54, 140, 175"]){border-color:rgba(18,128,100,.26) !important;}
+  html[data-exp]:not(#z) :is([style*="1.5px solid rgb(237, 98, 103)"],[style*="2px solid rgb(237, 98, 103)"],[style*="dashed rgb(237, 98, 103)"],[style*="solid rgba(237, 98, 103"],[style*="dashed rgba(237, 98, 103"]){border-color:var(--accent) !important;}
+  html[data-exp]:not(#z) [style*="color: rgb(222, 235, 242)"]{color:rgba(247,244,234,.86) !important;}
+  html:not([data-immersif]) [data-nav-top] [data-house-rule],[data-screen-label="Request to book, funnel"] [data-house-rule]{background:var(--accent) !important;}
+  html:not([data-immersif]) [data-nav-top] [data-house-name] b,[data-screen-label="Request to book, funnel"] [data-house-name] b{color:var(--encre) !important;}
+  html[data-exp]:not(#z) [data-screen-label="Request to book, funnel"] [style*="color: rgb(35, 70, 104)"]:not([style*="background: var(--principal)"]){color:var(--encre) !important;}
+  html[data-exp]:not(#z) [data-screen-label="Request to book, funnel"] [style*="color: rgb(74, 106, 128)"]{color:var(--encre-douce) !important;}
+  html[data-exp]:not(#z) :is([style*="background: rgb(35, 70, 104)"],[style*="background-color: rgb(35, 70, 104)"]){background-color:var(--encre) !important;}
+  html[data-exp]:not(#z) :is([style*="background: rgb(54, 140, 175)"],[style*="background-color: rgb(54, 140, 175)"]){background-color:var(--mer) !important;}
+  html[data-exp]:not(#z) :is([style*="background: rgb(184, 203, 212)"],[style*="background-color: rgb(184, 203, 212)"]){background-color:#B9C9C1 !important;}
+  html[data-exp]:not(#z) [data-screen-label="Request to book, funnel"] input{color:var(--encre) !important;}
+  html[data-exp]:not(#z) [data-screen-label="Request to book, funnel"] [data-house-rule]{background:var(--accent) !important;}
+  html[data-exp]:not(#z) [data-screen-label="Request to book, funnel"] [data-house-name] b{color:var(--encre) !important;}
+  html[data-exp]:not(#z) [style*="color: rgb(237, 98, 103)"]:not([data-bresil-mots] > span):not([data-nav-item]){color:var(--accent) !important;}
+  html[data-exp]:not(#z) [data-coral-text]{color:var(--accent) !important;}
+  html[data-exp]:not(#z) [data-forfaits] > * > div:nth-of-type(3) > div{background:linear-gradient(90deg,#BFE5CF,var(--accent)) !important;}
+  html[data-exp]:not(#z) [data-saisons] > *::after,html[data-exp]:not(#z) [data-saisons] > *::before{filter:hue-rotate(-28deg) saturate(.9);}
+  /* Correctif : le texte des boutons secondaires restait vert foncé sur vert foncé quand ils venaient d'un ancien lien bleu */
+  html[data-exp]:not(#z) [data-vers-onglet]:not(#y),html[data-exp]:not(#z) [data-vers-onglet]:not(#y):hover{color:var(--ecume) !important;}
+  /* Correctifs du 14/11 : chiffres des pages camp de nouveau en jaune sur le panneau sombre, bouton « Bora ? » lisible */
+  html[data-exp]:not(#z) [data-chiffres] > * > span:first-child:not(#y),html[data-exp]:not(#z) [data-shaper] [data-faits] > * > span:first-child:not(#y){color:var(--soleil) !important;}
+  html[data-exp]:not(#z) [data-primary-cta]:not([data-coral]):not([data-cream-cta]):not(#y){background:var(--principal) !important;color:var(--principal-texte) !important;}

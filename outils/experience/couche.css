@@ -1,0 +1,316 @@
+  /* ═══ Couche expérientielle (branche refonte-synthese, 11/11/2026) ═══
+     Tout est conditionné à html[data-exp], posé par le script : sans script, le site reste tel quel.
+     Le texte reste dans la page ; seuls l'habillage et le mouvement changent. */
+
+  /* 1. Révélation au défilement (titres de section, cartes) */
+  html[data-exp] [data-rev]{opacity:0;translate:0 26px;transition:opacity .9s cubic-bezier(.22,.61,.36,1),translate .9s cubic-bezier(.22,.61,.36,1);transition-delay:var(--rev-d,0s);}
+  html[data-exp] [data-rev][data-vu]{opacity:1;translate:none;}
+
+  /* 2. « Le Brésil, c'est… » : grand aplat encre, mots géants, pellicule de photos */
+  html[data-exp] [data-bresil]{--bord:max(24px,calc((100vw - 1240px) / 2));max-width:none !important;margin:0 !important;background:var(--encre);padding-left:var(--bord) !important;padding-right:var(--bord) !important;position:relative;overflow:hidden;}
+  html[data-exp] [data-bresil] > p{color:rgba(242,248,246,.84) !important;}
+  html[data-exp] [data-bresil] > p:first-child{color:var(--soleil) !important;}
+  html[data-exp] [data-bresil] > h2{color:var(--ecume) !important;font-size:clamp(52px,9.5vw,136px) !important;line-height:.9 !important;margin-bottom:clamp(12px,2vw,26px) !important;max-width:calc(100% - clamp(90px,16vw,260px));}
+  html[data-exp] [data-bresil] [data-bresil-note]{color:rgba(242,248,246,.6) !important;}
+  html[data-exp] [data-bresil-mots]{gap:6px clamp(16px,2.6vw,40px) !important;margin-bottom:clamp(30px,4vw,52px) !important;}
+  html[data-exp] [data-bresil-mots] > span{font-family:'Londrina Solid',sans-serif !important;font-weight:900 !important;font-size:clamp(34px,6.2vw,92px) !important;line-height:1;color:transparent !important;-webkit-text-stroke:1.5px rgba(242,248,246,.55);border-bottom:0 !important;padding-bottom:10px !important;position:relative;transition:color .35s ease,-webkit-text-stroke-color .35s ease,translate .35s ease !important;}
+  html[data-exp] [data-bresil-mots] > span::after{content:"";position:absolute;left:0;right:0;bottom:0;height:10px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='10' viewBox='0 0 44 10'%3E%3Cpath d='M0 5 Q11 -1 22 5 T44 5' fill='none' stroke='%23FFC531' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E") repeat-x left center;scale:0 1;transform-origin:left center;transition:scale .55s cubic-bezier(.22,.61,.36,1);}
+  html[data-exp] [data-bresil-mots] > span:hover{-webkit-text-stroke-color:var(--soleil);translate:0 -3px;}
+  html[data-exp] [data-bresil-mots] > span[style*="rgb(237, 98, 103)"]{color:var(--soleil) !important;-webkit-text-stroke-color:var(--soleil);}
+  html[data-exp] [data-bresil-mots] > span[style*="rgb(237, 98, 103)"]::after{scale:1 1;}
+  html[data-exp] [data-bresil] [data-hscroll]{display:flex !important;grid-template-columns:none !important;gap:clamp(14px,1.6vw,22px) !important;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 calc(-1 * var(--bord)) !important;padding:20px var(--bord) 40px !important;scroll-padding-left:var(--bord);cursor:grab;}
+  html[data-exp] [data-bresil] [data-hscroll]::-webkit-scrollbar{display:none;}
+  html[data-exp] [data-bresil] [data-hscroll] > *{flex:0 0 clamp(250px,26vw,360px) !important;max-width:none !important;height:clamp(360px,52vh,500px);position:relative;border:0 !important;border-radius:26px !important;background:#04262D !important;scroll-snap-align:start;rotate:-1.4deg;transition:rotate .5s cubic-bezier(.2,.8,.2,1),translate .5s cubic-bezier(.2,.8,.2,1),scale .5s cubic-bezier(.2,.8,.2,1);box-shadow:0 14px 34px rgba(0,0,0,.3);}
+  html[data-exp] [data-bresil] [data-hscroll] > *:nth-child(even){rotate:1.2deg;translate:0 14px;}
+  html[data-exp] [data-bresil] [data-hscroll] > *:hover{rotate:0deg;translate:0 -8px;scale:1.02;z-index:2;}
+  html[data-exp] [data-bresil] [data-hscroll] > * > div:not(:last-child){height:100% !important;}
+  html[data-exp] [data-bresil] [data-hscroll] > * > div:last-child{position:absolute;left:0;right:0;bottom:0;padding:70px 22px 20px !important;background:linear-gradient(to top,rgba(4,30,36,.92),rgba(4,30,36,0));pointer-events:none;}
+  html[data-exp] [data-bresil] [data-hscroll] h3{color:#FFFFFF !important;font-size:clamp(24px,2.2vw,30px) !important;line-height:1.02;}
+  html[data-exp] [data-bresil] [data-hscroll] img{animation:exp-zoom 16s ease-in-out infinite alternate;}
+  html[data-exp] [data-bresil] [data-hscroll]:not([data-joue]) > *{opacity:0;}
+  html[data-exp] [data-bresil] [data-hscroll][data-joue] > *{animation:exp-carte .8s cubic-bezier(.22,.61,.36,1) both;}
+  html[data-exp] [data-bresil] [data-hscroll][data-joue] > *:nth-child(2){animation-delay:.08s;}
+  html[data-exp] [data-bresil] [data-hscroll][data-joue] > *:nth-child(3){animation-delay:.16s;}
+  html[data-exp] [data-bresil] [data-hscroll][data-joue] > *:nth-child(4){animation-delay:.24s;}
+  html[data-exp] [data-bresil] [data-hscroll][data-joue] > *:nth-child(5){animation-delay:.32s;}
+  html[data-exp] [data-bresil] [data-hscroll][data-joue] > *:nth-child(n+6){animation-delay:.4s;}
+  @keyframes exp-carte{from{opacity:0;transform:translateY(46px)}to{opacity:1;transform:none}}
+  @keyframes exp-zoom{from{scale:1}to{scale:1.12}}
+  @keyframes exp-flotte{from{translate:0 0}to{translate:0 -10px}}
+  /* Stickers Brésil (série proposée le 11/11) : coco et ballon de futevôlei */
+  html[data-exp] [data-bresil]::before,html[data-exp] [data-bresil]::after{content:"";position:absolute;pointer-events:none;background:no-repeat center / contain;animation:exp-flotte 3.6s ease-in-out infinite alternate;}
+  html[data-exp] [data-bresil]::before{background-image:var(--stk-coco);width:clamp(84px,11vw,170px);aspect-ratio:1;top:clamp(26px,5vw,70px);right:clamp(12px,6vw,110px);rotate:12deg;}
+  html[data-exp] [data-bresil]::after{background-image:var(--stk-bola);width:clamp(54px,6vw,96px);aspect-ratio:1;top:clamp(20px,3vw,48px);right:clamp(190px,20vw,330px);rotate:-14deg;animation-delay:-1.8s;}
+
+  /* 3. « Pourquoi Surf Inn existe » : aplat soleil, photo qui se pose, texte qui s'éclaire au défilement */
+  html[data-exp] [data-pourquoi]{background:var(--soleil);position:relative;overflow:hidden;}
+  html[data-exp] [data-pourquoi] [data-coral-text]{color:var(--encre) !important;}
+  html[data-exp] [data-pourquoi] h2{font-size:clamp(46px,7vw,104px) !important;line-height:.9 !important;color:var(--encre) !important;margin-bottom:clamp(18px,2.4vw,30px) !important;}
+  html[data-exp] [data-pourquoi-photo]{border-radius:28px !important;box-shadow:0 0 0 8px #FFFFFF,0 26px 50px rgba(6,50,59,.28);rotate:calc(-2.5deg - (1 - var(--pq,1)) * 7deg);scale:calc(.86 + var(--pq,1) * .14);}
+  html[data-exp] [data-pourquoi-photo] img{scale:1.14;translate:0 calc((var(--pq2,.5) - .5) * -46px);}
+  html[data-exp] [data-pourquoi-texte]{display:inline !important;font-size:clamp(21px,2.2vw,30px) !important;line-height:1.38 !important;font-weight:600;color:rgba(6,50,59,.3) !important;background-image:linear-gradient(var(--encre),var(--encre));background-repeat:no-repeat;background-size:calc(var(--pt,1) * 100%) 100%;-webkit-background-clip:text;background-clip:text;}
+  html[data-exp] [data-pourquoi]::after{content:"";position:absolute;pointer-events:none;background:var(--stk-sol) no-repeat center / contain;width:clamp(90px,12vw,180px);aspect-ratio:1;right:clamp(8px,3vw,60px);bottom:-6px;rotate:8deg;}
+
+  /* 4. Piliers d'« À propos » : cartes qui se soulèvent, photo qui s'approche */
+  html[data-exp] [data-piliers] > *{transition:opacity .9s cubic-bezier(.22,.61,.36,1),translate .6s cubic-bezier(.22,.61,.36,1),rotate .6s cubic-bezier(.22,.61,.36,1);transition-delay:var(--rev-d,0s);}
+  html[data-exp] [data-piliers] > *[data-vu]:hover{translate:0 -10px;rotate:-1deg;transition-delay:0s;}
+  html[data-exp] [data-piliers] > *:nth-child(even)[data-vu]:hover{rotate:1deg;}
+  html[data-exp] [data-piliers] img{transition:scale 1.2s cubic-bezier(.22,.61,.36,1);}
+  html[data-exp] [data-piliers] > *:hover img{scale:1.08;}
+
+  @media (max-width:720px){
+    html[data-exp] [data-bresil] > p:first-child{padding-right:84px;}
+    html[data-exp] [data-bresil]::before{width:76px;top:22px;right:10px;}
+    html[data-exp] [data-bresil]::after{display:none;}
+    html[data-exp] [data-bresil] > h2{max-width:none;font-size:clamp(50px,15vw,84px) !important;}
+    html[data-exp] [data-bresil-mots]{flex-wrap:wrap !important;gap:2px 16px !important;margin-bottom:26px !important;}
+    html[data-exp] [data-bresil-mots] > span{font-size:clamp(30px,9.4vw,46px) !important;white-space:nowrap;-webkit-text-stroke-width:1.2px;}
+    html[data-exp] [data-bresil] [data-hscroll] > *{flex-basis:clamp(236px,72vw,300px) !important;height:clamp(340px,56vh,440px);}
+    html[data-exp] [data-pourquoi]{padding-bottom:128px !important;}
+    html[data-exp] [data-pourquoi-photo]{box-shadow:0 0 0 6px #FFFFFF,0 18px 36px rgba(6,50,59,.26);}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html[data-exp] [data-rev]{opacity:1 !important;translate:none !important;transition:none !important;}
+    html[data-exp] [data-bresil] [data-hscroll] > *,html[data-exp] [data-bresil] [data-hscroll] img,html[data-exp] [data-bresil]::before,html[data-exp] [data-bresil]::after{animation:none !important;opacity:1 !important;transition:none !important;}
+    html[data-exp] [data-bresil-mots] > span,html[data-exp] [data-bresil-mots] > span::after,html[data-exp] [data-piliers] > *,html[data-exp] [data-piliers] img{transition:none !important;}
+    html[data-exp] [data-pourquoi-photo]{rotate:-2.5deg;scale:1;}
+    html[data-exp] [data-pourquoi-photo] img{translate:none;}
+    html[data-exp] [data-pourquoi-texte]{background-size:100% 100%;}
+  }
+
+  /* 5. Les quatre piliers de l'accueil et les quatre profils de « Pour qui » : affiches penchées, cascade */
+  html[data-exp] [data-verbes] > *,html[data-exp] [data-profils] > *{rotate:-1.1deg;transition:opacity .9s cubic-bezier(.22,.61,.36,1),translate .7s cubic-bezier(.22,.61,.36,1),rotate .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease;transition-delay:var(--rev-d,0s);box-shadow:0 10px 26px rgba(6,50,59,.1);}
+  html[data-exp] [data-verbes] > *:nth-child(even),html[data-exp] [data-profils] > *:nth-child(even){rotate:1.1deg;}
+  html[data-exp] [data-verbes] > *[data-vu]:hover,html[data-exp] [data-profils] > *[data-vu]:hover{rotate:0deg;translate:0 -8px;box-shadow:0 22px 44px rgba(6,50,59,.2);transition-delay:0s;}
+  html[data-exp] [data-verbes] h3{font-size:clamp(30px,2.8vw,40px) !important;line-height:.95;}
+  html[data-exp] [data-verbes] > * > div:first-child > span[aria-hidden]{background:var(--soleil) !important;color:var(--encre) !important;transition:rotate .5s cubic-bezier(.2,.8,.2,1),scale .5s cubic-bezier(.2,.8,.2,1);}
+  html[data-exp] [data-verbes] > *:hover > div:first-child > span[aria-hidden]{rotate:90deg;scale:1.15;}
+  html[data-exp] [data-profils] img{transition:scale 1.2s cubic-bezier(.22,.61,.36,1);}
+  html[data-exp] [data-profils] > *:hover img{scale:1.07;}
+
+  /* 6. Photos des camps, de « Pour qui » et de l'appel final : la photo glisse dans son cadre au défilement */
+  html[data-exp] [data-m-img] > img{scale:1.14;translate:0 calc((var(--pp,.5) - .5) * -44px);}
+  html[data-exp] #create-your-package > img{scale:1.18;translate:0 calc((var(--pp,.5) - .5) * -90px);}
+  html[data-exp] #create-your-package h2{font-size:clamp(44px,7vw,96px) !important;line-height:.92 !important;}
+
+
+  @media (max-width:720px){
+    /* Sur téléphone, les quatre piliers s'empilent comme un jeu de cartes pendant le défilement */
+    html[data-exp] [data-verbes]{display:block !important;}
+    html[data-exp] [data-verbes] > *{position:sticky;top:calc(70px + var(--rang,0) * 12px);margin-bottom:20px;rotate:0deg !important;box-shadow:0 -8px 26px rgba(6,50,59,.16);}
+    html[data-exp] [data-verbes] > *:nth-child(2){--rang:1;}
+    html[data-exp] [data-verbes] > *:nth-child(3){--rang:2;}
+    html[data-exp] [data-verbes] > *:nth-child(4){--rang:3;}
+    html[data-exp] [data-profils] > *{rotate:0deg !important;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html[data-exp] [data-verbes] > *,html[data-exp] [data-profils] > *{position:static !important;rotate:0deg !important;transition:none !important;}
+    html[data-exp] [data-m-img] > img,html[data-exp] #create-your-package > img{scale:1;translate:none;}
+    html[data-exp] [data-verbes] span[aria-hidden],html[data-exp] [data-profils] img{transition:none !important;}
+  }
+
+  /* 8. Retours de Kévin du 11/11 (soir) */
+  /* La barre de quatre couleurs sous le menu est retirée partout */
+  [data-house-band]{display:none !important;}
+  @media (max-width:720px){
+    /* Libellé sous la planche : centré et entier sur téléphone */
+    [data-maree-texte]{left:50% !important;max-width:88vw !important;font-size:13px !important;}
+    /* Rio et Itacaré : le menu secondaire prend toute la largeur en haut (sans logo), flèches visibles, pastille du menu juste dessous */
+    html[data-exp][data-flottant] #camp-tabbar{padding-right:0 !important;}
+    html[data-exp][data-fusion] #camp-tabbar{padding-left:0 !important;}
+    html[data-exp][data-fusion] [data-fusion-marque]{display:none !important;}
+    html[data-exp][data-flottant][data-fusion] [data-nav-burger],html[data-exp][data-flottant][data-onglets-haut] [data-nav-burger]{top:calc(66px + env(safe-area-inset-top)) !important;width:44px;height:44px;}
+  }
+
+  /* 9. Menu mobile ouvert : un vrai écran plein, encre, grands liens ; il ne se confond plus avec la page */
+  @supports selector(:has(a)){
+    html[data-exp]:has([data-nav-mobile]){overflow:hidden;}
+    html[data-exp] [data-nav-mobile]{position:fixed !important;top:0 !important;left:0;right:0;bottom:0;z-index:65 !important;background:var(--encre) !important;padding:calc(92px + env(safe-area-inset-top)) 28px calc(34px + env(safe-area-inset-bottom)) !important;gap:4px !important;border:0 !important;overflow-y:auto;box-sizing:border-box;animation:exp-menu .3s ease both;}
+    html[data-exp] [data-nav-mobile] > a{font-family:'Londrina Solid',sans-serif !important;font-weight:900 !important;font-size:clamp(38px,11.5vw,56px) !important;line-height:1.04;color:var(--ecume) !important;padding:5px 0 !important;margin:0 !important;text-decoration:none;animation:exp-menu-lien .55s cubic-bezier(.22,.61,.36,1) both;}
+    html[data-exp] [data-nav-mobile] > a[data-on="1"]{color:var(--soleil) !important;}
+    html[data-exp] [data-nav-mobile] > a svg{display:none !important;}
+    html[data-exp] [data-nav-mobile] > a:nth-child(2){animation-delay:.05s;}
+    html[data-exp] [data-nav-mobile] > a:nth-child(3){animation-delay:.1s;}
+    html[data-exp] [data-nav-mobile] > a:nth-child(4){animation-delay:.15s;}
+    html[data-exp] [data-nav-mobile] > a:nth-child(5){animation-delay:.2s;}
+    html[data-exp] [data-nav-mobile] > [data-lang-menu]{margin-top:18px;}
+    html[data-exp] [data-nav-mobile] > [data-lang-menu] > span{color:rgba(242,248,246,.85) !important;font-size:14px !important;}
+    html[data-exp] [data-nav-mobile] > [data-coral]{margin-top:auto !important;font-size:18px !important;padding:16px 24px !important;}
+    /* Le bouton du menu reste au même endroit et devient une croix */
+    html[data-exp]:has([data-nav-mobile]) [data-nav-top]{z-index:70 !important;background:transparent !important;border-bottom-color:transparent !important;backdrop-filter:none !important;-webkit-backdrop-filter:none !important;box-shadow:none !important;transform:none !important;pointer-events:none;}
+    html[data-exp]:has([data-nav-mobile]) [data-nav-top] > *{pointer-events:auto;}
+    html[data-exp]:has([data-nav-mobile]) [data-nav-top] [data-house-name],html[data-exp]:has([data-nav-mobile]) [data-nav-top] [data-house-name] *{color:var(--ecume) !important;opacity:1 !important;}
+    html[data-exp]:has([data-nav-mobile]) [data-wa-bubble],html[data-exp]:has([data-nav-mobile]) [data-wa-panel]{display:none !important;}
+    html[data-exp]:has([data-nav-mobile]) [data-nav-top] [data-house-logo]{filter:brightness(0) invert(1) !important;opacity:1 !important;transform:none !important;}
+    html[data-exp]:has([data-nav-mobile]) [data-nav-burger]{position:fixed !important;top:calc(10px + env(safe-area-inset-top)) !important;right:12px !important;z-index:70 !important;width:48px !important;height:48px !important;box-sizing:border-box;padding:0 !important;align-items:center;justify-content:center;border-radius:50%;background:var(--soleil) !important;box-shadow:none !important;}
+    html[data-exp]:has([data-nav-mobile]) [data-nav-burger] span{width:20px !important;height:2.5px !important;background:var(--encre) !important;box-shadow:none !important;filter:none !important;transition:rotate .3s ease,translate .3s ease,opacity .2s ease;}
+    html[data-exp]:has([data-nav-mobile]) [data-nav-burger] span:nth-child(1){translate:0 7.5px;rotate:45deg;}
+    html[data-exp]:has([data-nav-mobile]) [data-nav-burger] span:nth-child(2){opacity:0;}
+    html[data-exp]:has([data-nav-mobile]) [data-nav-burger] span:nth-child(3){translate:0 -7.5px;rotate:-45deg;}
+  }
+  @keyframes exp-menu{from{opacity:0}to{opacity:1}}
+  @keyframes exp-menu-lien{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){html[data-exp] [data-nav-mobile],html[data-exp] [data-nav-mobile] > a{animation:none !important;}}
+
+  /* 10. Pages camp : les chiffres du spot en grand, sur un panneau encre ; ils comptent en arrivant */
+  html[data-exp] [data-chiffres]{background:var(--encre);}
+  html[data-exp] [data-chiffres] > *{background:transparent !important;border:0 !important;border-radius:0 !important;padding:clamp(18px,2vw,28px) !important;}
+  html[data-exp] [data-chiffres] > * > span:first-child{font-family:'Londrina Solid',sans-serif !important;font-size:clamp(64px,7.4vw,112px) !important;line-height:.86 !important;color:var(--soleil) !important;font-variant-numeric:tabular-nums;}
+  html[data-exp] [data-chiffres] h3{color:var(--ecume) !important;font-size:22px !important;}
+  html[data-exp] [data-chiffres] p{color:rgba(242,248,246,.78) !important;}
+  @media (min-width:721px){
+    html[data-exp] [data-chiffres]{border-radius:32px;padding:clamp(14px,1.6vw,24px);gap:0 !important;grid-template-columns:repeat(auto-fit,minmax(200px,1fr)) !important;}
+    html[data-exp] [data-chiffres] > * + *{border-left:1px solid rgba(242,248,246,.14) !important;}
+  }
+  @media (max-width:720px){
+    html[data-exp] [data-chiffres]{padding-top:18px !important;padding-bottom:22px !important;}
+  }
+
+  /* 11. Pages camp : la méthode en quatre temps, grands numéros au contour qui se remplissent */
+  html[data-exp] [data-methode] > *{background:transparent !important;border-top:3px solid var(--encre);border-radius:0 !important;padding:18px 18px 8px 0 !important;}
+  html[data-exp] [data-methode] > * > div:first-child{font-family:'Londrina Solid',sans-serif !important;font-size:clamp(76px,8.6vw,124px) !important;line-height:.9 !important;color:transparent !important;-webkit-text-stroke:2px var(--encre);margin-bottom:10px !important;transition:color .9s ease;transition-delay:calc(var(--rev-d,0s) + .45s);}
+  html[data-exp] [data-methode] > *[data-vu] > div:first-child{color:var(--encre) !important;}
+  html[data-exp] [data-methode] h3{font-size:24px !important;color:var(--encre) !important;}
+  html[data-exp] [data-methode] p{color:#1F4D55 !important;}
+
+  /* 12. Pages camp : « le quotidien » en photos posées comme des tirages */
+  html[data-exp] [data-quotidien]{gap:clamp(14px,1.8vw,24px) !important;padding:10px 4px;}
+  html[data-exp] [data-quotidien] > *{border:6px solid #FFFFFF;border-radius:8px !important;box-shadow:0 10px 24px rgba(6,50,59,.18);rotate:-2.2deg;transition:opacity .8s cubic-bezier(.22,.61,.36,1),translate .8s cubic-bezier(.22,.61,.36,1),rotate .45s cubic-bezier(.2,.8,.2,1),scale .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s ease;transition-delay:var(--rev-d,0s);}
+  html[data-exp] [data-quotidien] > *:nth-child(3n+2){rotate:1.8deg;}
+  html[data-exp] [data-quotidien] > *:nth-child(3n){rotate:-.7deg;translate:0 6px;}
+  html[data-exp] [data-quotidien] > *[data-vu]:hover{rotate:0deg;scale:1.14;z-index:3;box-shadow:0 22px 44px rgba(6,50,59,.3);transition-delay:0s;}
+
+  /* 13. Appel final des pages camp : titre géant, photo qui glisse */
+  html[data-exp] [data-appel] h2{font-size:clamp(42px,6.4vw,92px) !important;line-height:.94 !important;}
+  html[data-exp] [data-appel] > img{scale:1.18;translate:0 calc((var(--pp,.5) - .5) * -90px);}
+
+  /* 14. À propos : l'équipe, portraits plus grands */
+  html[data-exp] [data-equipe]{gap:clamp(16px,2vw,26px) !important;margin-top:26px;}
+  html[data-exp] [data-equipe] > *{background:transparent !important;border:0 !important;padding:8px 10px !important;}
+  html[data-exp] [data-equipe] > * > div:first-child{width:clamp(132px,13vw,176px) !important;height:clamp(132px,13vw,176px) !important;box-shadow:0 0 0 6px #FFFFFF,10px 12px 0 0 var(--soleil);rotate:-3deg;transition:rotate .5s cubic-bezier(.2,.8,.2,1),scale .5s cubic-bezier(.2,.8,.2,1);margin-bottom:22px !important;}
+  html[data-exp] [data-equipe] > *:nth-child(even) > div:first-child{rotate:3deg;box-shadow:0 0 0 6px #FFFFFF,-10px 12px 0 0 var(--mer);}
+  html[data-exp] [data-equipe] > *:hover > div:first-child{rotate:0deg;scale:1.06;}
+  html[data-exp] [data-equipe] > * > div:nth-child(2){font-size:30px !important;line-height:1;}
+
+  @media (prefers-reduced-motion:reduce){
+    html[data-exp] [data-methode] > * > div:first-child{color:var(--encre) !important;transition:none !important;}
+    html[data-exp] [data-quotidien] > *,html[data-exp] [data-equipe] > * > div:first-child{transition:none !important;}
+    html[data-exp] [data-appel] > img{scale:1;translate:none;}
+  }
+
+  /* 15. Onglet « Le camp » : les trois lieux en affiches, l'atelier du shaper, ce qui est inclus */
+  html[data-exp] [data-lieux] > * img{transition:scale 1s cubic-bezier(.2,.8,.2,1);}
+  html[data-exp] [data-lieux] > *:hover img{scale:1.07;}
+  @media (min-width:721px){
+    html[data-exp] [data-lieux]{gap:clamp(18px,2.2vw,30px) !important;}
+    html[data-exp] [data-lieux] > *{rotate:-1.3deg;box-shadow:0 12px 28px rgba(6,50,59,.16);transition:opacity .9s cubic-bezier(.22,.61,.36,1),translate .9s cubic-bezier(.22,.61,.36,1),rotate .5s cubic-bezier(.2,.8,.2,1),scale .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease;transition-delay:var(--rev-d,0s);}
+    html[data-exp] [data-lieux] > *:nth-child(2){rotate:1.1deg;}
+    html[data-exp] [data-lieux] > *:nth-child(3){rotate:-.6deg;}
+    html[data-exp] [data-lieux] > *[data-vu]:hover{rotate:0deg;scale:1.03;z-index:2;box-shadow:0 24px 48px rgba(6,50,59,.28);transition-delay:0s;}
+  }
+  html[data-exp] [data-faits]{gap:clamp(22px,3.4vw,52px) !important;margin-top:14px !important;}
+  html[data-exp] [data-shaper] [data-faits] > * > span:first-child{font-family:'Londrina Solid',sans-serif !important;font-size:clamp(68px,7.6vw,112px) !important;line-height:.86 !important;color:var(--soleil) !important;font-variant-numeric:tabular-nums;}
+  html[data-exp] [data-faits] > * > span:last-child{font-size:15px !important;max-width:14em;}
+  html[data-exp] [data-tirages]{gap:clamp(14px,1.8vw,24px) !important;padding:10px 6px 24px;}
+  html[data-exp] [data-tirages] > *{border:6px solid #FFFFFF;border-radius:8px !important;box-shadow:0 14px 30px rgba(0,0,0,.3);rotate:-3deg;transition:opacity .9s cubic-bezier(.22,.61,.36,1),translate .9s cubic-bezier(.22,.61,.36,1),rotate .5s cubic-bezier(.2,.8,.2,1),scale .5s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rev-d,0s);}
+  html[data-exp] [data-tirages] > *:nth-child(even){rotate:2.4deg;margin-top:22px;margin-bottom:-22px;}
+  html[data-exp] [data-tirages] > *[data-vu]:hover{rotate:0deg;scale:1.05;z-index:2;transition-delay:0s;}
+  html[data-exp] [data-inclus] > *{font-size:15px !important;padding:9px 16px !important;}
+  html[data-exp] [data-inclus] > [data-rev]{translate:none;scale:.5;transition:opacity .45s ease,scale .6s cubic-bezier(.34,1.56,.64,1);transition-delay:calc(var(--rev-d,0s) * 1.4);}
+  html[data-exp] [data-inclus] > [data-rev][data-vu]{scale:1;}
+
+  /* 16. Onglet « Expériences » : aplat encre, grand titre, mosaïque de photos qui se redressent */
+  html[data-exp] [data-experiences]{background:var(--encre);}
+  html[data-exp] [data-experiences] h2{color:var(--ecume) !important;font-size:clamp(44px,7vw,104px) !important;line-height:.92 !important;max-width:none !important;}
+  html[data-exp] [data-experiences] h2 + p{color:rgba(242,248,246,.8) !important;font-size:19px !important;}
+  html[data-exp] [data-experiences] h3{color:var(--soleil) !important;font-size:clamp(34px,4.4vw,60px) !important;line-height:.96 !important;margin-bottom:26px !important;}
+  html[data-exp] [data-experiences] h3 + p{color:rgba(242,248,246,.8) !important;}
+  html[data-exp] [data-experiences] [data-primary-cta] + span{color:rgba(242,248,246,.8) !important;font-size:15px !important;}
+  html[data-exp] [data-experiences] #camp-core > p:first-child,html[data-exp] [data-experiences] #camp-discovery > p:first-child{color:rgba(242,248,246,.7) !important;}
+  html[data-exp] [data-experiences] [data-hscroll] > *{border-radius:22px !important;background:#04262D !important;}
+  html[data-exp] [data-experiences] [data-hscroll] > * img,html[data-exp] [data-experiences] [data-hscroll] > * video{transition:scale 1.1s cubic-bezier(.2,.8,.2,1);}
+  html[data-exp] [data-experiences] [data-hscroll] > *:hover img,html[data-exp] [data-experiences] [data-hscroll] > *:hover video{scale:1.09;}
+  html[data-exp] [data-experiences] [data-hscroll] > * > div:last-child > span:first-child{font-family:'Londrina Solid',sans-serif !important;font-weight:400 !important;font-size:clamp(22px,2vw,28px) !important;line-height:1 !important;color:#FFFFFF !important;}
+  @media (min-width:721px){
+    html[data-exp] [data-experiences] [data-hscroll] > *{rotate:-1.2deg;transition:opacity .9s cubic-bezier(.22,.61,.36,1),translate .9s cubic-bezier(.22,.61,.36,1),rotate .5s cubic-bezier(.2,.8,.2,1),scale .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease;transition-delay:var(--rev-d,0s);}
+    html[data-exp] [data-experiences] [data-hscroll] > *:nth-child(even){rotate:1.2deg;}
+    html[data-exp] [data-experiences] [data-hscroll] > *:nth-child(3n){rotate:.4deg;}
+    html[data-exp] [data-experiences] [data-hscroll] > *[data-vu]:hover{rotate:0deg;scale:1.05;z-index:2;box-shadow:0 22px 44px rgba(0,0,0,.4);transition-delay:0s;}
+  }
+
+  /* 17. Onglet « Packages surf » : cartes qui se soulèvent, jauge d'intensité qui se remplit */
+  html[data-exp] [data-forfaits] > *{transition:opacity .9s cubic-bezier(.22,.61,.36,1),translate .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease;transition-delay:var(--rev-d,0s);}
+  html[data-exp] [data-forfaits] > *[data-vu]:hover{translate:0 -10px;box-shadow:0 24px 44px rgba(6,50,59,.2);transition-delay:0s;}
+  html[data-exp] [data-forfaits] > * > div:first-child{overflow:hidden;}
+  html[data-exp] [data-forfaits] > * img{transition:scale 1.1s cubic-bezier(.2,.8,.2,1);}
+  html[data-exp] [data-forfaits] > *:hover img{scale:1.08;}
+  html[data-exp] [data-forfaits] > * > div:nth-of-type(2) > span:first-child{font-size:26px !important;line-height:1;}
+  html[data-exp] [data-forfaits] > * > [data-coral-text]{font-size:21px !important;}
+  html[data-exp] [data-forfaits] > * > div:nth-of-type(3){height:8px !important;border-radius:4px !important;}
+  html[data-exp] [data-forfaits] > [data-rev] > div:nth-of-type(3) > div{scale:0 1;transform-origin:left center;transition:scale 1.3s cubic-bezier(.22,.61,.36,1);transition-delay:calc(var(--rev-d,0s) + .5s);}
+  html[data-exp] [data-forfaits] > [data-rev][data-vu] > div:nth-of-type(3) > div{scale:1 1;}
+  html[data-exp] [data-methode] h4{font-size:24px !important;color:var(--encre) !important;}
+
+  /* 19. Retours du 12/11 : boutons vers les onglets, chiffres qui tiennent dans leur colonne, bouton lisible sur aplat jaune, nom du camp en clair sur l'image */
+  html[data-exp] [data-vers-onglet]{display:inline-block !important;align-self:flex-start;background:var(--encre) !important;color:var(--ecume) !important;border:0 !important;border-radius:999px !important;padding:17px 34px !important;font-weight:800 !important;font-size:17px !important;line-height:1.2 !important;margin-top:10px;box-shadow:0 10px 24px rgba(6,50,59,.18);transition:background-color .3s ease,color .3s ease,translate .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s ease;}
+  html[data-exp] [data-house="itacare"] [data-vers-onglet]{background:#1E4636 !important;}
+  html[data-exp] [data-vers-onglet]:hover{background:var(--soleil) !important;color:var(--encre) !important;translate:0 -3px;box-shadow:0 16px 30px rgba(6,50,59,.24);}
+  html[data-exp] [data-chiffres] > *{container-type:inline-size;min-width:0;}
+  html[data-exp] [data-chiffres] > * > span:first-child{font-size:clamp(52px,44cqi,112px) !important;white-space:nowrap;}
+  @media (min-width:721px){
+    html[data-exp] [data-chiffres]:has(> :nth-child(6)){grid-template-columns:repeat(3,minmax(0,1fr)) !important;}
+    html[data-exp] [data-chiffres]:has(> :nth-child(6)) > :nth-child(3n+1){border-left:0 !important;}
+    html[data-exp] [data-chiffres]:has(> :nth-child(6)) > :nth-child(n+4){border-top:1px solid rgba(242,248,246,.14) !important;}
+  }
+  @media (min-width:1000px){html[data-exp] [data-chiffres]:has(> :nth-child(5)):not(:has(> :nth-child(6))){grid-template-columns:repeat(5,minmax(0,1fr)) !important;}}
+  html[data-exp] [data-coral-bg] [data-primary-cta]{background:var(--encre) !important;color:var(--ecume) !important;}
+  html[data-exp] [data-coral-bg] [data-primary-cta]:hover{background:#04262D !important;}
+  html[data-exp] [data-coral-bg] [data-primary-cta] *{color:var(--ecume) !important;}
+  html[data-exp] [data-house="itacare"] [data-coral-bg] [data-primary-cta]{background:#E3711C !important;}
+  html[data-immersif] [data-nav-top] [data-house-name] b{color:#FFF8EF !important;text-shadow:0 1px 12px rgba(10,25,40,.35);}
+  html[data-immersif] [data-nav-top] [data-house-rule]{background:rgba(255,248,239,.7) !important;}
+  @media (prefers-reduced-motion:reduce){html[data-exp] [data-vers-onglet]{transition:none !important;}html[data-exp] [data-vers-onglet]:hover{translate:none;}}
+
+  /* 18. Onglet « Guide surf » : saisons en affiches où la houle monte selon la taille des vagues, spots en cascade */
+  html[data-exp] #camp-guide h2{font-size:clamp(44px,7vw,104px) !important;line-height:.92 !important;color:var(--ecume) !important;}
+  html[data-exp] #camp-guide h2 + p{font-size:19px !important;}
+  html[data-exp] #camp-guide h3{font-size:clamp(30px,3.4vw,46px) !important;line-height:.96 !important;color:var(--soleil) !important;}
+  html[data-exp] [data-saisons] > *{position:relative;overflow:hidden;padding-bottom:calc(34px + var(--houle,.5) * 84px) !important;border-radius:22px !important;}
+  html[data-exp] [data-saisons] > * > div:first-child > div:first-child{font-family:'Londrina Solid',sans-serif !important;font-weight:400 !important;font-size:clamp(38px,3.3vw,50px) !important;line-height:.95 !important;color:var(--soleil) !important;}
+  html[data-exp] [data-saisons] > * > div:first-child > div:nth-child(2){color:var(--ecume) !important;font-size:13px !important;letter-spacing:.12em;text-transform:uppercase;margin-top:8px !important;}
+  html[data-exp] [data-saisons] > * > div:nth-of-type(2){font-size:15.5px !important;}
+  html[data-exp] [data-saisons] > *::after,html[data-exp] [data-saisons] > *::before{content:"";position:absolute;left:-2%;right:-2%;bottom:0;height:calc(18px + var(--houle,.5) * 84px);pointer-events:none;transform-origin:center bottom;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' view%42ox='0 0 240 100' preserve%41spect%52atio='none'%3E%3Cpath d='M0 26 C30 2 50 2 80 22 S130 44 160 20 S215 4 240 24 V100 H0Z' fill='%230B6A73'/%3E%3C/svg%3E") center bottom/100% 100% no-repeat;}
+  html[data-exp] [data-saisons] > *::before{opacity:.45;height:calc(30px + var(--houle,.5) * 84px);background-position:left bottom;background-size:140% 100%;}
+  html[data-exp] [data-saisons] > [data-rev]::after,html[data-exp] [data-saisons] > [data-rev]::before{scale:1 0;transition:scale 1.4s cubic-bezier(.22,.61,.36,1);transition-delay:calc(var(--rev-d,0s) + .35s);}
+  html[data-exp] [data-saisons] > [data-rev]::before{transition-duration:1.9s;}
+  html[data-exp] [data-saisons] > [data-rev][data-vu]::after,html[data-exp] [data-saisons] > [data-rev][data-vu]::before{scale:1 1;}
+  html[data-exp] [data-spots] > *{border-radius:18px !important;padding:18px 20px !important;transition:opacity .8s cubic-bezier(.22,.61,.36,1),translate .6s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rev-d,0s);}
+  html[data-exp] [data-spots] > [data-rev]:not([data-vu]){translate:-28px 0;}
+  html[data-exp] [data-spots] > * > div:first-child > span:first-child{font-family:'Londrina Solid',sans-serif !important;font-weight:400 !important;font-size:26px !important;line-height:1 !important;}
+  html[data-exp] [data-spots] > * > p{font-size:15px !important;}
+  @media (min-width:721px){
+    html[data-exp] [data-saisons]{gap:clamp(14px,1.6vw,22px) !important;align-items:stretch;}
+    html[data-exp] [data-saisons] > *{rotate:-1.1deg;box-shadow:0 14px 30px rgba(0,0,0,.28);transition:opacity .9s cubic-bezier(.22,.61,.36,1),translate .9s cubic-bezier(.22,.61,.36,1),rotate .5s cubic-bezier(.2,.8,.2,1),scale .5s cubic-bezier(.2,.8,.2,1);transition-delay:var(--rev-d,0s);}
+    html[data-exp] [data-saisons] > *:nth-child(2){rotate:.9deg;}
+    html[data-exp] [data-saisons] > *:nth-child(3){rotate:-.5deg;}
+    html[data-exp] [data-saisons] > *:nth-child(4){rotate:1.2deg;}
+    html[data-exp] [data-saisons] > *[data-vu]:hover{rotate:0deg;scale:1.03;z-index:2;transition-delay:0s;}
+    html[data-exp] [data-spots] > *[data-vu]:hover{translate:10px 0;transition-delay:0s;}
+  }
+
+  @media (max-width:720px){
+    html[data-exp] [data-experiences] [data-hscroll] > * > div:last-child > span:first-child{font-size:20px !important;}
+    html[data-exp] [data-saisons]{display:flex !important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px !important;margin:0 -24px 44px !important;padding:4px 24px 14px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+    html[data-exp] [data-saisons]::-webkit-scrollbar{display:none;}
+    html[data-exp] [data-saisons] > *{flex:0 0 78%;scroll-snap-align:center;box-sizing:border-box;}
+    html[data-exp] [data-saisons] > [data-rev]{translate:none;}
+    html[data-exp] [data-spots] > * > div:first-child > span:first-child{font-size:23px !important;}
+    html[data-exp] [data-shaper] > [data-tirages]{height:190px !important;padding:8px 4px 26px;}
+    html[data-exp] [data-shaper] [data-faits]{margin-top:10px !important;}
+    html[data-exp] [data-experiences] [data-hscroll] > * > div:last-child > span:last-child{font-size:12.5px !important;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html[data-exp] [data-saisons] > *,html[data-exp] [data-saisons] > *::after,html[data-exp] [data-saisons] > *::before,html[data-exp] [data-spots] > *{transition:none !important;}
+    html[data-exp] [data-lieux] > *,html[data-exp] [data-lieux] > * img,html[data-exp] [data-tirages] > *,html[data-exp] [data-experiences] [data-hscroll] > *,html[data-exp] [data-experiences] [data-hscroll] > * img,html[data-exp] [data-experiences] [data-hscroll] > * video,html[data-exp] [data-forfaits] > *,html[data-exp] [data-forfaits] > * img{transition:none !important;}
+    html[data-exp] [data-lieux] > *:hover img,html[data-exp] [data-experiences] [data-hscroll] > *:hover img,html[data-exp] [data-experiences] [data-hscroll] > *:hover video,html[data-exp] [data-forfaits] > *:hover img{scale:1;}
+  }

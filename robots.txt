@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Bêta : exploration autorisée (outils et IA peuvent lire le site), mais pas d'indexation :
+# chaque réponse porte l'en-tête X-Robots-Tag: noindex, nofollow (voir vercel.json).

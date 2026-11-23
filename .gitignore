@@ -1,83 +1,33 @@
-# OS generated files
+# Copie de travail de outils/paquet.py (gabarit et textes décodés) : jetable, recréée par « paquet.py extraire ».
+.travail/
+
+# Dossier d'audit (captures, scripts Playwright, données, environ 1,2 Go) : documents de travail, pas le site.
+audit/
+
+# Archive de l'audit d'usabilité du 09/11/2026 (17 Mo) : même contenu que le dossier audit/.
+audit-usabilite-beta-20261109.zip
+
+# Maquettes et planches de travail (environ 93 Mo) : références visuelles, pas le site.
+maquettes/
+
+# Fichiers de configuration de la mesure d'audience. Attention : contient l'export du conteneur Tag Manager
+# (mesure/gtm-surfinn-import.json), à transmettre à part si on veut réimporter la configuration.
+mesure/
+
+# Dépendances Node : réinstallées par « npm install » ou par Vercel à partir de package-lock.json.
+node_modules/
+
+# Fichiers que macOS crée dans chaque dossier ouvert dans le Finder.
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
 
-# IDE and Editor files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
+# Liaison locale avec le projet Vercel, créée par la commande « vercel link ».
+.vercel
 
-# System and config files
-.bash_history
-.zsh_history
-.zsh_sessions/
-.ssh/
-.cups/
-.cache/
-.npm/
-.node_repl_history
-.gitconfig
+# Variables d'environnement et secrets locaux : ne jamais les versionner.
+.env*
 
-# Application data
+# Copies de travail des agents Claude Code (worktrees).
 .claude/
-.claude.json*
-.cursor/
-.cursor-tutor/
-.docker/
-.gemini/
-.local/
-.config/
-.mcp-auth/
-.opencode/
-.codex/
-.tor/
-.antigravity/
 
-# User directories
-Desktop/
-Documents/
-Downloads/
-Library/
-Movies/
-Music/
-Pictures/
-Applications/
-Public/
-.Trash/
-
-# Development tools
-.dart-tool/
-.flutter
-.pub-cache/
-.fontconfig/
-.npm-global/
-.npmrc
-.bun/
-
-# Temporary files
-*.tmp
-*.temp
-.CFUserTextEncoding
-# Test screenshots (local dev only)
-*.jpeg
-!assets/**/*.jpeg
-.playwright-mcp/
-framer-*.jpeg
-menu-*.jpeg
-rio-*.jpeg
-my-*.jpeg
-builder-*.jpeg
-accomod-*.jpeg
-itacare-*.jpeg
-leaf-*.jpeg
-palms-*.jpeg
-select-*.jpeg
-rooms-*.jpeg
-create-*.jpeg
+# Cache Python créé en lançant outils/experience.py (modules importés).
+__pycache__/
